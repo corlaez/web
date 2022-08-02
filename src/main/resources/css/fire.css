@@ -1,0 +1,43 @@
+.fire {
+    background-image: url(SIGNATURE_IMAGE_PATH), url(WINE_IMAGE_PATH);
+    background-repeat: no-repeat, repeat,no-repeat,no-repeat;
+    background-attachment: scroll, fixed;/*scroll, fixed; looks a little better in the PC butg breaks color animation on mobile*/
+    background-position: left, center;
+    background-size: 300px, 780px 390px;
+    animation: AnimateBG2 0.2s;
+}
+.fire h1, .fire p {
+    color: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+    text-shadow: 7px 2px black;
+}
+.fire p {
+    background: rgba(73, 79, 82, 0.41);
+    text-shadow: 0 0 black;
+}
+.signature {
+    height: 220px;
+    /*animation: AnimateBG 24s ease infinite;*/
+    background-image: url(SIGNATURE2_IMAGE_PATH), url(WINE_IMAGE_PATH);
+    background-size: 222px, 780px 390px;
+    background-repeat: no-repeat, repeat;
+    background-position: center, center;
+    background-attachment: scroll, fixed;
+}
+
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(0deg, rgba(48, 255, 164, 0), rgba(238, 13, 13, 0.8), rgba(238, 13, 13, 0.8), rgba(48, 255, 164, 0)), url(WINE_IMAGE_PATH);
+    background-attachment: scroll, fixed;
+}
+@keyframes AnimateBG2 {
+    0%{background-position: center, center;}
+    100%{background-position: left, center;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .fire {
+        animation: unset;
+    }
+}

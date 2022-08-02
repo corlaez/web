@@ -1,0 +1,27 @@
+.fire {
+    background-image:
+            linear-gradient(rgba(37,202,168,.5) 25%, rgba(249,198,134,.5), rgba(255,88,60,.5)),
+            url(/assets/fire.webp),
+            linear-gradient(0deg,#ff583c,#f9c686,#25caa8);
+    background-repeat: no-repeat,repeat,no-repeat;
+    background-size: 100%,150px 150px,100%;
+    background-position: 50%,0 0,50%;
+    width: 100%;
+
+    align-items: stretch;
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: rgb(0, 163, 133);
+}
+.fire h1, .fire p {
+    color: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+}
+.fire p {
+     background: rgba(101, 95, 93, 0.41);
+}

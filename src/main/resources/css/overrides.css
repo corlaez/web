@@ -1,0 +1,16 @@
+p {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: justify;
+    color: rgb(178, 172, 162);
+}
+:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p), p {
+    max-width: 50rem;
+}
+p.center {
+    text-align: center;
+}
+body {
+    background-color: rgb(19, 21, 22);
+    color: rgb(178, 172, 162);
+}
