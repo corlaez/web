@@ -5,5 +5,7 @@ fun httpGet(urlStr: String): Pair<Int, String> {
     val url = URL(urlStr)
     val con = url.openConnection() as HttpURLConnection
     con.requestMethod = "GET"
-    return con.responseCode to con.inputStream.bufferedReader().readText()
+    return runCatching {
+        con.responseCode to con.inputStream.bufferedReader().readText()
+    }.getOrDefault(500 to "Couldn't connect")
 }

@@ -20,7 +20,6 @@ fun serve() {
     if (arg.isPrd()) logger.info("This server does not support hot reloading")
 }
 
-
 context(EnvContext)
 private fun devConfig(app: Javalin) {
     if (arg.isDev()) {
@@ -37,7 +36,6 @@ private fun devConfig(app: Javalin) {
         }
     }
 }
-
 
 // Avoid cache https://reqbin.com/req/doog8aai/http-headers-to-prevent-caching
 //            if (arg.isDev())
