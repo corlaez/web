@@ -3,7 +3,7 @@
     background-repeat: no-repeat, repeat,no-repeat,no-repeat;
     background-attachment: scroll, fixed;/*scroll, fixed; looks a little better in the PC butg breaks color animation on mobile*/
     background-position: left, center;
-    background-size: 300px, 780px 390px;
+    background-size: 300px, 390px 180px;
     animation: AnimateBG2 0.2s;
 }
 .fire h1, .fire p {

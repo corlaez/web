@@ -44,6 +44,7 @@ The bot was meant to Announce when Daniel arrives to your floor. You subscribe t
 The simple program relied on trust and accurate reports of its participants to work but it was a fun experiment to run. The bot is deployed but deactivated
 
 [https://github.com/corlaez/df-bot](https://github.com/corlaez/df-bot)
+
 <a target="_blank" rel="noopener" href="https://join.skype.com/bot/6397acda-dd3f-46e2-a90b-af14bd2c6565">Open Skype's Bot Info Page</a>
 
 ## Overmind tutorial
