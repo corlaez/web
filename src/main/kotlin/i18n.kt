@@ -28,3 +28,16 @@ class LocalizedText(language: Language){
         Language.es -> "Version en español"
     }
 }
+
+fun getTitleMap(language: Language) =mapOf(
+    "index.html" to when(language) {
+        Language.en -> "English"
+        Language.es -> "Español"
+    }
+)
+fun getDescriptionMap(language: Language) = mapOf(
+    "index.html" to when(language) {
+        Language.en -> "English"
+        Language.es -> "Español"
+    }
+)

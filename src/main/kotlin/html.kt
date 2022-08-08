@@ -1,12 +1,12 @@
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
 
-context(EnvContext, OutputContext, LanguageContext)
-fun asHtmlPage(contentMd: String): String {
+context(EnvContext, OutputContext, LanguageContext, PageContext)
+fun asHtmlPage(contentMd: String): Page {
     val contentHtml = mdToHtml(contentMd)
-    return buildString {
+    val htmlPageString = buildString {
         append("<!DOCTYPE html>")
-        appendHTML().html {
+        appendHTML(prettyPrint = false).html {
             lang = language.toString()
             head { headTags() }
             body {
@@ -20,10 +20,9 @@ fun asHtmlPage(contentMd: String): String {
                         controls = true
                         loop = true
                         source {
-                            src = "/assets/bec.mp3"
+                            src = OutputPaths.BEC_AUDIO
                             type = "audio/mpeg"
                         }
-                        +"Your browser does not support the audio tag."
                     }
                 }
                 unsafe {
@@ -33,16 +32,37 @@ fun asHtmlPage(contentMd: String): String {
             }
         }
     }
+    return Page(fileName, htmlPageString)
 }
-
 
 context(EnvContext, OutputContext, LanguageContext)
 private fun HEAD.headTags() {
     meta { charset = "utf-8" }
     meta { name = "theme-color"; content = "#000000" }
-    meta { name = "viewport"; content = "width=device-width,initial-scale=1" }
+    meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
     meta { name = "description"; content = t.metaDescription }
-    link { rel = "stylesheet"; href = OutputPaths.STYLES_CSS_PATH; }
+    meta { name = "robots"; content = "index, follow" }
+
+    meta { attributes += "property" to "og:url"; content=domain }
+    meta { attributes += "property" to "og:type"; content="website" }
+    meta { attributes += "property" to "og:image"; content="/assets/logo.png" }
+    meta { attributes += "property" to "og:title"; content="Software Blog" }
+    meta { attributes += "property" to "og:locale"; content=language.toString() }
+    meta { attributes += "property" to "og:site_name"; content="Corlaez" }
+    meta { attributes += "property" to "og:description"; content="Personal blog by Armando Cordova" }
+
+    meta { name="twitter:card"; content="summary_large_image" }
+    meta { name="twitter:image"; content="/assets/logo.png" }
+    meta { name="twitter:image:alt"; content="Logo that reads A R"}
+    meta { name="twitter:creator"; content="@corlaez" }
+    meta { name="twitter:site"; content="@corlaez" }
+    meta { name="twitter:site_name"; content="@corlaez" }
+    meta { name="twitter:title"; content="" }
+    meta { name="twitter:description"; content="" }
+
+    link { rel = "preload"; href = OutputPaths.WINE_IMAGE_PATH; attributes += "as" to "image"; }
+
+    style { +resources.sytlesCss; }
     title { +"Armando" }
     unsafe {
         +resources.faviconTags

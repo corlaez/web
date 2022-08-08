@@ -6,7 +6,7 @@ fun loadResourceAsString(name: String, charset: Charset = Charset.defaultCharset
 
 fun saveFile(content: String, folder: String?, name: String) {
     if (folder != null) File(folder).mkdirs()
-    File("$folder/$name").writeText(content)
+    File("$folder$name").writeText(content)
 }
 fun copyDirectory(name: String, target: String) = File(name).copyRecursively(File(target), true)
 
