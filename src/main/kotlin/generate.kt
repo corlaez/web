@@ -1,9 +1,9 @@
-import OutputPaths.replaceOutputPaths
+import C.replaceConstants
 
 context(EnvContext)
 fun generate() {
     val resources = Resources(
-        sytlesCss = loadAndMergeCss().replaceOutputPaths(),
+        sytlesCss = loadAndMergeCss().replaceConstants(),
         indexEn = loadResourceAsString("/en/index.md"),
         indexEs = loadResourceAsString("/es/index.md"),
         faviconTags = loadResourceAsString("/tags.txt").replace(">\n", ">"),
@@ -12,22 +12,22 @@ fun generate() {
     val output = with(OutputContext(resources)) {
         Output(
             enPages = with(LanguageContext(Language.en)) { listOf(
-                with(PageContext("index.html")) { asHtmlPage(resources.indexEn) }
+                with(PageContext("index.html", pageOgType = "website")) { asHtmlPage(resources.indexEn) }
             )},
             esPages = with(LanguageContext(Language.es)) { listOf(
-                with(PageContext("index.html")) { asHtmlPage(resources.indexEs) }
+                with(PageContext("index.html", pageOgType = "website")) { asHtmlPage(resources.indexEs) }
             )},
             otherPages = listOf(
-                Page("styles.css", resources.sytlesCss)
+                Page("styles.css", "/assets/", resources.sytlesCss)
             ),
             staticDir = "static"
         )
     }
     deleteDirectory("output")
-    copyDirectory(output.staticDir, "output/assets")
-    output.otherPages.forEach { saveFile(it.content, "output/assets/", it.name) }
-    output.enPages.forEach { saveFile(it.content, "output/", it.name) }
-    output.esPages.forEach { saveFile(it.content, "output/es/", it.name) }
+    copyDirectory(output.staticDir, "output")
+    output.otherPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
+    output.enPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
+    output.esPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
 }
 
 fun loadAndMergeCss(): String {

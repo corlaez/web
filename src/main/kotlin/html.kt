@@ -11,16 +11,16 @@ fun asHtmlPage(contentMd: String): Page {
             head { headTags() }
             body {
                 div(classes = "fire") {
-                    h1 { +t.hiIamArmando }
-                    p { +t.hiIamArmandoSubtitle }
+                    h1 { +t.heroTitle }
+                    p { +t.heroDescription }
                 }
                 noScript { +"Hey you, browsing with JavaScript off. You are welcomed! this page does not require JS to work properly :)" }
-                p {
+                div(classes = "centero") {
                     audio {
                         controls = true
                         loop = true
                         source {
-                            src = OutputPaths.BEC_AUDIO
+                            src = C.BEC_AUDIO
                             type = "audio/mpeg"
                         }
                     }
@@ -32,40 +32,44 @@ fun asHtmlPage(contentMd: String): Page {
             }
         }
     }
-    return Page(fileName, htmlPageString)
+    return Page(fileName, langNamespace, htmlPageString)
 }
 
-context(EnvContext, OutputContext, LanguageContext)
+context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun HEAD.headTags() {
     meta { charset = "utf-8" }
-    meta { name = "theme-color"; content = "#000000" }
+    link { rel = "preload"; href = C.WINE_IMAGE_PATH; attributes += "as" to "image"; }
+    style { +resources.sytlesCss; }
     meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
-    meta { name = "description"; content = t.metaDescription }
     meta { name = "robots"; content = "index, follow" }
 
+    title { +t.headTitle }
+    meta { name = "description"; content = t.headMetaDescription }
+    meta { name = "theme-color"; content = C.THEME_RGB }
+
+    meta { attributes += "property" to "og:title"; content=t.headTitle }
+    meta { attributes += "property" to "og:description"; content=t.headMetaDescription }
     meta { attributes += "property" to "og:url"; content=domain }
-    meta { attributes += "property" to "og:type"; content="website" }
-    meta { attributes += "property" to "og:image"; content="/assets/logo.png" }
-    meta { attributes += "property" to "og:title"; content="Software Blog" }
-    meta { attributes += "property" to "og:locale"; content=language.toString() }
-    meta { attributes += "property" to "og:site_name"; content="Corlaez" }
-    meta { attributes += "property" to "og:description"; content="Personal blog by Armando Cordova" }
+    meta { attributes += "property" to "og:type"; content=pageOgType }
+    meta { attributes += "property" to "og:image"; content=C.LOGO_SQR_IMAGE_PATH }
+    meta { attributes += "property" to "og:locale"; content=language.lan_TE() }
+    meta { attributes += "property" to "og:site_name"; content=C.WEBSITE_NAME }
 
     meta { name="twitter:card"; content="summary_large_image" }
-    meta { name="twitter:image"; content="/assets/logo.png" }
-    meta { name="twitter:image:alt"; content="Logo that reads A R"}
-    meta { name="twitter:creator"; content="@corlaez" }
-    meta { name="twitter:site"; content="@corlaez" }
-    meta { name="twitter:site_name"; content="@corlaez" }
-    meta { name="twitter:title"; content="" }
-    meta { name="twitter:description"; content="" }
+    meta { name="twitter:image"; content=C.LOGO_SQR_IMAGE_PATH }
+    meta { name="twitter:image:alt"; content=t.logoAlly}
+    meta { name="twitter:creator"; content=C.TWITTER_HANDLE }
+    meta { name="twitter:site"; content=C.TWITTER_HANDLE }
+    meta { name="twitter:site_name"; content=C.TWITTER_HANDLE }
 
-    link { rel = "preload"; href = OutputPaths.WINE_IMAGE_PATH; attributes += "as" to "image"; }
+    meta { name="twitter:title"; content=t.headTitle }
+    meta { name="twitter:description"; content=t.headMetaDescription }
 
-    style { +resources.sytlesCss; }
-    title { +"Armando" }
     unsafe {
         +resources.faviconTags
+    }
+    script {
+        unsafe { +"""if('serviceWorker' in navigator){navigator.serviceWorker.register("${C.SERVICE_WORKER_JS_PATH}")}""" }
     }
     devWsReloadScript()
 }

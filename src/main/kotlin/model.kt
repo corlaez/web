@@ -12,5 +12,5 @@ data class Resources(
     val faviconTags: String,
     val wsReload: String,
 )
-data class Page(val name: String, val content: String)
+data class Page(val name: String, val namespace: String, val content: String)
 data class Output(val enPages: List<Page>, val esPages: List<Page>, val otherPages: List<Page>, val staticDir: String)
