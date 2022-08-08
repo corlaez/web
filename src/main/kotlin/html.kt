@@ -51,7 +51,7 @@ private fun HEAD.headTags() {
 }
 
 context(EnvContext, OutputContext, LanguageContext)
-private fun HEAD.devWsReloadScript() {
+private fun BODY.devWsReloadScript() {
     if (arg.isDev())
         script {
             async = true
