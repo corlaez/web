@@ -14,14 +14,14 @@ fun asHtmlPage(contentMd: String): Page {
                     h1 { +t.heroTitle }
                     p { +t.heroDescription }
                 }
-                noScript { +"Hey you, browsing with JavaScript off. You are welcomed! this page does not require JS to work properly :)" }
-                div(classes = "centero") {
+                noScript { +t.noScriptMessage }
+                p {
                     audio {
                         controls = true
                         loop = true
                         source {
                             src = C.BEC_AUDIO
-                            type = "audio/mpeg"
+                            type = C.BEC_AUDIO_TYPE
                         }
                     }
                 }
@@ -45,14 +45,14 @@ private fun HEAD.headTags() {
 
     title { +t.headTitle }
     meta { name = "description"; content = t.headMetaDescription }
-    meta { name = "theme-color"; content = C.THEME_RGB }
+    meta { name = "theme-color"; content = C.THEME_RGB }// ios Safari (modern)
 
     meta { attributes += "property" to "og:title"; content=t.headTitle }
     meta { attributes += "property" to "og:description"; content=t.headMetaDescription }
     meta { attributes += "property" to "og:url"; content=domain }
     meta { attributes += "property" to "og:type"; content=pageOgType }
     meta { attributes += "property" to "og:image"; content=C.LOGO_SQR_IMAGE_PATH }
-    meta { attributes += "property" to "og:locale"; content=language.lan_TE() }
+    meta { attributes += "property" to "og:locale"; content=language.languageWithTerritory() }
     meta { attributes += "property" to "og:site_name"; content=C.WEBSITE_NAME }
 
     meta { name="twitter:card"; content="summary_large_image" }

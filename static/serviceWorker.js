@@ -2,16 +2,14 @@ const cacheName = 'v1.0.0';
 
 self.addEventListener('install', function(event) {
     self.skipWaiting();
-    event.waitUntil(
-        caches.open(cacheName).then(function(cache) {
-            return cache.addAll([
-                'assets/bec.mp3',
-            ]);
-        })
-    );
-});
-
-self.addEventListener('fetch', (e) => {
+    // Commenting to let audio fail on offline mode and avoid big downloads
+    // event.waitUntil(
+    //     caches.open(cacheName).then(function(cache) {
+    //         return cache.addAll([
+    //             'assets/bec.mp3',
+    //         ]);
+    //     })
+    // );
     e.respondWith((async () => {
         return await fetch(e.request)
             .then(async (response) => {

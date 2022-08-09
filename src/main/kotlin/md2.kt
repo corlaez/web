@@ -13,4 +13,4 @@ val options = with(MutableDataSet()) {
 private val parser: Parser = Parser.builder(options).build()
 private val htmlRenderer = HtmlRenderer.builder(options).build()
 
-fun mdToHtml(inputMarkdown: String) = htmlRenderer.render(parser.parse(inputMarkdown))
+fun mdToHtml(inputMarkdown: String) = htmlRenderer.render(parser.parse(inputMarkdown)).replace(">\n", ">")

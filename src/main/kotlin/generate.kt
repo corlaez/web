@@ -1,9 +1,11 @@
-import C.replaceConstants
+import C.replaceTemplateConstants
 
 context(EnvContext)
 fun generate() {
     val resources = Resources(
-        sytlesCss = loadAndMergeCss().replaceConstants(),
+        sytlesCss = loadAndMergeCss().replaceTemplateConstants(),
+        manifestJson = loadResourceAsString("/manifest.json").replaceTemplateConstants(),
+        browserconfigXml = loadResourceAsString("/browserconfig.xml").replaceTemplateConstants(),
         indexEn = loadResourceAsString("/en/index.md"),
         indexEs = loadResourceAsString("/es/index.md"),
         faviconTags = loadResourceAsString("/tags.txt").replace(">\n", ">"),
@@ -18,7 +20,8 @@ fun generate() {
                 with(PageContext("index.html", pageOgType = "website")) { asHtmlPage(resources.indexEs) }
             )},
             otherPages = listOf(
-                Page("styles.css", "/assets/", resources.sytlesCss)
+                Page("manifest.json", "/assets/favicon/", resources.manifestJson),
+                Page("browserconfig.xml", "/assets/favicon/", resources.browserconfigXml),
             ),
             staticDir = "static"
         )
@@ -39,9 +42,10 @@ fun loadAndMergeCss(): String {
 }
 
 private fun String.minifyCss() = this
+    .replace(Regex("\\{\\s+"), "{")
+    .replace(Regex(":\\s+"), ":")
     .replace(Regex(",\\s+"), ",")
     .replace(Regex(";\\s+"), ";")
-    .replace(Regex("\\{\\s+"), "{")
     .replace(Regex("}\\s+"), "}")
     .replace(Regex("/\\*\\s+"), "/*")
     .replace(Regex("\\*/\\s+"), "*/")

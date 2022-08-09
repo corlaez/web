@@ -1,13 +1,19 @@
+import java.lang.IllegalStateException
+
 enum class Language {
     en, es;
 
-    fun lan_TE(): String= when(this) {
+    fun languageWithTerritory(): String= when(this) {
         en -> "en_US"
         es -> "es_PE"
     }
 }
 
 class LocalizedText(language: Language){
+    val noScriptMessage = when(language) {
+        Language.en -> "Hey you, browsing with JavaScript off. You are welcomed! this page does not require JS to work properly :)"
+        Language.es -> "Hey tu, navegando con JavaScript deshabilitado. Bienvenido! esta pagina no requiere JS para funcionar de manera apropiada :)"
+    }
     val logoAlly = when(language) {
         Language.en -> "Logo that reads A R"
         Language.es -> "Logo con el texto A R"
@@ -16,13 +22,13 @@ class LocalizedText(language: Language){
         Language.en -> "Thanks for your visit."
         Language.es -> "Gracias por la visita"
     }
-    val esLinkText = when(language) {
-        Language.en -> "English version"
-        Language.es -> null
-    }
-    val enLinkText = when(language) {
+    val englishVersionLink = when(language) {
         Language.en -> null
-        Language.es -> "Version en español"
+        Language.es -> "English version"
+    }
+    val spanishVersionLink = when(language) {
+        Language.en -> "Version en español"
+        Language.es -> null
     }
 }
 

@@ -36,15 +36,7 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
-//
-//Content is not sized correctly for the viewportThe viewport size of 412px does not match the window size of 360px. (li problem... does in happen on p with the right string?)
-//
-//PWA
-//No matching service worker detected. You may need to reload the page, or check that the scope of the service worker for the current page encloses the scope and start URL from the manifest.
-//Downloaded icon was empty or corrupted
-//
-//
-//Does not register a service worker that controls page and start_url
-
-// additional rich content
+// First break articles into their own pages with links
+// Then add rich content jsons (article and qa or education)
 // https://developers.google.com/search/docs/advanced/structured-data/search-gallery
+// Then work on categories

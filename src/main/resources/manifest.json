@@ -4,7 +4,7 @@
  "start_url":"/",
  "background_color":"#131516",
  "display":"minimal-ui",
- "theme_color":"#A10000",
+ "theme_color":"THEME_RGB",
  "categories": ["blog", "IT", "technology", "software", "programming", "Kotlin", "Java", "JVM"],
  "icons": [
   {
