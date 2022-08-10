@@ -1,6 +1,6 @@
 <h2 id="website-update-more-kotlin-less-js">Website Update: More Kotlin, Less JS!</h2>
 
-***August 3, 2022***
+August 3, 2022
 
 Today, I finally rewrote this website with some big changes I have been planning for a while:
 

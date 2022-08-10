@@ -14,3 +14,16 @@ body {
     background-color: rgb(19, 21, 22);
     color: rgb(178, 172, 162);
 }
+h2:not(:nth-child(4)) {
+    margin: 6rem auto 1rem auto!important;
+}
+h2, h1 {
+    font-weight: bold;
+    font-family: sans-serif;/*TODO*/
+}
+a {
+    color: THEME_RGB!important;
+}
+a:visited {
+    color: THEME_DARK_RGB!important;
+}

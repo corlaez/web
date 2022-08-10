@@ -5,7 +5,8 @@ object C {
     const val BEC_AUDIO = "/assets/bec.mp3"// audio
     const val BEC_AUDIO_TYPE = "audio/mpeg"// audio
     const val WINE_IMAGE_PATH = "/assets/dark-red.webp"// preload
-    const val THEME_RGB = "#A10000"// og meta tags
+    const val THEME_RGB = "#db3636"// og meta tags
+    const val THEME_DARK_RGB = "#9d1e1e"
     const val BACKGROUND_RGB = ""// TODO
     const val TWITTER_HANDLE = "@corlaez"// og meta tags
     const val WEBSITE_NAME = "Corlaez Blog"// og meta tags
@@ -17,4 +18,5 @@ object C {
         .replace("SIGNATURE2_IMAGE_PATH", SIGNATURE2_IMAGE_PATH)
         .replace("WINE_IMAGE_PATH", WINE_IMAGE_PATH)
         .replace("THEME_RGB", THEME_RGB)
+        .replace("THEME_DARK_RGB", THEME_DARK_RGB)
 }

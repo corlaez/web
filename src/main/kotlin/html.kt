@@ -28,6 +28,8 @@ fun asHtmlPage(contentMd: String): Page {
                 unsafe {
                     +contentHtml
                 }
+                br()
+                br()
                 signatureAndThanks()
             }
         }
