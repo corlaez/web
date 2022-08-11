@@ -10,6 +10,9 @@ self.addEventListener('install', function(event) {
     //         ]);
     //     })
     // );
+});
+
+self.addEventListener('fetch', (e) => {
     e.respondWith((async () => {
         return await fetch(e.request)
             .then(async (response) => {

@@ -22,8 +22,8 @@ h2, h1 {
     font-family: sans-serif;/*TODO*/
 }
 a {
-    color: THEME_RGB!important;
+    color: LINK_RGB!important;
 }
 a:visited {
-    color: THEME_DARK_RGB!important;
+    color: LINK_VISITED_RGB!important;
 }

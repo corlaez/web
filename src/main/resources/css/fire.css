@@ -30,7 +30,7 @@
 }
 
 audio::-webkit-media-controls-panel {
-    background: linear-gradient(0deg, THEME_DARK_RGB66, THEME_DARK_RGBBB, THEME_DARK_RGBEE, THEME_DARK_RGBBB, THEME_DARK_RGB66), url(WINE_IMAGE_PATH);
+    background: linear-gradient(0deg, AUDIO_RGB66, AUDIO_RGBBB, AUDIO_RGBEE, AUDIO_RGBBB, AUDIO_RGB66), url(WINE_IMAGE_PATH);
     background-attachment: scroll, fixed;
 }
 @keyframes AnimateBG2 {
