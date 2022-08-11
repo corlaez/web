@@ -8,7 +8,7 @@ fun serve() {
     val app = Javalin.create { config ->
         config.showJavalinBanner = false
         config.addStaticFiles { staticFiles ->
-            staticFiles.directory = "output"
+            staticFiles.directory = "deploy/output"
             staticFiles.location = Location.EXTERNAL
         }
     }.start(port.toInt())

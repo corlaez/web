@@ -26,11 +26,11 @@ fun generate() {
             staticDir = "static"
         )
     }
-    deleteDirectory("output")
-    copyDirectory(output.staticDir, "output")
-    output.otherPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
-    output.enPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
-    output.esPages.forEach { saveFile(it.content, "output${it.namespace}", it.name) }
+    deleteDirectory("deploy/output")
+    copyDirectory(output.staticDir, "deploy/output")
+    output.otherPages.forEach { saveFile(it.content, "deploy/output${it.namespace}", it.name) }
+    output.enPages.forEach { saveFile(it.content, "deploy/output${it.namespace}", it.name) }
+    output.esPages.forEach { saveFile(it.content, "deploy/output${it.namespace}", it.name) }
 }
 
 fun loadAndMergeCss(): String {
