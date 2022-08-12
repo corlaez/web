@@ -1,0 +1,11 @@
+naming:
+  EnumNaming:
+    active: false
+    enumEntryPattern: '[A-Z][_a-zA-Z0-9]*'
+style:
+  WildcardImport:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']
+    excludeImports:
+      - 'java.util.*'
+      - 'kotlinx.html.*'

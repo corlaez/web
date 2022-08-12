@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.10"
+    id("io.gitlab.arturbosch.detekt").version("1.21.0")
     application
 }
 
@@ -32,4 +33,9 @@ tasks.withType<KotlinCompile> {
 
 application {
     mainClass.set("MainKt")
+}
+
+detekt {
+    config = files("config/detekt/detekt-overrides.yml")
+    buildUponDefaultConfig = true
 }

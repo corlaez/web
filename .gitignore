@@ -1,6 +1,7 @@
 .gradle
 build/
 deploy/output/
+config/detekt/detekt.yml
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
