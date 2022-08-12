@@ -40,6 +40,8 @@ Most Java/Kotlin examples seem to focus on backends and server side rendering. O
 
 I could share a lot more about this endeavour, but I will leave it for another day. In the meantime and if you are curious here is the [source code](https://github.com/corlaez/web)
 
+<hr/><br/><br/>
+
 ## Skype Chatbot
 
 ***August 3, 2022*** (Project demo shared on October 2019)
@@ -54,6 +56,8 @@ The simple program relied on trust and accurate reports of its participants to w
 
 [Skype Bot Info Page](https://github.com/corlaez/df-bot)
 
+<hr/><br/><br/>
+
 ## Overmind tutorial
 
 ***Jan 5, 2019***
@@ -61,3 +65,5 @@ The simple program relied on trust and accurate reports of its participants to w
 A basic tutorial on the JavaScript UI library state manager [Overmind JS](https://overmindjs.org/) in a React application.
 
 [YouTube tutorial](https://www.youtube.com/watch?v=pe1F0-A-e8U)
+
+<hr/><br/><br/>

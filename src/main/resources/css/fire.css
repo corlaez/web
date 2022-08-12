@@ -3,7 +3,6 @@
     background-repeat: no-repeat, repeat,no-repeat,no-repeat;
     background-attachment: scroll, fixed;
     background-position: left, center;
-    /*background-size: 300px, 390px 180px;*/
     background-size: 300px, auto;
     animation: AnimateBG2 0.2s;
 }
@@ -21,12 +20,12 @@
 }
 .signature {
     height: 210px;
-    background-image: url(SIGNATURE2_IMAGE_PATH), url(WINE_IMAGE_PATH);
-    /*background-size: 222px, 780px 390px;*/
-    background-size: 222px, auto;
-    background-repeat: no-repeat, repeat;
-    background-position: center, center;
-    background-attachment: scroll, fixed;
+    padding: 0;
+    background-image: url(WINE_IMAGE_PATH);
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 audio::-webkit-media-controls-panel {

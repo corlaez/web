@@ -17,6 +17,7 @@ fun asHtmlPage(contentMd: String): Page {
                 noScript { +t.noScriptMessage }
                 p {
                     audio {
+                        attributes += "preload" to "none"
                         controls = true
                         loop = true
                         source {
@@ -28,8 +29,6 @@ fun asHtmlPage(contentMd: String): Page {
                 unsafe {
                     +contentHtml
                 }
-                br()
-                br()
                 signatureAndThanks()
             }
         }
@@ -47,7 +46,7 @@ private fun HEAD.headTags() {
 
     title { +t.headTitle }
     meta { name = "description"; content = t.headMetaDescription }
-    meta { name = "theme-color"; content = C.THEME_RGB }// ios Safari (modern)
+    meta { name = "theme-color"; content = C.LOGO_SQR_THEME_RGB }// ios Safari (modern)
 
     meta { attributes += "property" to "og:title"; content=t.headTitle }
     meta { attributes += "property" to "og:description"; content=t.headMetaDescription }
@@ -90,7 +89,13 @@ private fun HEAD.devWsReloadScript() {
 
 context(OutputContext, LanguageContext)
 private fun BODY.signatureAndThanks() {
-    p(classes = "center signature") {  }
+    p(classes = "center signature") {
+        img {
+            alt = "A R logo in a white background"
+            attributes += "loading" to "lazy"
+            src = C.SIGNATURE2_IMAGE_PATH
+        }
+    }
     p(classes = "center") { +t.thanksForYourVisit  }
     p { a { href = "https://github.com/corlaez"; +"=> https://github.com/corlaez" } }
     p { a { href = "https://linkedin.com/in/corlaez"; +"=> https://linkedin.com/in/corlaez" } }

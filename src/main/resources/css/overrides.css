@@ -2,7 +2,7 @@ p {
     padding-right: 20px;
     padding-left: 20px;
     text-align: justify;
-    color: rgb(178, 172, 162);
+    color: rgb(199 175 146);/*rgb(219 219 219)*/
 }
 :not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p), p {
     max-width: 50rem;
@@ -11,19 +11,21 @@ p.center {
     text-align: center;
 }
 body {
-    background-color: rgb(19, 21, 22);
-    color: rgb(178, 172, 162);
-}
-h2:not(:nth-child(4)) {
-    margin: 6rem auto 1rem auto!important;
+    background-color: BACKGROUND_RGB;
+    color: rgb(199 175 146);
 }
 h2, h1 {
-    font-weight: bold;
-    font-family: sans-serif;/*TODO*/
+    /*font-weight: bold;*/
+    font-family: Arimo, Helvetica, sans-serif;
 }
 a {
     color: LINK_RGB!important;
 }
 a:visited {
     color: LINK_VISITED_RGB!important;
+}
+
+hr {
+    background: rgb(199 175 146);
+    border: rgb(199 175 146);
 }
