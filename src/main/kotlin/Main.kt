@@ -1,3 +1,4 @@
+import org.eclipse.jetty.http.HttpStatus
 import java.lang.IllegalStateException
 import java.time.LocalDateTime
 
@@ -20,7 +21,7 @@ fun main(args: Array<String>) {
 
 private fun getRequestArg(port: String): Args {
     val (argStatus, argResponse) = httpGet("http://localhost:$port/dev/arg")
-    return if (argStatus != 200) {
+    return if (argStatus != HttpStatus.OK_200) {
         logger.warn("server failed to provide arg (generating as prd). Code: $argStatus")
         Args.prd
     } else {
@@ -32,7 +33,7 @@ context(EnvContext)
 private fun devGetRequestReload() {
     if (arg.isDev()) {
         val (reloadStatus, reloadResponse) = httpGet("http://localhost:$port/dev/reload")
-        if (reloadStatus != 200) throw IllegalStateException("dev server failed to reload clients. Code: $reloadStatus")
+        if (reloadStatus != HttpStatus.OK_200) error("dev server failed to reload clients. Code: $reloadStatus")
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }

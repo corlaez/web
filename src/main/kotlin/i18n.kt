@@ -11,8 +11,10 @@ enum class Language {
 
 class LocalizedText(language: Language){
     val noScriptMessage = when(language) {
-        Language.en -> "Hey you, browsing with JavaScript off. You are welcomed! this page does not require JS to work properly :)"
-        Language.es -> "Hey tu, navegando con JavaScript deshabilitado. Bienvenido! esta pagina no requiere JS para funcionar de manera apropiada :)"
+        Language.en -> "Hey you, browsing with JavaScript off. You are welcomed! " +
+                "This page does not require JS to work properly :)"
+        Language.es -> "Hey tu, navegando con JavaScript deshabilitado. Bienvenido! " +
+                "Esta pagina no requiere JS para funcionar de manera apropiada :)"
     }
     val logoAlly = when(language) {
         Language.en -> "Logo that reads A R"

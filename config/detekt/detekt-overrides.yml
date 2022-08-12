@@ -1,3 +1,10 @@
+output-reports:
+  active: true
+  exclude:
+   - 'TxtOutputReport'
+   - 'XmlOutputReport'
+  # - 'HtmlOutputReport'
+   - 'MdOutputReport'
 naming:
   EnumNaming:
     active: false

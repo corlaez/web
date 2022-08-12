@@ -1,3 +1,4 @@
+import org.eclipse.jetty.http.HttpStatus
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -7,5 +8,5 @@ fun httpGet(urlStr: String): Pair<Int, String> {
     con.requestMethod = "GET"
     return runCatching {
         con.responseCode to con.inputStream.bufferedReader().readText()
-    }.getOrDefault(500 to "Couldn't connect")
+    }.getOrDefault(HttpStatus.INTERNAL_SERVER_ERROR_500 to "Couldn't connect")
 }

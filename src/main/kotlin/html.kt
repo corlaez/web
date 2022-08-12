@@ -70,7 +70,8 @@ private fun HEAD.headTags() {
         +resources.faviconTags
     }
     script {
-        unsafe { +"""if('serviceWorker' in navigator){navigator.serviceWorker.register("${C.SERVICE_WORKER_JS_PATH}")}""" }
+        unsafe { +"""if('serviceWorker' in navigator){
+            |navigator.serviceWorker.register("${C.SERVICE_WORKER_JS_PATH}")}""".trimMargin() }
     }
     devWsReloadScript()
 }
