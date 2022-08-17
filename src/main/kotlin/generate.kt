@@ -8,7 +8,7 @@ fun generate() {
         browserconfigXml = loadResourceAsString("/browserconfig.xml").replaceTemplateConstants(),
         indexEn = loadResourceAsString("/en/index.md"),
         indexEs = loadResourceAsString("/es/index.md"),
-        faviconTags = loadResourceAsString("/tags.txt").replace(">\n", ">"),
+        faviconTags = loadResourceAsString("/tags.txt").replace(">\n", ">").replaceTemplateConstants(),
         wsReload = loadResourceAsString("/wsReload.js").replace("PORT", port),
     )
     val output = with(OutputContext(resources)) {
