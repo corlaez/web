@@ -20,8 +20,8 @@ fun generate() {
                 with(PageContext("index.html", pageOgType = "website")) { asHtmlPage(resources.indexEs) }
             )},
             otherPages = listOf(
-                Page("manifest.json", "/assets/favicon/", resources.manifestJson),
-                Page("browserconfig.xml", "/assets/favicon/", resources.browserconfigXml),
+                Page("manifest.json", "/", resources.manifestJson),
+                Page("browserconfig.xml", "/", resources.browserconfigXml),
             ),
             staticDir = "static"
         )
