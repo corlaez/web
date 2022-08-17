@@ -17,7 +17,7 @@ data class LanguageContext(val language: Language) {
 
 context(EnvContext, LanguageContext)
 class PageContext(val fileName: String, val pageOgType: String = "article") {
-    val pageUrl get() = domain + langNamespace + fileName
+    val pageUrl get() = domain + langNamespace + (fileName.takeIf { it != "index.html" } ?: "")
     // No id is needed if filenames remain in english despite locale
     val LocalizedText.headTitle get() = getTitleMap(language)[fileName]!!
     val LocalizedText.headMetaDescription get() = getDescriptionMap(language)[fileName]!!

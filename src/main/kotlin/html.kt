@@ -40,6 +40,8 @@ context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun HEAD.headTags() {
     meta { charset = "utf-8" }
     link { rel = "preload"; href = C.WINE_IMAGE_PATH; attributes += "as" to "image"; }
+    link { rel = "canonical"; href = pageUrl }
+
     style { +resources.sytlesCss; }
     meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
     meta { name = "robots"; content = "index, follow" }
