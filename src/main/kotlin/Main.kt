@@ -1,5 +1,4 @@
 import org.eclipse.jetty.http.HttpStatus
-import java.lang.IllegalStateException
 import java.time.LocalDateTime
 
 fun main(args: Array<String>) {

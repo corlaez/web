@@ -1,5 +1,3 @@
-import java.lang.IllegalStateException
-
 enum class Language {
     en, es;
 
@@ -24,6 +22,7 @@ class LocalizedText(language: Language){
         Language.en -> "Thanks for your visit."
         Language.es -> "Gracias por la visita"
     }
+    val author = "Armando Cordova"
     val englishVersionLink = when(language) {
         Language.en -> null
         Language.es -> "English version"

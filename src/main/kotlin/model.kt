@@ -1,8 +1,9 @@
 enum class Args {
-    dev, prd, regenerate;
+    dev, prd, regenerate, prdWithoutServer;
     fun isDev() = this == dev
+    fun isPrd() = this == prd || this == prdWithoutServer
     fun isRegenerate() = this == regenerate
-    fun isPrd() = this == prd
+    fun noServer() = this == prdWithoutServer
 }
 
 data class Resources(

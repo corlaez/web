@@ -1,6 +1,6 @@
 .fire {
     background-image: url(SIGNATURE_IMAGE_PATH), url(WINE_IMAGE_PATH);
-    background-repeat: no-repeat, repeat,no-repeat,no-repeat;
+    background-repeat: no-repeat, repeat;
     background-attachment: scroll, fixed;
     background-position: left, center;
     background-size: 300px, auto;

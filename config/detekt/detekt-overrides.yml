@@ -10,6 +10,8 @@ naming:
     active: false
     enumEntryPattern: '[A-Z][_a-zA-Z0-9]*'
 style:
+  UnusedImports:
+    active: true
   WildcardImport:
     active: true
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']

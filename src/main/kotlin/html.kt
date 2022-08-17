@@ -47,6 +47,7 @@ private fun HEAD.headTags() {
     title { +t.headTitle }
     meta { name = "description"; content = t.headMetaDescription }
     meta { name = "theme-color"; content = C.LOGO_SQR_THEME_RGB }// ios Safari (modern)
+    meta { name = "author"; content = t.author }
 
     meta { attributes += "property" to "og:title"; content=t.headTitle }
     meta { attributes += "property" to "og:description"; content=t.headMetaDescription }
