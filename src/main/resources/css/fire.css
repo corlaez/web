@@ -27,7 +27,11 @@
     background-position: center;
     background-attachment: fixed;
 }
-
+audio {
+    width: 250px;
+    padding: 0!important;
+    margin: 0!important;
+}
 audio::-webkit-media-controls-panel {
     background: linear-gradient(0deg, AUDIO_RGB66, AUDIO_RGBBB, AUDIO_RGBEE, AUDIO_RGBBB, AUDIO_RGB66), url(WINE_IMAGE_PATH);
     background-attachment: scroll, fixed;
@@ -39,5 +43,10 @@ audio::-webkit-media-controls-panel {
 @media (prefers-reduced-motion: reduce) {
     .fire {
         animation: unset;
+    }
+}
+@media (max-width: 550px) {
+    .fire h1 {
+        padding: 0 !important;
     }
 }
