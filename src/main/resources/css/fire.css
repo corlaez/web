@@ -45,7 +45,7 @@ audio::-webkit-media-controls-panel {
         animation: unset;
     }
 }
-@media (max-width: 550px) {
+@media (max-width: 560px) {
     .fire h1 {
         padding: 0 !important;
     }
