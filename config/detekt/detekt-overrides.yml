@@ -1,15 +1,32 @@
+# Console output of detekt is enough for me
 output-reports:
   active: true
   exclude:
    - 'TxtOutputReport'
    - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
+   - 'HtmlOutputReport'
    - 'MdOutputReport'
+
+empty-blocks:
+  EmptyFunctionBlock:
+    active: true
+    ignoreOverridden: true
+
+# I like to be free to name constants and enum values however I want
 naming:
   EnumNaming:
     active: false
-    enumEntryPattern: '[A-Z][_a-zA-Z0-9]*'
+  TopLevelPropertyNaming:
+    active: false
+
 style:
+  ForbiddenMethodCall:
+    active: true
+    methods:
+      - 'kotlin.io.print'
+      - 'kotlin.io.println'
+  MagicNumber:
+    active: false
   UnusedImports:
     active: true
   WildcardImport:

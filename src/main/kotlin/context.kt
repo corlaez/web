@@ -1,26 +1,25 @@
-data class EnvContext(val arg: Args, val port: String) {
+data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebPlugin>) {
     val domain: String = when(arg) {
         Args.prd -> "https://corlaez.com"
         else -> "http://localhost:$port"
     }
+
+    private val markdownSupport = MarkdownSupport(webPlugins)
+    fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
 }
 
 data class OutputContext(val resources: Resources)
 
 data class LanguageContext(val language: Language) {
-    val langNamespace = when(language) {
-        Language.en -> "/"
-        Language.es -> "/es/"
-    }
     val t: LocalizedText = LocalizedText(language)
 }
 
 context(EnvContext, LanguageContext)
-class PageContext(val fileName: String, val pageOgType: String = "article") {
-    val pageUrl get() = domain + langNamespace + (fileName.takeIf { it != "index.html" } ?: "")
-    // No id is needed if filenames remain in english despite locale
-    val LocalizedText.headTitle get() = getTitleMap(language)[fileName]!!
-    val LocalizedText.headMetaDescription get() = getDescriptionMap(language)[fileName]!!
-    val LocalizedText.heroTitle get() = getHeroTitleMap(language)[fileName]!!
-    val LocalizedText.heroDescription get() = getHeroDescriptionMap(language)[fileName]!!
+class PageContext(val path: String, val pageOgType: String, private val titlesAndDescriptions: TitlesAndDescriptions) {
+    val pageUrl get() = domain + language.langPath() + (path.takeIf { it != "index.html" } ?: "")
+
+    val LocalizedText.headTitle get() = titlesAndDescriptions.metaTitle
+    val LocalizedText.headMetaDescription get() = titlesAndDescriptions.metaDescription
+    val LocalizedText.heroTitle get() = titlesAndDescriptions.visibleTitle
+    val LocalizedText.heroDescription get() = titlesAndDescriptions.visibleDescription
 }

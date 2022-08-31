@@ -6,7 +6,7 @@
     background-size: 300px, auto;
     animation: AnimateBG2 0.2s;
 }
-.fire h1, .fire p {
+.fire h2, .fire p {
     color: rgba(255, 255, 255, 0.9);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -14,9 +14,16 @@
     margin-bottom: 0!important;
     text-shadow: 7px 2px black;
 }
+.fire h2 {
+    font-size: 3.5rem;
+    padding: 4rem 0!important;
+}
 .fire p {
-    background: rgba(73, 79, 82, 0.41);
+    background: rgba(0, 0, 0, 0.5);
     text-shadow: 0 0 black;
+}
+h2 > a {
+    text-decoration: none;
 }
 .signature {
     height: 210px;
@@ -33,7 +40,7 @@ audio {
     margin: 0!important;
 }
 audio::-webkit-media-controls-panel {
-    background: linear-gradient(0deg, AUDIO_RGB66, AUDIO_RGBBB, AUDIO_RGBEE, AUDIO_RGBBB, AUDIO_RGB66), url(WINE_IMAGE_PATH);
+    background: linear-gradient(0deg, transparent, AUDIO_RGBDE, AUDIO_RGBDE, transparent), url(WINE_IMAGE_PATH);
     background-attachment: scroll, fixed;
 }
 @keyframes AnimateBG2 {
@@ -46,7 +53,24 @@ audio::-webkit-media-controls-panel {
     }
 }
 @media (max-width: 555px) {
-    .fire h1 {
+    .fire h2 {
         padding: 0 !important;
     }
+}
+.center {
+    text-align: center;
+}
+.content {
+    padding: 0 .25em .25em .25em;
+}
+pre {
+    background-color: black;
+    overflow-x: auto;
+}
+code {
+    background-color: black;
+}
+body {
+    background-color: #111;
+    color: #ddd;
 }

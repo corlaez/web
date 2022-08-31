@@ -1,17 +1,20 @@
+import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
+import plugins.DevPlugin
 import java.time.LocalDateTime
 
 fun main(args: Array<String>) {
     val arg = Args.valueOf(args[0])
     val port = System.getenv("PORT") ?: "8080"
+    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false)).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
-        with(EnvContext(serverArg, port)) {
+        with(EnvContext(serverArg, port, webPlugins)) {
             generate()
             devGetRequestReload()
         }
     } else {
-        with(EnvContext(arg, port)) {
+        with(EnvContext(arg, port, webPlugins)) {
             generate()
             serve()
         }
@@ -36,7 +39,12 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
-// First break articles into their own pages with links
-// Then add rich content jsons (article and qa or education)
-// https://developers.google.com/search/docs/advanced/structured-data/search-gallery
-// Then work on categories
+// complete translation https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/
+
+// use https://prismjs.com/ for syntax highlight NEW plugin
+// Articles should only show translation links if the translation exists NEW
+// Categories NEW
+
+// use theme colors in css
+// replace the banner with a solid color at least for og (linked in has agressive compression) Linkedin compat
+// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)

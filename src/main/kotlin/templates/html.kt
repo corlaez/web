@@ -11,29 +11,41 @@ fun asHtmlPage(contentMd: String): Page {
             head { headTags() }
             body {
                 div(classes = "fire") {
-                    h1 { +t.heroTitle }
-                    p { +t.heroDescription }
-                }
-                noScript { +t.noScriptMessage }
-                p {
-                    audio {
-                        attributes += "preload" to "none"
-                        controls = true
-                        loop = true
-                        source {
-                            src = C.BEC_AUDIO
-                            type = C.BEC_AUDIO_TYPE
+                    h2 { +t.heroTitle }
+                    p {
+                        +t.heroDescription; +" "
+                        if(path == "index.html") { a { href=language.langPath(); +t.backLink }; +" " }
+                        if(language != Language.es) {
+                            a { href="${Language.es.langPath()}$path"; +"Versión en Español" }; +" "
+                        }
+                        if(language != Language.en) {
+                            a { href="${Language.en.langPath()}$path"; +"English Version" }; +" "
                         }
                     }
                 }
-                unsafe {
-                    +contentHtml
+                div(classes = "content") {
+                    noScript { +t.noScriptMessage }
+                    div(classes = "center") {
+                        audio {
+                            attributes += "preload" to "none"
+                            controls = true
+                            loop = true
+                            source {
+                                src = C.BEC_AUDIO
+                                type = C.BEC_AUDIO_TYPE
+                            }
+                        }
+                    }
+                    unsafe {
+                        +contentHtml
+                    }
                 }
                 signatureAndThanks()
+                webPlugins.forEach{ it.bodyTags(this@body) }
             }
         }
     }
-    return Page(fileName, langNamespace, htmlPageString)
+    return Page(path, language.langPath(), htmlPageString)
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
@@ -42,7 +54,7 @@ private fun HEAD.headTags() {
     link { rel = "preload"; href = C.WINE_IMAGE_PATH; attributes += "as" to "image"; }
     link { rel = "canonical"; href = pageUrl }
 
-    style { +resources.sytlesCss; }
+    style { unsafe { +resources.sytlesCss; } }
     meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
     meta { name = "robots"; content = "index, follow" }
 
@@ -55,6 +67,14 @@ private fun HEAD.headTags() {
     meta { attributes += "property" to "og:description"; content=t.headMetaDescription }
     meta { attributes += "property" to "og:url"; content=domain }
     meta { attributes += "property" to "og:type"; content=pageOgType }
+    if (pageOgType == "article") {
+//        meta { attributes += "property" to "og:article:published_time"; content="" }
+//        meta { attributes += "property" to "og:article:modified_time"; content="" }
+//        meta { attributes += "property" to "og:article:expiration_time"; content="" }
+        meta { attributes += "property" to "og:article:author"; content=t.author }
+//        meta { attributes += "property" to "og:article:section"; content="" }
+//        meta { attributes += "property" to "og:article:tag"; content="" }
+    }
     meta { attributes += "property" to "og:image"; content=C.LOGO_SQR_IMAGE_PATH }
     meta { attributes += "property" to "og:locale"; content=language.languageWithTerritory() }
     meta { attributes += "property" to "og:site_name"; content=C.WEBSITE_NAME }
@@ -76,32 +96,27 @@ private fun HEAD.headTags() {
         unsafe { +"""if('serviceWorker' in navigator){
             |navigator.serviceWorker.register("${C.SERVICE_WORKER_JS_PATH}")}""".trimMargin() }
     }
-    devWsReloadScript()
-}
-
-context(EnvContext, OutputContext, LanguageContext)
-private fun HEAD.devWsReloadScript() {
-    if (arg.isDev())
-        script {
-            async = true
-            defer = true
-            unsafe {
-                +resources.wsReload
-            }
-        }
+    webPlugins.forEach{ it.headTags(this@headTags) }
 }
 
 context(OutputContext, LanguageContext)
 private fun BODY.signatureAndThanks() {
     p(classes = "center signature") {
         img {
-            alt = "A R logo in a white background"
+            alt = t.logoAlly
             attributes += "loading" to "lazy"
             src = C.SIGNATURE2_IMAGE_PATH
+            width = C.SIGNATURE2_IMAGE_W
+            height = C.SIGNATURE2_IMAGE_H
         }
     }
-    p(classes = "center") { +t.thanksForYourVisit  }
-    p { a { href = "https://github.com/corlaez"; +"=> https://github.com/corlaez" } }
-    p { a { href = "https://linkedin.com/in/corlaez"; +"=> https://linkedin.com/in/corlaez" } }
-    p { a { href = "https://twitter.com/corlaez"; +"=> https://twitter.com/corlaez" } }
+    p(classes = "center") {
+        +t.thanksForYourVisit
+        br()
+        a { href = "https://github.com/corlaez"; +"Github" }
+        +" "
+        a { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
+        +" "
+        a { href = "https://twitter.com/corlaez"; +"Twitter" }
+    }
 }

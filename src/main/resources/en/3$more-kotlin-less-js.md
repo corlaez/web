@@ -1,13 +1,15 @@
-<h2 id="website-update-more-kotlin-less-js">Website Update: More Kotlin, Less JS!</h2>
+more-kotlin-less-js.html
+More Kotlin, Less JS!
+2022 August 3 (Last update: August 2022)
+More Kotlin, Less JS!
+Corlaez article about the 2022 website renovation for this site that is now generated with Kotlin by Armando Cordova.
 
-August 3, 2022
+Today, I finally rewrote this website adding some big changes I have been planning for a while:
 
-Today, I finally rewrote this website with some big changes I have been planning for a while:
-
-* The new source code uses [Kotlin](https://kotlinlang.org/) to generate a static site
-* A **dev server** that reloads as code changes (providing similar experience to [react-hot-loader](https://github.com/gaearon/react-hot-loader))
-* Articles are written in [Markdown](https://www.markdownguide.org/), making easier to add new content
-* Type safe **Kotlin HTML templates**
+* The web is generated statically using [Kotlin](https://kotlinlang.org/)
+* There is a **dev server** that reloads as code changes (similar to [react-hot-loader](https://github.com/gaearon/react-hot-loader))
+* The articles are written in [Markdown](https://www.markdownguide.org/)
+* Templates are defined using the [Kotlinx HTML](https://github.com/Kotlin/kotlinx.html). Better than pure HTML or JSX IMO.
 * **Internalization support** for the Kotlin templates and Markdown articles
 * The website **no longer requires JavaScript** to render
 
@@ -39,31 +41,3 @@ I initially used markdown-jvm but after running into issues with it, I replaced 
 Most Java/Kotlin examples seem to focus on backends and server side rendering. On the other hand, the source for this web feels more like gulp. Pairing a dev server with the [File Watchers](https://www.jetbrains.com/help/idea/using-file-watchers.html) IntelliJ plugin I was able to achieve hot reloading for a static site in kotlin.
 
 I could share a lot more about this endeavour, but I will leave it for another day. In the meantime and if you are curious here is the [source code](https://github.com/corlaez/web)
-
-<hr/><br/><br/>
-
-## Skype Chatbot
-
-***August 3, 2022*** (Project demo shared on October 2019)
-
-"Daniel in my floor" was a Skype bot that I made for my coworkers when I worked at Bellatrix. Daniel came every day selling delicious home-made sandwiches.
-He stayed a few minutes outside each floor with Bellatrix offices and other companies. However, we would have to step out at the right time to catch him, or we would miss him.
-
-The bot was meant to Announce when Daniel arrives to your floor. You subscribe to a given floor, and when the bot is notified that Daniel is in a given floor, you receive a message and a notification.
-The simple program relied on trust and accurate reports of its participants to work, but it was a fun experiment to run. The bot is deployed but deactivated
-
-[Skype Bot Github Repo](https://github.com/corlaez/df-bot)
-
-[Skype Bot Info Page](https://github.com/corlaez/df-bot)
-
-<hr/><br/><br/>
-
-## Overmind tutorial
-
-***Jan 5, 2019***
-
-A basic tutorial on the JavaScript UI library state manager [Overmind JS](https://overmindjs.org/) in a React application.
-
-[YouTube tutorial](https://www.youtube.com/watch?v=pe1F0-A-e8U)
-
-<hr/><br/><br/>

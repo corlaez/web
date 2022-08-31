@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     implementation("com.vladsch.flexmark:flexmark-all:0.64.0")
+    implementation("com.vladsch.flexmark:flexmark-ext-gitlab:0.64.0")
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
     implementation("org.slf4j:slf4j-simple:1.7.36")
     implementation("io.javalin:javalin:4.6.4")

@@ -1,13 +1,22 @@
 enum class Language {
     en, es;
 
+    fun langPath() = when(this) {
+        Language.en -> "/"
+        Language.es -> "/es/"
+    }
+
     fun languageWithTerritory(): String= when(this) {
         en -> "en_US"
         es -> "es_PE"
     }
 }
 
-class LocalizedText(language: Language){
+class LocalizedText(language: Language) {
+    val backLink = when(language) {
+        Language.en -> "Back"
+        Language.es -> "Volver"
+    }
     val noScriptMessage = when(language) {
         Language.en -> "Hey you, browsing with JavaScript off. You are welcomed! " +
                 "This page does not require JS to work properly :)"
@@ -23,6 +32,14 @@ class LocalizedText(language: Language){
         Language.es -> "Gracias por la visita"
     }
     val author = "Armando Cordova"
+    val blogIndexHeroTitle = when(language) {
+        Language.en -> null
+        Language.es -> "English version"
+    }
+    val blogIndexHeroDescription = when(language) {
+        Language.en -> null
+        Language.es -> "English version"
+    }
     val englishVersionLink = when(language) {
         Language.en -> null
         Language.es -> "English version"
@@ -31,29 +48,25 @@ class LocalizedText(language: Language){
         Language.en -> "Version en español"
         Language.es -> null
     }
+    val blogIndexTitlesAndDescriptions = when(language) {
+        Language.en -> TitlesAndDescriptions(
+            "Hi! I am Armando",
+            "Welcome to my blog #Software #Kotlin",
+            "Corlaez Blog",
+            "Armando Cordova's Personal Blog",// Todo 100 chars
+        )
+        Language.es -> TitlesAndDescriptions(
+            "Hola! Soy Armando",
+            "Bienvenido a mi blog #Software #Kotlin",
+            "Corlaez Blog",
+            "Bienvenido a mi blog #Software #Kotlin",
+        )
+    }
 }
 
-fun getTitleMap(language: Language) =mapOf(
-    "index.html" to when(language) {
-        Language.en -> "Corlaez Blog"
-        Language.es -> "Corlaez Blog"
-    }
-)
-fun getDescriptionMap(language: Language) = mapOf(
-    "index.html" to when(language) {
-        Language.en -> "Armando Cordova's Personal Blog"
-        Language.es -> "Blog personal de Armando Cordova"
-    }
-)
-fun getHeroTitleMap(language: Language) = mapOf(
-    "index.html" to when(language) {
-        Language.en -> "Hi! I am Armando"
-        Language.es -> "Hola! Soy Armando"
-    }
-)
-fun getHeroDescriptionMap(language: Language) = mapOf(
-    "index.html" to when(language) {
-        Language.en -> "Welcome to my blog  #Software #Kotlin"
-        Language.es -> "Bienvenido a mi blog #Software #Kotlin"
-    }
+class TitlesAndDescriptions(
+    val visibleTitle: String,
+    val visibleDescription: String,
+    val metaTitle: String,
+    val metaDescription: String,
 )

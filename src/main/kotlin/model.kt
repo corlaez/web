@@ -1,3 +1,5 @@
+import blog.ArticleResource
+
 enum class Args {
     dev, prd, regenerate, prdWithoutServer;
     fun isDev() = this == dev
@@ -7,20 +9,18 @@ enum class Args {
 }
 
 data class Resources(
+    //blog
+    val articles: Map<Language, List<ArticleResource>>,
     val sytlesCss: String,
-    val indexEn: String,
-    val indexEs: String,
+    //favicon
     val faviconTags: String,
-    val wsReload: String,
-    val manifestJson: String,
-    val browserconfigXml: String,
+    val manifestJson: String,// Google PWA
+    val browserconfigXml: String,// Windows 8+
 )
 
 data class Page(val name: String, val namespace: String, val content: String)
 
 data class Output(
-    val enPages: List<Page>,
-    val esPages: List<Page>,
-    val otherPages: List<Page> = emptyList(),
+    val pages: List<Page>,
     val staticDir: String,
 )
