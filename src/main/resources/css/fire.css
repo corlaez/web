@@ -6,7 +6,7 @@
     background-size: 300px, auto;
     animation: AnimateBG2 0.2s;
 }
-.fire h2, .fire p {
+.fire h1, .fire p {
     color: rgba(255, 255, 255, 0.9);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -14,16 +14,13 @@
     margin-bottom: 0!important;
     text-shadow: 7px 2px black;
 }
-.fire h2 {
+.fire h1 {
     font-size: 3.5rem;
     padding: 4rem 0!important;
 }
 .fire p {
     background: rgba(0, 0, 0, 0.5);
     text-shadow: 0 0 black;
-}
-h2 > a {
-    text-decoration: none;
 }
 .signature {
     height: 210px;
@@ -53,7 +50,7 @@ audio::-webkit-media-controls-panel {
     }
 }
 @media (max-width: 555px) {
-    .fire h2 {
+    .fire h1 {
         padding: 0 !important;
     }
 }

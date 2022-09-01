@@ -11,10 +11,11 @@ fun asHtmlPage(contentMd: String): Page {
             head { headTags() }
             body {
                 div(classes = "fire") {
-                    h2 { +t.heroTitle }
+                    h1 { +t.heroTitle }
                     p {
-                        +t.heroDescription; +" "
-                        if(path == "index.html") { a { href=language.langPath(); +t.backLink }; +" " }
+                        +t.heroDescription
+                        br()
+                        if(path != "index.html") { a { href=language.langPath(); +t.backLink }; +" " }
                         if(language != Language.es) {
                             a { href="${Language.es.langPath()}$path"; +"Versión en Español" }; +" "
                         }
