@@ -5,7 +5,7 @@ import java.time.LocalTime
 
 context(EnvContext)
 fun serve() {
-    if (arg.noServer()) return
+    if (arg.isPrdWithoutServer()) return
     val app = Javalin.create { config ->
         config.showJavalinBanner = false
         config.addStaticFiles { staticFiles ->

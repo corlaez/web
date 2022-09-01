@@ -34,7 +34,7 @@ fun generate() {
     createDirectory("deploy/output/blog")
     createDirectory("deploy/output/${Language.es}/blog")
     output.pages.forEach { saveFile(it.content, "deploy/output${it.namespace}", it.name) }
-    copyDirectory(output.staticDir, "deploy/output")
+    if (!arg.isPrdWithoutServer()) copyDirectory(output.staticDir, "deploy/output")
 }
 
 fun loadAndMergeCss(): String {
