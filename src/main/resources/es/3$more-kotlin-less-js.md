@@ -4,30 +4,24 @@ Más Kotlin, menos JS
 Más Kotlin, menos JS
 Artículo acerca de la renovación de esta web que ahora es generada con Kotlin. Publicado en 2022 por Armando Cordova.
 
-En los últimos años, JavaScript ha crecido por encima de la web y librerías, frameworks y compiladores han sido desarrollados para crear interfaces y experiencias ricas y complejas.
-Esto ha llevado a que muchos estudiantes y proyectos usen herramientas complejas incluso cuando tiene sentido hacer eso.
-Yo mismo cometí ese error al escribir mi sencilla página con React, obligando a los visitantes a activar JavaScript y haciendo que mi página sea más lenta y pesada.
-
- 2017 I worked writing a React application (and some Kotlin backend code), I enjoyed the team and the tech I made at that time.
-The best of React, that I wanted to keep for the future was the fact that the web would reload as I saved my code providing a fast feedback loop.
-Furthermore, HTMX was a fantastic way to create and compose HTML components.
+En los últimos años, JavaScript se ha expandido de manera increíble. Aplicaciones complejas, frameworks y lenguajes que compilan a JavaScript han sido desarrollados para crear interfaces y experiencias ricas y complejas.
+Yo empecé a usar React en el trabajo en 2017 en una aplicación que realmente requería el uso de dicha librería. A mí me gustó trabajar con React y lo utilizaba siempre que podía.
+Es así pues que terminé escribiendo mi web personal en React, en retrospectiva una pésima idea pues mi web no mostraba nada sin JavaScript, afectando el SEO y reduciendo la velocidad de carga.
 
 Hoy, finalmente, reescribí este website agregando unos grandes cambios que he estado planeando por un tiempo:
 
 * La web es generada de manera estática usando [Kotlin](https://kotlinlang.org/)
-* Hay un **dev server** que recarga las páginas cuando el código cambia (similar a [react-hot-loader](https://github.com/gaearon/react-hot-loader))
-* Los artículos son escritos en [Markdown](https://www.markdownguide.org/)
-* Las plantillas (templates) son definidas en Kotlin usando [Kotlinx HTML DSL](https://github.com/Kotlin/kotlinx.html). Mejor que HTML puro o JSX en mi opinión.
-* **Soporte para múltiples idiomas** para plantillas y artículos
 * La página web **ya no requiere JavaScript** para ser renderizada.
+* Los artículos son escritos en [Markdown](https://www.markdownguide.org/)
+* **Soporte para múltiples idiomas** para plantillas y artículos
+* Las plantillas (templates) son definidas en Kotlin usando [Kotlinx HTML DSL](https://github.com/Kotlin/kotlinx.html). (Similar a JSX pero fuertemente tipado)
+* Hay un **dev server** que recarga las páginas cuando el código cambia (inspirado en [react-hot-loader](https://github.com/gaearon/react-hot-loader))
 
+Estos proyectos e ideas (en inglés) han influenciado el diseño de mi website:
 
-Tanto el dev server como el DSL para escribir HTML emulan los beneficios de React pero dejando de lado JS y Node.
+* [La pequeña web](https://ar.al/2020/08/07/what-is-the-small-web/): Aral explica los problemas de la web centralizada que domina hoy. Él trabaja con Laura Kalbag para reducir la dificultad de crear sitios web independientes.
+* [Protolo Gemini](https://gemini.circumlunar.space/): Gemini es un protocolo más ligero y seguro que HTTP. No existe el concepto de scripts en los clientes (Correcto, no hay JS). Aun así puedes hacer login usando llaves asimétricas y existen aplicaciones similares a reddit o twitter, etc.
+* [htmx](https://htmx.org/) AJAX, CSS Transitions y WebSockets en atributos HTML. Permite usar HTML como el motor del estado de una aplicación web, reduciendo significativamente la necesidad de usar JSON o escribir JavaScript
+* [website < 14kb](https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/) endtime.dev's article on the significant performance improvement that smaller web pages gain.
 
-These are some projects that have influenced my thoughts about simple websites:
-
-* [The Small Web](https://ar.al/2020/08/07/what-is-the-small-web/): This one advocates for more independent sites avoiding the centralized web that dominates. They are also building tools to easy independent web creation
-* [https://gemini.circumlunar.space/](https://gemini.circumlunar.space/): Gemini is a lighter and simpler protocol than HTTP with mandatory Transport Layer Security and privacy focus (No JavaScript here)
-* [(https://htmx.org/](https://htmx.org/) AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes and reclaim HTML as the Hypermedia to be exchanged between browser and HTTP Server
-
-At the moment this web does not use htmx, but I am not closed to the idea of using in the future if the need arises. That said, I would strive to make the site usable even with JS off.
+Ahí lo tienes, creo que estos cambios me permitirán experimentar y crear con mayor facilidad. Ya veremos...

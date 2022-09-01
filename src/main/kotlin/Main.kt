@@ -41,6 +41,8 @@ private fun devGetRequestReload() {
 }
 // complete translation https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/
 
+// bg animation> https://heckscaper.com/stuff/index.html
+
 // use https://prismjs.com/ for syntax highlight NEW plugin
 // Articles should only show translation links if the translation exists NEW
 // Categories NEW
