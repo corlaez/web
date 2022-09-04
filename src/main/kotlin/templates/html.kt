@@ -102,22 +102,33 @@ private fun HEAD.headTags() {
 
 context(OutputContext, LanguageContext, PageContext)
 private fun BODY.signatureAndThanks() {
-    p(classes = "center signature") {
-        img {
-            alt = t.logoAlly
-            attributes += "loading" to "lazy"
-            src = C.SIGNATURE2_IMAGE_PATH
-            width = C.SIGNATURE2_IMAGE_W
-            height = C.SIGNATURE2_IMAGE_H
+    div(classes = "h-card")  {
+        p(classes = "center signature") {
+            img(classes = "u-photo") {
+                alt = t.logoAlly
+                attributes += "loading" to "lazy"
+                src = C.SIGNATURE2_IMAGE_PATH
+                width = C.SIGNATURE2_IMAGE_W
+                height = C.SIGNATURE2_IMAGE_H
+            }
         }
-    }
-    p(classes = "center") {
-        +t.thanksForYourVisit
-        br()
-        a {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
-        +" "
-        a { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
-        +" "
-        a { href = "https://twitter.com/corlaez"; +"Twitter" }
+        div {
+            a(classes = "u-url") {
+                +"https://corlaez.com"
+            }
+            +" is made with love by "
+            span(classes = "p-name") {
+                +C.OWNER_NAME
+            }
+            +". "
+            +t.thanksForYourVisit
+        }
+        p(classes = "center") {
+            a {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
+            +" "
+            a { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
+            +" "
+            a { href = "https://twitter.com/corlaez"; +"Twitter" }
+        }
     }
 }
