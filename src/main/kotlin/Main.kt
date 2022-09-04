@@ -50,3 +50,5 @@ private fun devGetRequestReload() {
 // use theme colors in css
 // replace the banner with a solid color at least for og (linked in has agressive compression) Linkedin compat
 // pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)
+
+// keep checking https://app.asqatasun.org/ for html validity or learn how to incorporate to predeploy https://app.asqatasun.org/home/contract/page-result.html?wr=28874

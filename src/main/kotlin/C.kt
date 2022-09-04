@@ -1,5 +1,6 @@
 object C {
     private val list = mutableListOf<Pair<String, String>>()
+    val OWNER_NAME = register("OWNER_NAME" to "Armando Cordova")
     val SIGNATURE_IMAGE_PATH = register("SIGNATURE_IMAGE_PATH" to "/assets/signature-400.webp")
     val SIGNATURE2_IMAGE_PATH = register("SIGNATURE2_IMAGE_PATH" to "/assets/signature-white-210.webp")
     val SIGNATURE2_IMAGE_W = register("SIGNATURE2_IMAGE_W" to "210px")

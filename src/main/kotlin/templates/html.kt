@@ -100,7 +100,7 @@ private fun HEAD.headTags() {
     webPlugins.forEach{ it.headTags(this@headTags) }
 }
 
-context(OutputContext, LanguageContext)
+context(OutputContext, LanguageContext, PageContext)
 private fun BODY.signatureAndThanks() {
     p(classes = "center signature") {
         img {
@@ -114,7 +114,7 @@ private fun BODY.signatureAndThanks() {
     p(classes = "center") {
         +t.thanksForYourVisit
         br()
-        a { href = "https://github.com/corlaez"; +"Github" }
+        a {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
         +" "
         a { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
         +" "
