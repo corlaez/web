@@ -2,8 +2,8 @@ enum class Language {
     en, es;
 
     fun langPath() = when(this) {
-        Language.en -> "/"
-        Language.es -> "/es/"
+        en -> "/"
+        es -> "/es/"
     }
 
     fun languageWithTerritory(): String= when(this) {
@@ -13,6 +13,10 @@ enum class Language {
 }
 
 class LocalizedText(language: Language) {
+    val messageBetweenWebsiteAndName = when(language) {
+        Language.en -> " has been brought to you by "
+        Language.es -> " llega a usted gracias a "
+    }
     val backLink = when(language) {
         Language.en -> "Back"
         Language.es -> "Volver"

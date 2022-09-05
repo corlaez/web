@@ -114,9 +114,10 @@ private fun BODY.signatureAndThanks() {
         }
         div {
             a(classes = "u-url") {
-                +"https://corlaez.com"
+                href = "https://corlaez.com"
+                +"corlaez.com"
             }
-            +" is made with love by "
+            +t.messageBetweenWebsiteAndName
             span(classes = "p-name") {
                 +C.OWNER_NAME
             }
