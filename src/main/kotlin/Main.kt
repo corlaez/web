@@ -53,3 +53,5 @@ private fun devGetRequestReload() {
 // https://validator.w3.org/
 // https://jigsaw.w3.org/css-validator/
 // https://htmlhelp.org/tools/csscheck/
+
+// main add https://webmention.io/settings

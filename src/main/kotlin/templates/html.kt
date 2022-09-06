@@ -132,4 +132,9 @@ private fun BODY.signatureAndThanks() {
             a(classes = "u-url")  { href = "https://twitter.com/corlaez"; +"Twitter" }
         }
     }
+    p(classes = "center") {
+        a(classes = "u-url") {href = "https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous"; rel = "nofollow"; +"←";  }
+        +" An IndieWeb Webring \uD83D\uDD78\uD83D\uDC8D "
+        a(classes = "u-url")  { href = "https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next"; rel = "nofollow"; +"→" }
+    }
 }

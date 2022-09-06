@@ -19,7 +19,7 @@ context(EnvContext, LanguageContext, OutputContext)
 fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
     // todo remove presentational html
     val articleSeparator = "\n\n<hr/><br/><br/>\n\n"
-    // todo surround articles in article tag with h-entry, author reference (probably the link itself), e-content, etc
+    // todo surround articles in article tag with h-entry, author reference (probably the link itself), e-content, etc https://indiewebify.me/validate-h-entry/ https://desmondrivet.com/2020/04/04/indieweb-conversation
     // todo make sure the whole index is not marked as an article, an article deep link will mark the whole page as an article  (maybe not the footer, but the hero header will)
     val mergedArticles = articles.joinToString("") {
         "<h2><a href='${language.langPath()}blog/${it.blogId}'>${it.titlesAndDescriptions.visibleTitle}</a></h2>" + it.content() + articleSeparator
