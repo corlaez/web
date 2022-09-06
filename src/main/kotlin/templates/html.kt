@@ -113,7 +113,7 @@ private fun BODY.signatureAndThanks() {
             }
         }
         div {
-            a(classes = "u-url") {
+            a(classes = "u-url u-uid") {
                 href = "https://corlaez.com"
                 +"corlaez.com"
             }
@@ -125,11 +125,11 @@ private fun BODY.signatureAndThanks() {
             +t.thanksForYourVisit
         }
         p(classes = "center") {
-            a {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
+            a(classes = "u-url") {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
             +" "
-            a { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
+            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
             +" "
-            a { href = "https://twitter.com/corlaez"; +"Twitter" }
+            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; +"Twitter" }
         }
     }
 }
