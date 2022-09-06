@@ -1,12 +1,14 @@
 import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
 import plugins.DevPlugin
+import plugins.IndieWebWebRing
+import plugins.WebMentionPlugin
 import java.time.LocalDateTime
 
 fun main(args: Array<String>) {
     val arg = Args.valueOf(args[0])
     val port = System.getenv("PORT") ?: "8080"
-    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false)).filter { it.enabled }
+    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false), WebMentionPlugin(), IndieWebWebRing()).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
         with(EnvContext(serverArg, port, webPlugins)) {
