@@ -102,7 +102,9 @@ private fun HEAD.headTags() {
 
 context(OutputContext, LanguageContext, PageContext)
 private fun BODY.hCardFooter() {
+    // Based on http://microformats.org/wiki/representative-h-card-authoring
     div(classes = "h-card")  {
+        id = "h-card"
         p(classes = "center signature") {
             img(classes = "u-photo") {
                 alt = t.logoAlly
@@ -125,11 +127,11 @@ private fun BODY.hCardFooter() {
             +t.thanksForYourVisit
         }
         p(classes = "center") {
-            a(classes = "u-url") {href = "https://github.com/corlaez";  if(path == "index.html") rel = "me"; +"Github";  }
+            a(classes = "u-url") {href = "https://github.com/corlaez"; rel = "me authn"; +"Github";  }
             +" "
-            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; +"LinkedIn" }
+            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; rel = "me"; +"LinkedIn" }
             +" "
-            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; +"Twitter" }
+            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; rel = "me"; +"Twitter" }
         }
     }
 }
