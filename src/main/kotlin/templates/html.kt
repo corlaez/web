@@ -14,7 +14,7 @@ fun asHtmlPage(contentMd: String): Page {
                     h1 { +t.heroTitle }
                     p {
                         +t.heroDescription
-                        br()
+                        if(t.heroDescription.isNotBlank()) br()
                         if(path != "index.html") { a { href=language.langPath(); +t.backLink }; +" " }
                         if(language != Language.es) {
                             a { href="${Language.es.langPath()}$path"; +"Versión en Español" }; +" "

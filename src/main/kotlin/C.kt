@@ -3,8 +3,8 @@ object C {
     val OWNER_NAME = register("OWNER_NAME" to "Armando Cordova")
     val SIGNATURE_IMAGE_PATH = register("SIGNATURE_IMAGE_PATH" to "/assets/signature-400.webp")
     val SIGNATURE2_IMAGE_PATH = register("SIGNATURE2_IMAGE_PATH" to "/assets/signature-white-210.webp")
-    val SIGNATURE2_IMAGE_W = register("SIGNATURE2_IMAGE_W" to "210px")
-    val SIGNATURE2_IMAGE_H = register("SIGNATURE2_IMAGE_H" to "210px")
+    val SIGNATURE2_IMAGE_W = register("SIGNATURE2_IMAGE_W" to "210")
+    val SIGNATURE2_IMAGE_H = register("SIGNATURE2_IMAGE_H" to "210")
     // referenced directly in the html template
     val BEC_AUDIO = register("BEC_AUDIO" to "/assets/bec.mp3")
     val BEC_AUDIO_TYPE = register("BEC_AUDIO_TYPE" to "audio/mpeg")

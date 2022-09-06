@@ -1,8 +1,10 @@
 skype-chatbot.html
 Skype Chatbot
-2019 setiembre 2 (Última actualización: 2022 agosto)
+
 Skype Chatbot
 Artículo acerca de un Chatbot que notificaba la llegada de un vendedor de comida a la oficina. Publicado en 2019 por Armando Cordova.
+2019-09-02
+2022-08-31
 
 "Daniel en mi piso" era un bot de Skype que hice para mis compañeros de trabajo cuando trabajaba en Belatrix. Daniel venía cada día a vender deliciosos sanguches hechos en casa.
 Él esperaba afuera de las oficinas por unos pocos minutos antes de dirigirse a otro piso. Nosotros teníamos que salir a la hora adecuada para encontrarlo antes que se vaya.

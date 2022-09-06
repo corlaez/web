@@ -1,8 +1,10 @@
 more-kotlin-less-js.html
 More Kotlin, Less JS!
-2022 August 3 (Last update: August 2022)
+
 More Kotlin, Less JS!
 Corlaez article about the 2022 website renovation for this site that is now generated with Kotlin by Armando Cordova.
+2022-08-03
+2022-08-31
 
 In the last years, JavaScript had an incredible growth, complex apps, frameworks and languages that compile to JS have been developed to create rich and complex web UIs and experiences.
 I started to use React at work in 2017 in a webapp that truly required the use of that library. I enjoyed working with React and used it whenever I had a chance.

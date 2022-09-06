@@ -1,8 +1,10 @@
 overmind-tutorial.html
 Overmind tutorial
-2019 Jan 5 (Last update: 2022 August)
+
 Overmind tutorial
 Corlaez tutorial video for the JavaScript state manager library Overmind made in 2019 by Armando Cordova
+2019-01-05
+2022-08-31
 
 A tutorial on the JavaScript UI library state manager [Overmind JS](https://overmindjs.org/) in a React application.
 

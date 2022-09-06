@@ -13,6 +13,10 @@ enum class Language {
 }
 
 class LocalizedText(language: Language) {
+    val lastUpdate = when(language) {
+        Language.en -> "Last update"
+        Language.es -> "Última actualización"
+    }
     val messageBetweenWebsiteAndName = when(language) {
         Language.en -> " has been brought to you by "
         Language.es -> " llega a usted gracias a "

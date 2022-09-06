@@ -39,8 +39,6 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
-// complete translation https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/
-
 // bg animation> https://heckscaper.com/stuff/index.html
 
 // use https://prismjs.com/ for syntax highlight NEW plugin
@@ -52,3 +50,6 @@ private fun devGetRequestReload() {
 // pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)
 
 // keep checking https://app.asqatasun.org/ for html validity or learn how to incorporate to predeploy https://app.asqatasun.org/home/contract/page-result.html?wr=28874
+// https://validator.w3.org/
+// https://jigsaw.w3.org/css-validator/
+// https://htmlhelp.org/tools/csscheck/

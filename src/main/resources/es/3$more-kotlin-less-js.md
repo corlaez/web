@@ -1,8 +1,10 @@
 more-kotlin-less-js.html
 Más Kotlin, menos JS
-2022 agosto 26
+
 Más Kotlin, menos JS
 Artículo acerca de la renovación de esta web que ahora es generada con Kotlin. Publicado en 2022 por Armando Cordova.
+2022-08-26
+
 
 En los últimos años, JavaScript se ha expandido de manera increíble. Aplicaciones complejas, frameworks y lenguajes que compilan a JavaScript han sido desarrollados para crear interfaces y experiencias ricas y complejas.
 Yo empecé a usar React en el trabajo en 2017 en una aplicación que realmente requería el uso de dicha librería. A mí me gustó trabajar con React y lo utilizaba siempre que podía.

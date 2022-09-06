@@ -1,8 +1,10 @@
 skype-chatbot.html
 Skype Chatbot
-2019 September 2 (Last update: 2022 August)
+
 Skype Chatbot
 Article about a Skype Chatbot that notified the arrival of a food provider to the office. Published in 2019 by Armando Cordova
+2019-09-02
+2022-08-31
 
 "Daniel en mi piso" (Daniel in my floor) was a Skype bot that I made for my coworkers when I worked at Bellatrix. Daniel came every day selling delicious home-made sandwiches.
 He stayed a few minutes outside each floor with Bellatrix offices and other companies. However, we would have to step out at the right time to catch him, or we would miss him.
