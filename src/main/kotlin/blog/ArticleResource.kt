@@ -32,6 +32,6 @@ class ArticleResource(name: String, unparsedContent: String) {
     context(LanguageContext, PageContext)
     fun contentWithPermalink() = "<a class=\"u-url\" href=\"$pageUrl\"><em><span class=\"dt-published\">${createdDate}</span>${lastUpdate()}</em></a>\n\n" + rawContent
 
-    context(LanguageContext)x
+    context(LanguageContext)
     private fun lastUpdate() = if (modifiedDate.isNotBlank()) " (${t.lastUpdate}: <span class=\"dt-updated\">$modifiedDate</span>)" else ""
 }

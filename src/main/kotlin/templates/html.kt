@@ -24,9 +24,9 @@ fun asHtmlPage(contentMd: String): Page {
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.heroBannerAndMain(contentHtml: String) {
     header(classes = "fire") {
-        h1 { +t.heroTitle }
+        h1(classes = "p-name") { +t.heroTitle }
         p {
-            span(classes = "p-name") { +t.heroDescription }
+            span { +t.heroDescription }
             if (t.heroDescription.isNotBlank()) br()
             if (path != "index.html") {
                 a { href = language.langPath(); +t.backLink }; +" "
@@ -39,7 +39,7 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             }
         }
     }
-    section(classes = "content e-content") {
+    section {
         noScript { +t.noScriptMessage }
         div(classes = "center") {
             audio {
@@ -52,6 +52,8 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
                 }
             }
         }
+    }
+    section(classes = "content${if(!isIndex) " e-content" else ""}") {
         unsafe {
             +contentHtml
         }
@@ -113,7 +115,6 @@ context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.hCardFooter() {
     // Based on http://microformats.org/wiki/representative-h-card-authoring
     div(classes = "h-card p-author")  {
-        id = "h-card"
         p(classes = "center signature") {
             img(classes = "u-photo") {
                 alt = t.logoAlly

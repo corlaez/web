@@ -41,15 +41,6 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
-// bg animation> https://heckscaper.com/stuff/index.html
-
-// use https://prismjs.com/ for syntax highlight NEW plugin
-// Articles should only show translation links if the translation exists NEW
-// Categories NEW
-
-// use theme colors in css
-// replace the banner with a solid color at least for og (linked in has agressive compression) Linkedin compat
-// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)
 
 // keep checking https://app.asqatasun.org/ for html validity or learn how to incorporate to predeploy https://app.asqatasun.org/home/contract/page-result.html?wr=28874
 // https://validator.w3.org/
@@ -57,3 +48,14 @@ private fun devGetRequestReload() {
 // https://htmlhelp.org/tools/csscheck/
 
 // main add https://webmention.io/settings
+// https://indiewebify.me/validate-h-entry/ https://desmondrivet.com/2020/04/04/indieweb-conversation
+
+
+// bg animation> https://heckscaper.com/stuff/index.html
+// use https://prismjs.com/ for syntax highlight NEW plugin
+// use theme colors in css
+// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)
+// replace the banner with a solid color at least for og (linked in has aggressive compression) LinkedIn compat
+
+// Categories NEW
+// Articles should only show translation links if the translation exists NEW
