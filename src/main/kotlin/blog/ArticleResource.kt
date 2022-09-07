@@ -1,6 +1,7 @@
 package blog
 
 import LanguageContext
+import PageContext
 import TitlesAndDescriptions
 
 class ArticleResource(name: String, unparsedContent: String) {
@@ -28,6 +29,9 @@ class ArticleResource(name: String, unparsedContent: String) {
     context(LanguageContext)
     fun content() = "<em><span class=\"dt-published\">${createdDate}</span>${lastUpdate()}</em>\n\n" + rawContent
 
-    context(LanguageContext)// todo dt-updated
-    private fun lastUpdate() = if (modifiedDate.isNotBlank()) " (${t.lastUpdate}: <span>$modifiedDate</span>)" else ""
+    context(LanguageContext, PageContext)
+    fun contentWithPermalink() = "<a class=\"u-url\" href=\"$pageUrl\"><em><span class=\"dt-published\">${createdDate}</span>${lastUpdate()}</em></a>\n\n" + rawContent
+
+    context(LanguageContext)x
+    private fun lastUpdate() = if (modifiedDate.isNotBlank()) " (${t.lastUpdate}: <span class=\"dt-updated\">$modifiedDate</span>)" else ""
 }

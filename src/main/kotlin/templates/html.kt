@@ -10,43 +10,52 @@ fun asHtmlPage(contentMd: String): Page {
             lang = language.toString()
             head { headTags() }
             body {
-                div(classes = "fire") {
-                    h1 { +t.heroTitle }
-                    p {
-                        +t.heroDescription
-                        if(t.heroDescription.isNotBlank()) br()
-                        if(path != "index.html") { a { href=language.langPath(); +t.backLink }; +" " }
-                        if(language != Language.es) {
-                            a { href="${Language.es.langPath()}$path"; +"Versión en Español" }; +" "
-                        }
-                        if(language != Language.en) {
-                            a { href="${Language.en.langPath()}$path"; +"English Version" }; +" "
-                        }
-                    }
+                main(classes = if (isIndex) "h-feed" else "h-entry") {
+                    heroBannerAndMain(contentHtml)
+                    hCardFooter()
                 }
-                div(classes = "content") {
-                    noScript { +t.noScriptMessage }
-                    div(classes = "center") {
-                        audio {
-                            attributes += "preload" to "none"
-                            controls = true
-                            loop = true
-                            source {
-                                src = C.BEC_AUDIO
-                                type = C.BEC_AUDIO_TYPE
-                            }
-                        }
-                    }
-                    unsafe {
-                        +contentHtml
-                    }
-                }
-                hCardFooter()
                 webPlugins.forEach{ it.bodyTags(this@body) }
             }
         }
     }
     return Page(path, language.langPath(), htmlPageString)
+}
+
+context(EnvContext, OutputContext, LanguageContext, PageContext)
+private fun MAIN.heroBannerAndMain(contentHtml: String) {
+    header(classes = "fire") {
+        h1 { +t.heroTitle }
+        p {
+            span(classes = "p-name") { +t.heroDescription }
+            if (t.heroDescription.isNotBlank()) br()
+            if (path != "index.html") {
+                a { href = language.langPath(); +t.backLink }; +" "
+            }
+            if (language != Language.es) {
+                a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }; +" "
+            }
+            if (language != Language.en) {
+                a { href = "${Language.en.langPath()}${path}"; +"English Version" }; +" "
+            }
+        }
+    }
+    section(classes = "content e-content") {
+        noScript { +t.noScriptMessage }
+        div(classes = "center") {
+            audio {
+                attributes += "preload" to "none"
+                controls = true
+                loop = true
+                source {
+                    src = C.BEC_AUDIO
+                    type = C.BEC_AUDIO_TYPE
+                }
+            }
+        }
+        unsafe {
+            +contentHtml
+        }
+    }
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
@@ -100,10 +109,10 @@ private fun HEAD.headTags() {
     webPlugins.forEach{ it.headTags(this@headTags) }
 }
 
-context(OutputContext, LanguageContext, PageContext)
-private fun BODY.hCardFooter() {
+context(EnvContext, OutputContext, LanguageContext, PageContext)
+private fun MAIN.hCardFooter() {
     // Based on http://microformats.org/wiki/representative-h-card-authoring
-    div(classes = "h-card")  {
+    div(classes = "h-card p-author")  {
         id = "h-card"
         p(classes = "center signature") {
             img(classes = "u-photo") {

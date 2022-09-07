@@ -17,6 +17,7 @@ data class LanguageContext(val language: Language) {
 context(EnvContext, LanguageContext)
 class PageContext(val path: String, val pageOgType: String, private val titlesAndDescriptions: TitlesAndDescriptions) {
     val pageUrl get() = domain + language.langPath() + (path.takeIf { it != "index.html" } ?: "")
+    val isIndex = path == "index.html"
 
     val LocalizedText.headTitle get() = titlesAndDescriptions.metaTitle
     val LocalizedText.headMetaDescription get() = titlesAndDescriptions.metaDescription
