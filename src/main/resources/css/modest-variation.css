@@ -149,3 +149,7 @@ pre,
 code {
     background-color: #fafafa;
 }
+ul {
+    text-align: justify;
+    padding-inline-end: 20px;
+}
