@@ -8,7 +8,6 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
-import java.util.*
 
 class ArticleResource(name: String, unparsedContent: String) {
     val id: Int = name.split("$")[0].toInt()
@@ -33,12 +32,16 @@ class ArticleResource(name: String, unparsedContent: String) {
     }
 
     context(LanguageContext)
-    fun content() = "<em><time datetime=\"${toDateTime(createdDate)}\" class=\"dt-published\">${toHumanDate(createdDate)}</time>${lastUpdate()}</em>\n\n" + rawContent
+    fun content() = "<p><em><time datetime=\"${toDateTime(createdDate)}\" class=\"dt-published\">" +
+            toHumanDate(createdDate) +
+            "</time>${lastUpdate()}</em></p>\n\n" + rawContent
 
     context(LanguageContext, PageContext)
-    fun contentWithPermalink() = "<a class=\"u-url\" href=\"$pageUrl\">" +
-            "<em><time datetime=\"${toDateTime(createdDate)}\" class=\"dt-published\">${toHumanDate(createdDate)}</time>${lastUpdate()}</em>" +
-            "</a>\n\n" + rawContent
+    fun contentWithPermalink() = "<p><a class=\"u-url\" href=\"$pageUrl\">" +
+            "<em><time datetime=\"${toDateTime(createdDate)}\" class=\"dt-published\">" +
+            toHumanDate(createdDate) +
+            "</time>${lastUpdate()}</em>" +
+            "</a></p>\n\n" + rawContent
 
     private fun toDateTime(s: String) = LocalDateTime.of(LocalDate.parse(s), LocalTime.MIDNIGHT)
         .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)

@@ -61,3 +61,4 @@ private fun devGetRequestReload() {
 // Articles should only show translation links if the translation exists NEW
 
 // https://jsoup.org/ implement first microformars-jvm parser
+// https://sadgrl.online/

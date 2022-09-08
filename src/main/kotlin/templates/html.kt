@@ -12,7 +12,7 @@ fun asHtmlPage(contentMd: String): Page {
             body {
                 main(classes = if (isIndex) "h-feed" else "h-entry") {
                     heroBannerAndMain(contentHtml)
-                    hCardFooter()
+                    hCard()
                 }
                 webPlugins.forEach{ it.bodyTags(this@body) }
             }
@@ -39,19 +39,17 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             }
         }
     }
-    section {
-        noScript { +t.noScriptMessage }
-        div(classes = "center") {
-            audio {
-                attributes += "preload" to "none"
-                controls = true
-                loop = true
-                source {
-                    src = C.BEC_AUDIO
-                    type = C.BEC_AUDIO_TYPE
-                }
+    section(classes = "center") {
+        audio {
+            attributes += "preload" to "none"
+            controls = true
+            loop = true
+            source {
+                src = C.BEC_AUDIO
+                type = C.BEC_AUDIO_TYPE
             }
         }
+        noScript { p { +t.noScriptMessage } }
     }
     section(classes = "content${if(!isIndex) " e-content" else ""}") {
         unsafe {
@@ -112,9 +110,9 @@ private fun HEAD.headTags() {
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-private fun MAIN.hCardFooter() {
+private fun MAIN.hCard() {
     // Based on http://microformats.org/wiki/representative-h-card-authoring
-    div(classes = "h-card p-author")  {
+    section(classes = "h-card p-author")  {
         p(classes = "center signature") {
             img(classes = "u-photo") {
                 alt = t.logoAlly
@@ -124,7 +122,7 @@ private fun MAIN.hCardFooter() {
                 height = C.SIGNATURE2_IMAGE_H
             }
         }
-        div {
+        p {
             a(classes = "u-url u-uid") {
                 href = "https://corlaez.com"
                 +"corlaez.com"
