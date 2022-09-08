@@ -8,7 +8,8 @@ import java.time.LocalDateTime
 fun main(args: Array<String>) {
     val arg = Args.valueOf(args[0])
     val port = System.getenv("PORT") ?: "8080"
-    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false), WebMentionPlugin(), IndieWebWebRing()).filter { it.enabled }
+    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false), WebMentionPlugin(), IndieWebWebRing())
+        .filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
         with(EnvContext(serverArg, port, webPlugins)) {
@@ -54,7 +55,7 @@ private fun devGetRequestReload() {
 // bg animation> https://heckscaper.com/stuff/index.html
 // use https://prismjs.com/ for syntax highlight NEW plugin
 // use theme colors in css
-// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW (may need js to make mermaid follow)
+// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW
 // replace the banner with a solid color at least for og (linked in has aggressive compression) LinkedIn compat
 
 // Categories NEW

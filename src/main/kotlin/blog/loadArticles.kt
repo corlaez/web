@@ -20,7 +20,9 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
     // todo p-category
     val articleSeparator = "\n\n<hr/><br/><br/>\n\n"
     val mergedArticles = articles.joinToString("") {
-        "<h2><a href='${language.langPath()}blog/${it.blogId}'>${it.titlesAndDescriptions.visibleTitle}</a></h2>" + it.content() + articleSeparator
+        "<h2><a href='${language.langPath()}blog/${it.blogId}'>" +
+                it.titlesAndDescriptions.visibleTitle +
+                "</a></h2>" + it.content() + articleSeparator
     }
 
     add(with(PageContext("index.html", pageOgType = "website", t.blogIndexTitlesAndDescriptions)) {
