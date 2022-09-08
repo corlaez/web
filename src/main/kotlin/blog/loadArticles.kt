@@ -17,6 +17,7 @@ fun loadArticles(folder: String): List<ArticleResource> {
 
 context(EnvContext, LanguageContext, OutputContext)
 fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
+    // todo p-category
     val articleSeparator = "\n\n<hr/><br/><br/>\n\n"
     val mergedArticles = articles.joinToString("") {
         "<h2><a href='${language.langPath()}blog/${it.blogId}'>${it.titlesAndDescriptions.visibleTitle}</a></h2>" + it.content() + articleSeparator

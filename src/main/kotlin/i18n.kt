@@ -1,3 +1,5 @@
+import java.util.*
+
 enum class Language {
     en, es;
 
@@ -9,6 +11,11 @@ enum class Language {
     fun languageWithTerritory(): String= when(this) {
         en -> "en_US"
         es -> "es_PE"
+    }
+
+    fun locale(): Locale = when(this) {
+        en -> Locale.ENGLISH
+        es -> Locale("es")
     }
 }
 
