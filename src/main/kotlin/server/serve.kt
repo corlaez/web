@@ -12,6 +12,7 @@ fun serve() {
             staticFiles.directory = "deploy/output"
             staticFiles.location = Location.EXTERNAL
         }
+        config.enableDevLogging()
     }.start(port.toInt())
     app.get("/dev/arg") { ctx ->
         ctx.result(arg.toString())

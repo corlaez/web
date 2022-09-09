@@ -11,7 +11,7 @@ import kotlinx.html.HEAD
 import kotlinx.html.a
 import kotlinx.html.p
 
-class IndieWebWebRing(override val enabled: Boolean = true) : WebPlugin {
+class IndieWebRingPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext)
     override fun pages(): List<Page> {
         return emptyList()

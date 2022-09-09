@@ -1,15 +1,21 @@
 import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
+import plugins.BlogPlugin
 import plugins.DevPlugin
-import plugins.IndieWebWebRing
+import plugins.IndieWebRingPlugin
 import plugins.WebMentionPlugin
 import java.time.LocalDateTime
 
 fun main(args: Array<String>) {
     val arg = Args.valueOf(args[0])
     val port = System.getenv("PORT") ?: "8080"
-    val webPlugins = listOf(DevPlugin(), MermaidPlugin(false), WebMentionPlugin(), IndieWebWebRing())
-        .filter { it.enabled }
+    val webPlugins = listOf(
+        BlogPlugin(),
+        DevPlugin(),
+        MermaidPlugin(false),
+        WebMentionPlugin(),
+        IndieWebRingPlugin()
+    ).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
         with(EnvContext(serverArg, port, webPlugins)) {
@@ -42,6 +48,7 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
+// ALLOW NEW PATHS TO BE CREATED. ADD ONE FOR NOTES (It may be something different from plugins)
 
 // keep checking https://app.asqatasun.org/ for html validity or learn how to incorporate to predeploy https://app.asqatasun.org/home/contract/page-result.html?wr=28874
 // https://validator.w3.org/

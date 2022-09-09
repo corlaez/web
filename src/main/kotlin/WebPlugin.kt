@@ -7,7 +7,7 @@ interface WebPlugin {
 
     fun flexmarkExtensions(): Collection<Extension> = emptyList()
 
-    context(EnvContext)
+    context(EnvContext, OutputContext)
     fun pages(): List<Page>
 
     context(EnvContext, OutputContext, LanguageContext, PageContext)

@@ -1,5 +1,3 @@
-import blog.ArticleResource
-
 enum class Args {
     dev, prd, regenerate, prdWithoutServer;
     fun isDev() = this == dev
@@ -9,10 +7,7 @@ enum class Args {
 }
 
 data class Resources(
-    //blog
-    val articles: Map<Language, List<ArticleResource>>,
     val sytlesCss: String,
-    //favicon
     val faviconTags: String,
     val manifestJson: String,// Google PWA
     val browserconfigXml: String,// Windows 8+
