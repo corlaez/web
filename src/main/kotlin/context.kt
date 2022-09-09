@@ -1,3 +1,5 @@
+import kotlinx.html.stream.appendHTML
+
 data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebPlugin>) {
     val domain: String = when(arg) {
         Args.prd -> "https://corlaez.com"
@@ -6,6 +8,7 @@ data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebP
 
     private val markdownSupport = MarkdownSupport(webPlugins)
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
+    fun Appendable.h() = appendHTML(prettyPrint = false)
 }
 
 data class OutputContext(val resources: Resources)

@@ -1,12 +1,10 @@
 import kotlinx.html.*
-import kotlinx.html.stream.appendHTML
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-fun asHtmlPage(contentMd: String): Page {
-    val contentHtml = mdToHtml(contentMd)
+fun asHtmlPage(contentHtml: String): Page {
     val htmlPageString = buildString {
         append("<!DOCTYPE html>")
-        appendHTML(prettyPrint = false).html {
+        h().html {
             lang = language.toString()
             head { headTags() }
             body {
@@ -39,7 +37,7 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             }
         }
     }
-    section(classes = "center") {
+    div(classes = "center") {
         audio {
             attributes += "preload" to "none"
             controls = true
@@ -112,7 +110,7 @@ private fun HEAD.headTags() {
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.hCard() {
     // Based on http://microformats.org/wiki/representative-h-card-authoring
-    section(classes = "h-card p-author")  {
+    div(classes = "h-card p-author")  {
         p(classes = "center signature") {
             img(classes = "u-photo") {
                 alt = t.logoAlly
