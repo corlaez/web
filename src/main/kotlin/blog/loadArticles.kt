@@ -37,7 +37,7 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
                 }
                 div(classes = "e-content") {
                     unsafe {
-                        +articleResource.content()
+                        +content(articleResource)
                     }
                 }
                 hr()
@@ -53,11 +53,12 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
         asHtmlPage(hiddenPermalink + mergedArticles)
     })
 
-    articles.forEach {
-        with(it) {
-            add(with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
-                asHtmlPage(contentWithPermalink())
-            })
+    articles.forEach { articleResource ->
+        val blogId = articleResource.blogId
+        val titlesAndDescriptions = articleResource.titlesAndDescriptions
+        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
+            asHtmlPage(contentWithPermalink(articleResource))
         }
+        add(articlePage)
     }
 }

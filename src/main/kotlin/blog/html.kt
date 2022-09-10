@@ -3,8 +3,10 @@ package blog
 import EnvContext
 import LanguageContext
 import PageContext
+import kotlinx.html.FlowOrPhrasingContent
 import kotlinx.html.a
 import kotlinx.html.em
+import kotlinx.html.p
 import kotlinx.html.time
 import kotlinx.html.unsafe
 import toDateTime
@@ -21,32 +23,34 @@ private fun ArticleResource.unsafeLastUpdate() = if (modifiedDate.isBlank()) "" 
 }
 
 context(EnvContext, LanguageContext)
-fun ArticleResource.content() =  buildString {
-    h().em {
+private fun FlowOrPhrasingContent.datesHtml(articleResource: ArticleResource) {
+    em {
         time(classes = "dt-published") {
-            dateTime = toDateTime(createdDate)
-            +toHumanDate(createdDate)
+            dateTime = toDateTime(articleResource.createdDate)
+            +toHumanDate(articleResource.createdDate)
         }
         unsafe {
-            +unsafeLastUpdate()
+            +articleResource.unsafeLastUpdate()
         }
     }
-    append(mdToHtml(rawContent))
 }
 
+context(EnvContext, LanguageContext)
+fun content(articleResource: ArticleResource) =  buildString {
+    h().p {
+        datesHtml(articleResource)
+    }
+    append(mdToHtml(articleResource.rawContent))
+}
+
+
 context(EnvContext,LanguageContext, PageContext)
-fun ArticleResource.contentWithPermalink() = buildString {
-    h().a(classes = "u-url") {
-        href = pageUrl
-        em {
-            time(classes = "dt-published") {
-                dateTime = toDateTime(createdDate)
-                +toHumanDate(createdDate)
-            }
-            unsafe {
-                +unsafeLastUpdate()
-            }
+fun contentWithPermalink(articleResource: ArticleResource) = buildString {
+    h().p {
+        a(classes = "u-url") {
+            href = pageUrl
+            datesHtml(articleResource)
         }
     }
-    append(mdToHtml(rawContent))
+    append(mdToHtml(articleResource.rawContent))
 }
