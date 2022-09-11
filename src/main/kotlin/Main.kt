@@ -3,6 +3,7 @@ import org.eclipse.jetty.http.HttpStatus
 import plugins.BlogPlugin
 import plugins.DevPlugin
 import plugins.IndieWebRingPlugin
+import plugins.NotesPlugin
 import plugins.WebMentionPlugin
 import java.time.LocalDateTime
 
@@ -11,6 +12,7 @@ fun main(args: Array<String>) {
     val port = System.getenv("PORT") ?: "8080"
     val webPlugins = listOf(
         BlogPlugin(),
+        NotesPlugin(),
         DevPlugin(),
         MermaidPlugin(false),
         WebMentionPlugin(),
@@ -70,3 +72,5 @@ private fun devGetRequestReload() {
 
 // https://jsoup.org/ implement first microformars-jvm parser
 // https://sadgrl.online/
+
+// https://jeffhuang.com/designed_to_last/

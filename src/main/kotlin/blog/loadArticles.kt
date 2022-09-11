@@ -12,13 +12,13 @@ import kotlinx.html.br
 import kotlinx.html.div
 import kotlinx.html.h2
 import kotlinx.html.hr
-import kotlinx.html.stream.appendHTML
 import kotlinx.html.unsafe
 import listFilenamesInDirectory
 import loadResourceAsString
 
 fun loadArticles(folder: String): List<ArticleResource> {
     return listFilenamesInDirectory(folder)
+        .filter { it.contains("$") }
         .map { ArticleResource(it, loadResourceAsString("$folder/$it")) }
         .sortedByDescending { it.id }
 }
@@ -32,7 +32,7 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
                 h2(classes = "p-name") {
                     a(classes = "u-url") {
                         href = "${language.langPath()}blog/${articleResource.blogId}"
-                        +articleResource.titlesAndDescriptions.visibleTitle
+                        +articleResource.titlesAndDescriptions.visibleTitle!!
                     }
                 }
                 div(classes = "e-content") {
@@ -56,7 +56,7 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
     articles.forEach { articleResource ->
         val blogId = articleResource.blogId
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
-        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
+        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions, "")) {
             asHtmlPage(contentWithPermalink(articleResource))
         }
         add(articlePage)

@@ -2,13 +2,13 @@ import kotlinx.html.stream.appendHTML
 
 data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebPlugin>) {
     val domain: String = when(arg) {
-        Args.prd -> "https://corlaez.com"
+        Args.prd -> C.DOMAIN
         else -> "http://localhost:$port"
     }
 
     private val markdownSupport = MarkdownSupport(webPlugins)
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
-    fun Appendable.h() = appendHTML(prettyPrint = false)
+    fun Appendable.h() = appendHTML(prettyPrint = arg.isPrd())
 }
 
 data class OutputContext(val resources: Resources)
@@ -18,9 +18,11 @@ data class LanguageContext(val language: Language) {
 }
 
 context(EnvContext, LanguageContext)
-class PageContext(val path: String, val pageOgType: String, private val titlesAndDescriptions: TitlesAndDescriptions) {
-    val pageUrl get() = domain + language.langPath() + (path.takeIf { it != "index.html" } ?: "")
-    val isIndex = path == "index.html"
+class PageContext(val fileName: String, val pageOgType: String, private val titlesAndDescriptions: TitlesAndDescriptions, private val backFolder: String = "") {
+    val isIndex = fileName.split("/").last() == "index.html"
+    val path = if (isIndex) fileName.split("/").dropLast(1).joinToString("/")  else fileName
+    val pageUrl get() = domain + language.langPath() + path
+    val indexRoute get() = domain + language.langPath() + backFolder
 
     val LocalizedText.headTitle get() = titlesAndDescriptions.metaTitle
     val LocalizedText.headMetaDescription get() = titlesAndDescriptions.metaDescription

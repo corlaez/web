@@ -6,20 +6,20 @@ import OutputContext
 import Page
 import PageContext
 import WebPlugin
-import blog.addBlogPages
-import blog.loadArticles
+import notes.addBlogPages
+import notes.loadArticles
 import createDirectory
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
 
-class BlogPlugin(override val enabled: Boolean = true) : WebPlugin {
+class NotesPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)
     override fun pages(): List<Page> {
-        createDirectory("deploy/output/blog")
-        createDirectory("deploy/output/${Language.es}/blog")
+        createDirectory("deploy/output/note")
+        createDirectory("deploy/output/${Language.es}/note")
         val articles = mapOf(
-            Language.en to loadArticles("/${Language.en}/blog"),
-            Language.es to loadArticles("/${Language.es}/blog"),
+            Language.en to loadArticles("/${Language.en}/notes"),
+            Language.es to loadArticles("/${Language.es}/notes"),
         )
         return buildList {
             articles.forEach { (lang, articles) ->

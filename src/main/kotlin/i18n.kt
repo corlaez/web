@@ -47,22 +47,6 @@ class LocalizedText(language: Language) {
         Language.es -> "Gracias por la visita"
     }
     val author = "Armando Cordova"
-    val blogIndexHeroTitle = when(language) {
-        Language.en -> null
-        Language.es -> "English version"
-    }
-    val blogIndexHeroDescription = when(language) {
-        Language.en -> null
-        Language.es -> "English version"
-    }
-    val englishVersionLink = when(language) {
-        Language.en -> null
-        Language.es -> "English version"
-    }
-    val spanishVersionLink = when(language) {
-        Language.en -> "Version en español"
-        Language.es -> null
-    }
     val blogIndexTitlesAndDescriptions = when(language) {
         Language.en -> TitlesAndDescriptions(
             "Hi! I am Armando",
@@ -80,7 +64,7 @@ class LocalizedText(language: Language) {
 }
 
 class TitlesAndDescriptions(
-    val visibleTitle: String,
+    val visibleTitle: String?,
     val visibleDescription: String,
     val metaTitle: String,
     val metaDescription: String,

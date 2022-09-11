@@ -16,26 +16,26 @@ fun asHtmlPage(contentHtml: String): Page {
             }
         }
     }
-    return Page(path, language.langPath(), htmlPageString)
+    return Page(fileName, language.langPath(), htmlPageString)
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.heroBannerAndMain(contentHtml: String) {
-    header(classes = "fire") {
-        h1(classes = "p-name") { +t.heroTitle }
-        p {
-            span { +t.heroDescription }
-            if (t.heroDescription.isNotBlank()) br()
-            if (path != "index.html") {
-                a { href = language.langPath(); +t.backLink }; +" "
-            }
-            if (language != Language.es) {
-                a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }; +" "
-            }
-            if (language != Language.en) {
-                a { href = "${Language.en.langPath()}${path}"; +"English Version" }; +" "
-            }
+    p {
+        span { +t.heroDescription }
+        if (t.heroDescription.isNotBlank()) br()
+        if (!isIndex) {
+            a { href = indexRoute; +t.backLink }; +" "
         }
+        if (language != Language.es) {
+            a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }; +" "
+        }
+        if (language != Language.en) {
+            a { href = "${Language.en.langPath()}${path}"; +"English Version" }; +" "
+        }
+    }
+    header(classes = "fire") {//todo remove header style?
+        if(t.heroTitle != null) { h1(classes = "p-name") { +t.heroTitle!! }}
     }
     div(classes = "center") {
         audio {
