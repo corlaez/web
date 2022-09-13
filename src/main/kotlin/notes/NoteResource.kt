@@ -4,6 +4,7 @@ import TitlesAndDescriptions
 
 class NoteResource(name: String, unparsedContent: String) {
     val id: Int = name.substring(0, name.length - 3).toInt()
+    val outputFileName: String = "$id.html"
     val titlesAndDescriptions: TitlesAndDescriptions
     val createdDate: String
     val modifiedDate: String

@@ -27,7 +27,6 @@ class PageContext(
     val isIndex = fileName.split("/").last() == "index.html"
     val path = if (isIndex) fileName.split("/").dropLast(1).joinToString("/")  else fileName
     val pageUrl get() = domain + language.langPath() + path
-    val indexRoute get() = domain + language.langPath() + backFolder
 
     val LocalizedText.headTitle get() = titlesAndDescriptions.metaTitle
     val LocalizedText.headMetaDescription get() = titlesAndDescriptions.metaDescription

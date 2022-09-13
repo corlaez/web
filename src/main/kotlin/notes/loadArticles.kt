@@ -25,9 +25,9 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
     // todo p-category
 
     val contents = articles.map { articleResource ->
-        val blogId = articleResource.id
+        val outputFileName = articleResource.outputFileName
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
-        with(PageContext("note/$blogId", pageOgType = "article", titlesAndDescriptions, "note")) {
+        with(PageContext("note/$outputFileName", pageOgType = "article", titlesAndDescriptions, "note")) {
             val c = contentWithPermalink(articleResource)
             add(asHtmlPage(c))
             c
