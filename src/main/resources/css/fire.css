@@ -82,11 +82,11 @@ a.selected {
     background: #6e0000;
 }
 summary h2 {
-    display: inline-block;
+    display: inline;
 }
 summary.h2  {
     font-size: 2.4rem;
 }
 summary {
-    cursor:pointer;
+    cursor: pointer;
 }
