@@ -7,7 +7,6 @@ import Page
 import PageContext
 import asHtmlPage
 import kotlinx.html.a
-import kotlinx.html.article
 import kotlinx.html.br
 import kotlinx.html.details
 import kotlinx.html.div
@@ -59,7 +58,7 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
     articles.forEach { articleResource ->
         val blogId = articleResource.blogId
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
-        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions, "")) {
+        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
             asHtmlPage(contentWithPermalink(articleResource))
         }
         add(articlePage)

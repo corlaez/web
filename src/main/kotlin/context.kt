@@ -1,9 +1,9 @@
 import kotlinx.html.stream.appendHTML
 
 data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebPlugin>) {
-    val domain: String = when(arg) {
-        Args.prd -> C.DOMAIN
-        else -> "http://localhost:$port"
+    val domain: String = when(arg.isPrd()) {
+        true -> C.DOMAIN
+        false -> "http://localhost:$port"
     }
 
     private val markdownSupport = MarkdownSupport(webPlugins)
@@ -22,7 +22,6 @@ class PageContext(
     val fileName: String,
     val pageOgType: String,
     private val titlesAndDescriptions: TitlesAndDescriptions,
-    private val backFolder: String = ""
 ) {
     val isIndex = fileName.split("/").last() == "index.html"
     val path = if (isIndex) fileName.split("/").dropLast(1).joinToString("/")  else fileName
