@@ -49,7 +49,7 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
         }
     }
 
-    add(with(PageContext("note/index.html", pageOgType = "website", t.blogIndexTitlesAndDescriptions)) {
+    add(with(PageContext("note/index.html", pageOgType = "website", t.notesIndexTitlesAndDescriptions)) {
         val hiddenPermalink = "<a class=\"u-url\" href='$pageUrl'></a>"
         asHtmlPage(hiddenPermalink + mergedArticles)
     })

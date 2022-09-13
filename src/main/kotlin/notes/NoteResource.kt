@@ -17,7 +17,7 @@ class NoteResource(name: String, unparsedContent: String) {
         titlesAndDescriptions = TitlesAndDescriptions(
             null,
             "",
-            C.OWNER_NAME + ": " + rawContent.substring(0,40),
+            C.OWNER_NAME + ": " + rawContent.substring(0, 40.coerceAtMost(rawContent.length)),
             rawContent,
         )
     }

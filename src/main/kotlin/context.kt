@@ -8,7 +8,7 @@ data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebP
 
     private val markdownSupport = MarkdownSupport(webPlugins)
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
-    fun Appendable.h() = appendHTML(prettyPrint = arg.isPrd())
+    fun Appendable.h() = appendHTML(prettyPrint = !arg.isPrd())
 }
 
 data class OutputContext(val resources: Resources)
@@ -18,7 +18,12 @@ data class LanguageContext(val language: Language) {
 }
 
 context(EnvContext, LanguageContext)
-class PageContext(val fileName: String, val pageOgType: String, private val titlesAndDescriptions: TitlesAndDescriptions, private val backFolder: String = "") {
+class PageContext(
+    val fileName: String,
+    val pageOgType: String,
+    private val titlesAndDescriptions: TitlesAndDescriptions,
+    private val backFolder: String = ""
+) {
     val isIndex = fileName.split("/").last() == "index.html"
     val path = if (isIndex) fileName.split("/").dropLast(1).joinToString("/")  else fileName
     val pageUrl get() = domain + language.langPath() + path

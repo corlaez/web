@@ -20,6 +20,10 @@ enum class Language {
 }
 
 class LocalizedText(language: Language) {
+    val notes = when(language) {
+        Language.en -> "Notes"
+        Language.es -> "Apuntes"
+    }
     val lastUpdate = when(language) {
         Language.en -> "Last update"
         Language.es -> "Última actualización"
@@ -50,15 +54,35 @@ class LocalizedText(language: Language) {
     val blogIndexTitlesAndDescriptions = when(language) {
         Language.en -> TitlesAndDescriptions(
             "Hi! I am Armando",
-            "Welcome to my blog #Software #Kotlin",
+            "Welcome to my website where I will share about software in general," +
+                    " Kotlin and the Indie Web",
             "Corlaez Blog",
-            "Armando Cordova's Personal Blog",// Todo 100 chars
+            "Welcome to the website of Armando Cordova. You will find blogs about topics " +
+                    "such as Violin, Kotlin and IndieWeb",
         )
         Language.es -> TitlesAndDescriptions(
             "Hola! Soy Armando",
-            "Bienvenido a mi blog #Software #Kotlin",
+            "Bienvenido a mi página web donde compartiré sobre software en general, Violin," +
+                    " Kotlin y la Indie Web",
             "Corlaez Blog",
-            "Bienvenido a mi blog #Software #Kotlin",
+            "Bienvenido a la página web de Armando Cordova. " +
+                    "Encontrarás información sobre Violín, Kotlin y La Indie Web",
+        )
+    }
+    val notesIndexTitlesAndDescriptions = when(language) {
+        Language.en -> TitlesAndDescriptions(
+            null,
+            "",
+            "Notes made by Armando Cordova",
+            "Notes made by Armando Cordova. You will find notes about topics " +
+                    "such as Violin, Kotlin and IndieWeb",
+        )
+        Language.es -> TitlesAndDescriptions(
+            null,
+            "",
+            "Apuntes hechos por Armando Cordova",
+            "Bienvenido a la página web de Armando Cordova. " +
+                    "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
         )
     }
 }

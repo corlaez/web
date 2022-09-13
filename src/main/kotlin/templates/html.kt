@@ -21,21 +21,44 @@ fun asHtmlPage(contentHtml: String): Page {
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.heroBannerAndMain(contentHtml: String) {
-    p {
-        span { +t.heroDescription }
-        if (t.heroDescription.isNotBlank()) br()
-        if (!isIndex) {
-            a { href = indexRoute; +t.backLink }; +" "
+    nav {
+        a {
+            if (path == "" || path.contains("blog")) {
+                classes = classes + "selected"
+                if (isIndex) classes = classes + "u-url"
+            }
+            href = language.langPath()
+            +"Blog"
         }
+        +" "
+        a {
+            if (path.contains("note")) {
+                classes = classes + "selected"
+                if (isIndex) classes = classes + "u-url"
+            }
+            href = "${language.langPath()}note"
+            +t.notes
+        }
+        +" "
         if (language != Language.es) {
-            a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }; +" "
+            +" "
+            a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }
         }
         if (language != Language.en) {
-            a { href = "${Language.en.langPath()}${path}"; +"English Version" }; +" "
+            +" "
+            a { href = "${Language.en.langPath()}${path}"; +"English Version" }
         }
     }
-    header(classes = "fire") {//todo remove header style?
-        if(t.heroTitle != null) { h1(classes = "p-name") { +t.heroTitle!! }}
+    if (t.heroDescription.isNotBlank()) p { +t.heroDescription }
+    if(t.heroTitle != null) {
+        header(classes = "fire") {
+            a(classes = "u-url") {
+                href = pageUrl
+            h1(classes = "p-name") {
+                    +t.heroTitle!!
+                }
+            }
+        }
     }
     div(classes = "center") {
         audio {
@@ -49,7 +72,7 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
         }
         noScript { p { +t.noScriptMessage } }
     }
-    section(classes = "content${if(!isIndex) " e-content" else ""}") {
+    div(classes = "content${if(!isIndex) " e-content" else ""}") {
         unsafe {
             +contentHtml
         }
