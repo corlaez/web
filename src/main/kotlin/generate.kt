@@ -24,11 +24,15 @@ fun generate() {
     copyDirectory(output.staticDir, "deploy/output")
 }
 
+context(EnvContext)
 fun loadAndMergeCss(): String {
-    return listOf(
-        loadResourceAsString("/css/print.min.css"),
-        loadResourceAsString("/css/fluidity.min.css"),
-        loadResourceAsString("/css/modest-variation.css").minifyCss(),
-        loadResourceAsString("/css/fire.css").minifyCss(),
-    ).joinToString("")
+    return buildList {
+        add(loadResourceAsString("/css/print.min.css"))
+        add(loadResourceAsString("/css/fluidity.min.css"))
+        add(loadResourceAsString("/css/modest-variation.css").minifyCss())
+        add(loadResourceAsString("/css/fire.css").minifyCss())
+        if (arg.isDev()) {
+            add(loadResourceAsString("/css/dev.css").minifyCss())
+        }
+    }.joinToString("")
 }

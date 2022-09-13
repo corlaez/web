@@ -1,0 +1,15 @@
+.h-feed {
+    border: 5px blue solid;
+}
+.h-entry {
+    border: 4px yellow solid;
+}
+.p-name {
+    border: 3px deeppink solid;
+}
+.u-photo {
+    border: 2px aquamarine solid;
+}
+.u-url {
+    border: 1px #1dff00 solid;
+}

@@ -6,7 +6,6 @@ import OutputContext
 import Page
 import PageContext
 import asHtmlPage
-import kotlinx.html.article
 import kotlinx.html.br
 import kotlinx.html.div
 import kotlinx.html.hr
@@ -36,7 +35,7 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
 
     val mergedArticles = contents.joinToString("") { content ->
         buildString {
-            h().article(classes = "h-entry") {
+            h().div(classes = "h-entry") {
                 div(classes = "e-content") {
                     unsafe {
                         +content
