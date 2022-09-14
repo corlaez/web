@@ -94,3 +94,9 @@ blockquote p {
     margin-top: 0;
     padding: 0;
 }
+nav {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
