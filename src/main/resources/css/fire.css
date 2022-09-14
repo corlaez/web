@@ -90,3 +90,7 @@ summary.h2  {
 summary {
     cursor: pointer;
 }
+blockquote p {
+    margin-top: 0;
+    padding: 0;
+}

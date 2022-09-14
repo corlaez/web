@@ -31,8 +31,5 @@ fun loadAndMergeCss(): String {
         add(loadResourceAsString("/css/fluidity.min.css"))
         add(loadResourceAsString("/css/modest-variation.css").minifyCss())
         add(loadResourceAsString("/css/fire.css").minifyCss())
-        if (arg.isDev()) {
-            add(loadResourceAsString("/css/dev.css").minifyCss())
-        }
     }.joinToString("")
 }

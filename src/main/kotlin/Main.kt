@@ -1,6 +1,7 @@
 import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
 import plugins.BlogPlugin
+import plugins.DevCss
 import plugins.DevPlugin
 import plugins.IndieWebRingPlugin
 import plugins.NotesPlugin
@@ -13,9 +14,9 @@ fun main(args: Array<String>) {
     val webPlugins = listOf(
         BlogPlugin(),
         NotesPlugin(),
-        DevPlugin(),
+        DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
-        WebMentionPlugin(),
+        WebMentionPlugin(false),
         IndieWebRingPlugin()
     ).filter { it.enabled }
     if (arg.isRegenerate()) {

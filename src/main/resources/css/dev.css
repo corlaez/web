@@ -1,15 +1,29 @@
 .h-feed {
-    border: 5px blue solid;
+    outline: 1px rgb(0, 178, 255) solid;
+    outline-offset: -1px;
+    background-color: rgba(0, 0, 255, 0.1);
 }
 .h-entry {
-    border: 4px yellow solid;
+    outline: 3px rgb(255, 174, 0) solid;
+    outline-offset: -3px;
+    background-color: rgba(255, 255, 0, 0.5);
+}
+.h-card {
+    outline: 5px rgb(131, 97, 78) solid;
+    outline-offset: -5px;
+    background-color: rgba(131, 97, 78, 0.5);
 }
 .p-name {
-    border: 3px deeppink solid;
+    outline: 2px rgb(255, 20, 147) solid;
+    outline-offset: -2px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .u-photo {
-    border: 2px aquamarine solid;
+    outline: 10px rgb(127, 255, 212) solid;
+    outline-offset: -10px;
 }
 .u-url {
-    border: 1px #1dff00 solid;
+    outline: 2px rgb(29, 255, 0) solid;
+    outline-offset: -2px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
