@@ -74,13 +74,6 @@ body {
     background-color: #111;
     color: #ddd;
 }
-nav a {
-    padding: 5px;
-    border-radius: 10px;
-}
-a.selected {
-    background: #6e0000;
-}
 summary h2 {
     display: inline;
 }
@@ -97,8 +90,14 @@ blockquote p {
     padding: 0;
 }
 nav {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    padding: 4px 20px;
+}
+nav a {
+    display: inline-block;
+    padding: 10px 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+a.selected {
+    background: #6e0000;
 }
