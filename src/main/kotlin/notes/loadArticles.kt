@@ -5,13 +5,13 @@ import LanguageContext
 import OutputContext
 import Page
 import PageContext
-import asHtmlPage
 import kotlinx.html.br
 import kotlinx.html.div
 import kotlinx.html.hr
 import kotlinx.html.unsafe
 import listFilenamesInDirectory
 import loadResourceAsString
+import templates.asHtmlPage
 
 fun loadArticles(folder: String): List<NoteResource> {
     return listFilenamesInDirectory(folder)

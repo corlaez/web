@@ -1,3 +1,10 @@
+package templates
+
+import EnvContext
+import LanguageContext
+import OutputContext
+import Page
+import PageContext
 import kotlinx.html.*
 import plugins.BlogPlugin
 import plugins.BoardPlugin
@@ -12,6 +19,7 @@ fun asHtmlPage(contentHtml: String): Page {
             head { headTags() }
             body {
                 main(classes = if (isIndex) "h-feed" else "h-entry") {
+                    navBar()
                     heroBannerAndMain(contentHtml)
                     hCard()
                 }
@@ -22,8 +30,8 @@ fun asHtmlPage(contentHtml: String): Page {
     return Page(fileName, language.langPath(), htmlPageString)
 }
 
-context(EnvContext, OutputContext, LanguageContext, PageContext)
-private fun MAIN.heroBannerAndMain(contentHtml: String) {
+context(EnvContext, LanguageContext, PageContext)
+private fun MAIN.navBar() {
     nav {
         if (webPlugins.any { it is BlogPlugin }) a {
             if (path == "" || path.contains("blog")) {
@@ -60,11 +68,15 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             a { href = "${Language.en.langPath()}${path}"; +"English Version" }
         }
     }
+}
+
+context(EnvContext, OutputContext, LanguageContext, PageContext)
+        private fun MAIN.heroBannerAndMain(contentHtml: String) {
     if(t.heroTitle != null) {
         header(classes = "fire") {
             a(classes = "u-url") {
                 href = pageUrl
-            h1(classes = "p-name") {
+                h1(classes = "p-name") {
                     +t.heroTitle!!
                 }
             }

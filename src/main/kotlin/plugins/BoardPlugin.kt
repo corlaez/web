@@ -6,10 +6,10 @@ import OutputContext
 import Page
 import PageContext
 import WebPlugin
-import asHtmlPage
 import notes.loadArticles
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
+import templates.asHtmlPage
 
 class BoardPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)
