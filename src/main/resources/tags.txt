@@ -12,6 +12,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
 <link rel="manifest" href="/manifest.json">
-<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
 <meta name="msapplication-TileColor" content="LOGO_SQR_THEME_RGB">
 <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
