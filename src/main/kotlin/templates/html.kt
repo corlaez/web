@@ -1,4 +1,6 @@
 import kotlinx.html.*
+import plugins.BlogPlugin
+import plugins.NotesPlugin
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 fun asHtmlPage(contentHtml: String): Page {
@@ -22,7 +24,7 @@ fun asHtmlPage(contentHtml: String): Page {
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 private fun MAIN.heroBannerAndMain(contentHtml: String) {
     nav {
-        a {
+        if (webPlugins.any { it is BlogPlugin }) a {
             if (path == "" || path.contains("blog")) {
                 classes = classes + "selected"
                 if (isIndex) classes = classes + "u-url"
@@ -31,7 +33,7 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             +"Blog"
         }
         +" "
-        a {
+        if (webPlugins.any { it is NotesPlugin }) a {
             if (path.contains("note")) {
                 classes = classes + "selected"
                 if (isIndex) classes = classes + "u-url"
@@ -49,7 +51,6 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             a { href = "${Language.en.langPath()}${path}"; +"English Version" }
         }
     }
-    if (t.heroDescription.isNotBlank()) p { +t.heroDescription }
     if(t.heroTitle != null) {
         header(classes = "fire") {
             a(classes = "u-url") {
@@ -58,6 +59,7 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
                     +t.heroTitle!!
                 }
             }
+            if (t.heroDescription.isNotBlank()) p { +t.heroDescription }
         }
     }
     div(classes = "center") {
