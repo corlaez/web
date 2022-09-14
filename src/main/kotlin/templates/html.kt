@@ -1,5 +1,6 @@
 import kotlinx.html.*
 import plugins.BlogPlugin
+import plugins.BoardPlugin
 import plugins.NotesPlugin
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
@@ -40,6 +41,14 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             }
             href = "${language.langPath()}note"
             +t.notes
+        }
+        +" "
+        if (webPlugins.any { it is BoardPlugin }) a {
+            if (pageUrl.contains("board.html")) {
+                classes = classes + "selected u-url"
+            }
+            href = "${language.langPath()}board.html"
+            +t.board
         }
         +" "
         if (language != Language.es) {

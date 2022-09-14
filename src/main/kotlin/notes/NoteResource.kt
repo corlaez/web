@@ -2,7 +2,7 @@ package notes
 
 import TitlesAndDescriptions
 
-class NoteResource(name: String, unparsedContent: String) {
+class NoteResource(name: String, val unparsedContent: String) {
     val id: Int = name.substring(0, name.length - 3).toInt()
     val outputFileName: String = "$id.html"
     val titlesAndDescriptions: TitlesAndDescriptions

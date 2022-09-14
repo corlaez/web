@@ -20,6 +20,10 @@ enum class Language {
 }
 
 class LocalizedText(language: Language) {
+    val board = when(language) {
+        Language.en -> "Board"
+        Language.es -> "Pizarra"
+    }
     val notes = when(language) {
         Language.en -> "Notes"
         Language.es -> "Apuntes"

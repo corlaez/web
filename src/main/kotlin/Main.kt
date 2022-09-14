@@ -1,6 +1,7 @@
 import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
 import plugins.BlogPlugin
+import plugins.BoardPlugin
 import plugins.DevCss
 import plugins.DevPlugin
 import plugins.IndieWebRingPlugin
@@ -14,6 +15,7 @@ fun main(args: Array<String>) {
     val webPlugins = listOf(
         BlogPlugin(),
         NotesPlugin(),
+        BoardPlugin(),
         DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
         WebMentionPlugin(false),
@@ -51,29 +53,3 @@ private fun devGetRequestReload() {
         logger.info("$reloadResponse ${LocalDateTime.now()}")
     }
 }
-// ALLOW NEW PATHS TO BE CREATED. ADD ONE FOR NOTES (It may be something different from plugins)
-
-// keep checking https://app.asqatasun.org/ for html validity or learn how to incorporate to predeploy https://app.asqatasun.org/home/contract/page-result.html?wr=28874
-// https://validator.w3.org/
-// https://jigsaw.w3.org/css-validator/
-// https://htmlhelp.org/tools/csscheck/
-
-// main add https://webmention.io/settings
-// https://indiewebify.me/validate-h-entry/ https://desmondrivet.com/2020/04/04/indieweb-conversation
-
-
-// bg animation> https://heckscaper.com/stuff/index.html
-// use https://prismjs.com/ for syntax highlight NEW plugin
-// use theme colors in css
-// pure css dark/light mode https://www.jobsity.com/blog/how-to-make-dark-mode-for-websites-using-only-css NEW
-// replace the banner with a solid color at least for og (linked in has aggressive compression) LinkedIn compat
-
-// Categories NEW
-// Articles should only show translation links if the translation exists NEW
-
-// https://jsoup.org/ implement first microformars-jvm parser
-// https://sadgrl.online/
-
-// https://jeffhuang.com/designed_to_last/
-
-// granary.io/
