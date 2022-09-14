@@ -107,7 +107,14 @@ private fun HEAD.headTags() {
     meta { charset = "utf-8" }
     link { rel = "preload"; href = C.WINE_IMAGE_PATH; attributes += "as" to "image"; }
     link { rel = "canonical"; href = pageUrl }
-
+    if (language != Language.en) link {
+        rel = "alternate"; hrefLang = Language.en.toString()
+        href = domain + "${Language.en.langPath()}${path}"
+    }
+    if (language != Language.es) link {
+        rel = "alternate"; hrefLang = Language.es.toString()
+        href = domain + "${Language.es.langPath()}${path}"
+    }
     style { unsafe { +resources.sytlesCss; } }
     meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
     meta { name = "robots"; content = "index, follow" }
