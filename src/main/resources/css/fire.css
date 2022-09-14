@@ -89,6 +89,8 @@ summary.h2  {
 }
 summary {
     cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 blockquote p {
     margin-top: 0;
