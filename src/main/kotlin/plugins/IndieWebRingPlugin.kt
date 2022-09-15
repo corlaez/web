@@ -8,17 +8,11 @@ import PageContext
 import WebPlugin
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
+import kotlinx.html.NAV
 import kotlinx.html.a
 import kotlinx.html.p
 
 class IndieWebRingPlugin(override val enabled: Boolean = true) : WebPlugin {
-    context(EnvContext)
-    override fun pages(): List<Page> {
-        return emptyList()
-    }
-
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) { }
 
     context(EnvContext, OutputContext, LanguageContext, PageContext)
     override fun bodyTags(body: BODY) {

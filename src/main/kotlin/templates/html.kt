@@ -33,32 +33,7 @@ fun asHtmlPage(contentHtml: String): Page {
 context(EnvContext, LanguageContext, PageContext)
 private fun MAIN.navBar() {
     nav {
-        if (webPlugins.any { it is BlogPlugin }) a {
-            if (path == "" || path.contains("blog")) {
-                classes = classes + "selected"
-                if (isIndex) classes = classes + "u-url"
-            }
-            href = language.langPath()
-            +"Blog"
-        }
-        +" "
-        if (webPlugins.any { it is NotesPlugin }) a {
-            if (path.contains("note")) {
-                classes = classes + "selected"
-                if (isIndex) classes = classes + "u-url"
-            }
-            href = "${language.langPath()}note"
-            +t.notes
-        }
-        +" "
-        if (webPlugins.any { it is BoardPlugin }) a {
-            if (pageUrl.contains("board.html")) {
-                classes = classes + "selected u-url"
-            }
-            href = "${language.langPath()}board.html"
-            +t.board
-        }
-        +" "
+        webPlugins.forEach { it.navTags(this) }
         if (language != Language.es) {
             +" "
             a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }

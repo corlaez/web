@@ -8,6 +8,7 @@ import PageContext
 import WebPlugin
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
+import kotlinx.html.NAV
 import kotlinx.html.script
 import kotlinx.html.style
 import kotlinx.html.unsafe
@@ -19,11 +20,6 @@ enum class DevCss {
 }
 
 class DevPlugin(private val devCss: DevCss = DevCss.NONE, override val enabled: Boolean = true) : WebPlugin {
-    context(EnvContext)
-    override fun pages(): List<Page> {
-        return buildList {
-        }
-    }
 
     context(EnvContext, OutputContext, LanguageContext, PageContext)
     override fun headTags(head: HEAD) {
@@ -48,7 +44,4 @@ class DevPlugin(private val devCss: DevCss = DevCss.NONE, override val enabled: 
             }
         }
     }
-
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun bodyTags(body: BODY) { }
 }

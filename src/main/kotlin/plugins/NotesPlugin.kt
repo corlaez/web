@@ -11,6 +11,9 @@ import notes.loadArticles
 import createDirectory
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
+import kotlinx.html.NAV
+import kotlinx.html.a
+import kotlinx.html.classes
 
 class NotesPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)
@@ -30,9 +33,18 @@ class NotesPlugin(override val enabled: Boolean = true) : WebPlugin {
         }
     }
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) { }
-
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun bodyTags(body: BODY) { }
+    context(EnvContext, LanguageContext, PageContext)
+    override fun navTags(nav: NAV) {
+        with(nav) {
+            a {
+                if (path.contains("note")) {
+                    classes = classes + "selected"
+                    if (isIndex) classes = classes + "u-url"
+                }
+                href = "${language.langPath()}note"
+                +t.notes
+            }
+            +" "
+        }
+    }
 }

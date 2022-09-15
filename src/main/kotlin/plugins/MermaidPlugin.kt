@@ -10,6 +10,7 @@ import com.vladsch.flexmark.ext.gitlab.GitLabExtension
 import com.vladsch.flexmark.util.misc.Extension
 import kotlinx.html.BODY
 import kotlinx.html.HEAD
+import kotlinx.html.NAV
 import kotlinx.html.script
 
 class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
@@ -20,9 +21,6 @@ class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
     override fun pages(): List<Page> {
         return emptyList()// TODO add mermaid js from webjar
     }
-
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) { }
 
     // loads mermaid js
     context(EnvContext, OutputContext, LanguageContext, PageContext)
