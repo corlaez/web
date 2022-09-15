@@ -7,6 +7,7 @@ import plugins.DevPlugin
 import plugins.IndieAuthPlugin
 import plugins.IndieWebRingPlugin
 import plugins.LegalPlugin
+import plugins.MicrosubPlugin
 import plugins.NotesPlugin
 import plugins.WebMentionPlugin
 import java.time.LocalDateTime
@@ -21,9 +22,10 @@ fun main(args: Array<String>) {
         LegalPlugin(),
         DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
-        WebMentionPlugin(true),
+        WebMentionPlugin(),
         IndieWebRingPlugin(),
-        IndieAuthPlugin(true),
+        IndieAuthPlugin(),
+        MicrosubPlugin(),
     ).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
