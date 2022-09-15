@@ -9,8 +9,6 @@ import WebPlugin
 import notes.addBlogPages
 import notes.loadArticles
 import createDirectory
-import kotlinx.html.BODY
-import kotlinx.html.HEAD
 import kotlinx.html.NAV
 import kotlinx.html.a
 import kotlinx.html.classes
