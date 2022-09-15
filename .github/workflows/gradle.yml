@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'semeru'
+        distribution: 'adopt-openj9'
     - name: Gradle Run
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
