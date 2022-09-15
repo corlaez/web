@@ -25,6 +25,11 @@ jobs:
       uses: github-actions-x/commit@722d56b8968bf00ced78407bbe2ead81062d8baa
       with:
         github-token: ${{ secrets.GH_PUSH_TOKEN }}
+        push-branch: 'master'
+        commit-message: 'publish'
+        files: deploy
+        name: Armando Cordova
+        email: jarmandocp@live.com
     - name: HTTP Request Action
       uses: fjogeleit/http-request-action@4cbc7a46b206a7aad09ef774775110b7b94f8523
       with:
