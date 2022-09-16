@@ -7,8 +7,6 @@ import Page
 import PageContext
 import WebPlugin
 import notes.loadArticles
-import kotlinx.html.BODY
-import kotlinx.html.HEAD
 import kotlinx.html.NAV
 import kotlinx.html.a
 import kotlinx.html.classes

@@ -9,8 +9,6 @@ import WebPlugin
 import com.vladsch.flexmark.ext.gitlab.GitLabExtension
 import com.vladsch.flexmark.util.misc.Extension
 import kotlinx.html.BODY
-import kotlinx.html.HEAD
-import kotlinx.html.NAV
 import kotlinx.html.script
 
 class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {

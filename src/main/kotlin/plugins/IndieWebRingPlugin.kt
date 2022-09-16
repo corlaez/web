@@ -3,12 +3,9 @@ package plugins
 import EnvContext
 import LanguageContext
 import OutputContext
-import Page
 import PageContext
 import WebPlugin
 import kotlinx.html.BODY
-import kotlinx.html.HEAD
-import kotlinx.html.NAV
 import kotlinx.html.a
 import kotlinx.html.p
 

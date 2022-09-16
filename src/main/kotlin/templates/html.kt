@@ -6,9 +6,6 @@ import OutputContext
 import Page
 import PageContext
 import kotlinx.html.*
-import plugins.BlogPlugin
-import plugins.BoardPlugin
-import plugins.NotesPlugin
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 fun asHtmlPage(contentHtml: String): Page {
