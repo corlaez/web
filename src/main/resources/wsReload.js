@@ -1,5 +1,5 @@
 const ws = new WebSocket("ws://localhost:PORT/dev/subscribe")
-ws.onopen=()=>console.log("open")
-ws.onmessage=()=>console.log("reload")||location.reload()
-ws.onerror=(ev)=>console.log(ev)
-ws.onclose=()=>{console.log("close")}
+ws.onopen = () => console.log("Dev Reload Websocket: open")
+ws.onmessage = () => console.log("Dev Reload Websocket: reload") || location.reload()
+ws.onerror = (event) => console.log("Dev Reload Websocket: event") || console.log(event)
+ws.onclose = () => console.log("Dev Reload Websocket: close")

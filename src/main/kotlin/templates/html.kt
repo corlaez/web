@@ -46,7 +46,7 @@ private fun MAIN.navBar() {
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-        private fun MAIN.heroBannerAndMain(contentHtml: String) {
+private fun MAIN.heroBannerAndMain(contentHtml: String) {
     if(t.heroTitle != null) {
         header(classes = "fire") {
             a(classes = "u-url") {

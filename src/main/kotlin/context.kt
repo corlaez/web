@@ -5,10 +5,12 @@ data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebP
         true -> C.DOMAIN
         false -> "http://localhost:$port"
     }
-
+    // prettyPrint helps people to read and understand the source in their browsers and doesn't do much to reduce size
+    val prettyPrint = true
     private val markdownSupport = MarkdownSupport(webPlugins)
+
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
-    fun Appendable.h() = appendHTML(prettyPrint = !arg.isPrd())
+    fun Appendable.h() = appendHTML(prettyPrint = prettyPrint)
 }
 
 data class OutputContext(val resources: Resources)
