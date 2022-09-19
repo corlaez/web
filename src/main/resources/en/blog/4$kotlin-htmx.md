@@ -10,7 +10,7 @@ Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx]
 
 Kotlin as you may know is a modern JVM and (more recently) multiplatform language. It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.
 
-htmx is a JavaScript library that allows you to write HTML attribute instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.
+htmx is a JavaScript library that allows you to write HTML attributes instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.
 
 Let's start! The main function creates a [Javalin](https://javalin.io/) HTTP Server (static files config including [Webjars](https://www.webjars.org/) which is how we will import the htmx js code avoiding node) and adds the "Friends" module (which is an extension function). Finally, it starts the server. A key config I want to highlight is the webjars setup that will help us serve htmx:
 
@@ -22,7 +22,9 @@ config.addStaticFiles { staticFiles ->
 }
 ```
 
-addFriendsModule creates an index route and a route for each friend. ctx.html is the Javalin function to respond with an HTML string.
+It is important to mention that Javalin can be replaced with any HTTP Server you like. In fact your can drop the server altogether, write your HTML Strings to files and make your own static generator (that's how corlaez.com is written)
+
+Then addFriendsModule creates an index route and a route for each friend. ctx.html is the Javalin function to respond with an HTML string. friends.forEach will be [inlined](https://kotlinlang.org/docs/inline-functions.html) into a regular for loop
 
 ```kotlin
 // https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/addFriendsModule.kt
@@ -40,12 +42,31 @@ fun Javalin.addFriendsModule() {
 }
 ```
 
-Let's focus on htmlFriendProfile and htmlFriendsIndex now:
+Next we have the base html template which is a Kotlin function. The parameter is a [lambda with receiver](https://kotlinlang.org/docs/lambdas.html#function-literals-with-receiver) that will populate our HTML body tag and the return is an String. `createHTML` takes out fancy DSL and outputs a String as well.
+If you try to define a body tag inside a head or viceversa the editor and compiler will let you know.
+
+```kotlin
+// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/htmlBaseTemplate.kt
+fun htmlBaseTemplate(bodyFn: BODY.() -> Unit): String {
+    return "<!DOCTYPE html>" + createHTML().html {
+        lang = "en"
+        head {
+            script { src = "/htmx.org/$htmxVersion/dist/htmx.js" }
+            link { href = "/modest-variation.css"; rel="stylesheet" }
+        }
+        body {
+            bodyFn()
+        }
+    }
+}
+```
+
+Let's now focus on htmlFriendProfile and htmlFriendsIndex now:
 
 ```kotlin
 // https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/html.kt
 fun htmlFriendsIndex(friends: List<String>): String {
-    return htmlBaseTemplate { /* htmlBaseTemplate is just another function of this app. Its parameter is the HTML that is inside the braces */
+    return htmlBaseTemplate {
         h1 { a { href = "/"; +"My Friends" } }// nested `a` inside a `h1`. To insert a text inside any tag we use the + operator
         friends.forEach { friend ->// Regular Kotlin used to loop!
             h2 {
@@ -73,16 +94,29 @@ fun htmlFriendProfile(friend: String, characteristic: String): String {
 }
 ```
 
-htmlFriendsIndex calls htmlBaseTemplate, this auxiliary function is where the html, head and body tags are defined (including css and htmx script). Its argument is the HTML markup that goes inside the BODY tag. The index builds its contents using regular Kotlin loops.
+htmlFriendsIndex calls htmlBaseTemplate as this is meant to be a full page. This index builds its contents using regular Kotlin loops. htmlFriendProfile, on the other hand, creates the HTML directly as it is just a partial HTML document.
 
-The hx functions are simple HTMLTag extension functions that add attributes (`attributes += "hx-get" to "/$friend"`). The autocomplete game of HTML DSL gives me the best experience writing HTML ever and the htmx integration is seamless. It is hard to articulate how good is it until you try it.
+The hx functions are simple HTMLTag [extension functions](https://kotlinlang.org/docs/extensions.html) that add HTML attributes.
 
-And as a closing argument while this example uses an HTTP Server, you could use the DSL and htmx to make a static website. Actually this blog post is an example of a Kotlin HTML DSL static website.
+```kotlin
+// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/hx.kt
+fun HTMLTag.hxGet(value: String) {
+    attributes += "hx-get" to value
+}
+fun HTMLTag.hxSwap(value: String) {
+    attributes += "hx-swap" to value
+}
+fun HTMLTag.hxTarget(value: String) {
+    attributes += "hx-target" to value
+}
+```
 
-Cons!
+The autocomplete game of HTML DSL gives me the best experience writing HTML I have ever experienced and the htmx integration is seamless. It is hard to articulate how good is it until you try it (Use [IntelliJ IDEA](https://www.jetbrains.com/idea/) if in doubt, there is a free community edition, and they do offer education licences if you have an institutional email)
 
-* The DSL is written with advanced Kotlin features and will force you to use advanced features if you try to break templates into pieces as I did: i.e. there is a lambda with receiver in `fun htmlBaseTemplate(bodyFn: BODY.() -> Unit): String`
-* Kotlin and its advanced features are better experienced with IntelliJ IDEA. There is a great free community edition but no other great alternatives that I know of.
+**Cons!**
+
+* The DSL is written with advanced Kotlin features and will force you to use/learn (maybe not that bad) advanced features if you try to break templates into different functions as I did.
+* Kotlin's advanced features are better experienced with IntelliJ IDEA. There is a great free community edition but no other great alternatives that I know of.
 * While the HTML DSL autocomplete is very powerful at preventing mistakes, it does rely on a lot of imports. I recommend isolating the template code from the rest of your code (which is probably a good idea anyway)
 * Regarding HTMX, perhaps the biggest drawback and advantage is that it goes against the norm: it works best if you serve HTML partials from your server, the old school way. This works great for websites meant to be used by humans.
 
