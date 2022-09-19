@@ -28,7 +28,7 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
         with(PageContext("note/$outputFileName", pageOgType = "article", titlesAndDescriptions)) {
             val c = contentWithPermalink(articleResource)
-            add(asHtmlPage(c))
+            add(asHtmlPage("h-entry", c))
             c
         }
     }
@@ -49,6 +49,6 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
     }
 
     add(with(PageContext("note/index.html", pageOgType = "website", t.notesIndexTitlesAndDescriptions)) {
-        asHtmlPage(mergedArticles)
+        asHtmlPage("h-feed", mergedArticles)
     })
 }

@@ -6,16 +6,17 @@ import OutputContext
 import Page
 import PageContext
 import kotlinx.html.*
+import notes.NoteResource
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-fun asHtmlPage(contentHtml: String): Page {
+fun asHtmlPage(mainClasses: String, contentHtml: String): Page {
     val htmlPageString = buildString {
         append("<!DOCTYPE html>")
         h().html {
             lang = language.toString()
             head { headTags() }
             body {
-                main(classes = if (isIndex) "h-feed" else "h-entry") {
+                main(classes = mainClasses) {
                     navBar()
                     heroBannerAndMain(contentHtml)
                     hCard()

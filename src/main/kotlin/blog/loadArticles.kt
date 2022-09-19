@@ -52,14 +52,14 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
     }
 
     add(with(PageContext("index.html", pageOgType = "website", t.blogIndexTitlesAndDescriptions)) {
-        asHtmlPage(mergedArticles)
+        asHtmlPage("h-feed", mergedArticles)
     })
 
     articles.forEach { articleResource ->
         val blogId = articleResource.blogId
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
         val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
-            asHtmlPage(contentWithPermalink(articleResource))
+            asHtmlPage("h-entry", contentWithPermalink(articleResource))
         }
         add(articlePage)
     }

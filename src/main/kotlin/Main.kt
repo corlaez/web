@@ -1,12 +1,11 @@
 import plugins.MermaidPlugin
 import org.eclipse.jetty.http.HttpStatus
 import plugins.BlogPlugin
-import plugins.BoardPlugin
 import plugins.DevCss
 import plugins.DevPlugin
 import plugins.IndieAuthPlugin
 import plugins.IndieWebRingPlugin
-import plugins.LegalPlugin
+import plugins.MdPlugin
 import plugins.MicrosubPlugin
 import plugins.NotesPlugin
 import plugins.ScorePlugin
@@ -19,8 +18,8 @@ fun main(args: Array<String>) {
     val webPlugins = listOf(
         BlogPlugin(),
         NotesPlugin(),
-        BoardPlugin(),
-        LegalPlugin(),
+        MdPlugin("board", "", { it.board }),
+        MdPlugin("legal", "", { it.legal }, "legal privacy"),
         DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
         WebMentionPlugin(),
