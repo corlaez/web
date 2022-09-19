@@ -13,6 +13,7 @@ fun generate() {
     val output = with(OutputContext(resources)) {
         Output(
             pages = buildList {
+                add(Page("styles.css", "/", resources.sytlesCss))
                 add(Page("manifest.json", "/", resources.manifestJson))
                 add(Page("browserconfig.xml", "/", resources.browserconfigXml))
                 webPlugins.forEach { addAll(it.pages()) }

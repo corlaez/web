@@ -14,6 +14,17 @@ import kotlinx.html.unsafe
 import loadResourceAsString
 import utils.minifyCss
 
+/**
+ * Prism current config:
+ * Okaidia style
+ * minified
+ * Markup + HTML + XML + SVG + MathML + SSML + Atom + RSS
+ * CSS
+ * C-like
+ * JavaScript
+ * Kotlin + Kotlin Script
+ * Autolinker
+ */
 class PrismPlugin(override val enabled: Boolean = true) : WebPlugin {
 
     context(EnvContext, OutputContext, LanguageContext, PageContext)

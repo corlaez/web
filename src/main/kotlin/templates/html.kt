@@ -88,7 +88,7 @@ private fun HEAD.headTags() {
         rel = "alternate"; hrefLang = Language.es.toString()
         href = domain + "${Language.es.langPath()}${path}"
     }
-    style { unsafe { +resources.sytlesCss; } }
+    link { rel = "stylesheet"; href = "/styles.css" }
     meta { name = "viewport"; content = "user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no" }
     meta { name = "robots"; content = "index, follow" }
 

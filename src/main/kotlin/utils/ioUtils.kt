@@ -33,4 +33,6 @@ fun saveFile(content: ByteArray, folder: String?, name: String) {
     if (folder != null) File(folder).mkdirs()
     File("$folder/$name").writeBytes(content)
 }
-fun copyFileFromResource(name: String, target: String) = File(getUri(name)).copyRecursively(File(target), true)
+fun saveFileFromResource(resourceName: String, folder: String?, name: String) {
+    saveFile(loadResourceAsString(resourceName), folder, name)
+}
