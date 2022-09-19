@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preload" href="/assets/dark-red.webp" as="image">
+    <link rel="canonical" href="https://corlaez.com/note">
+    <link rel="alternate" hreflang="es" href="https://corlaez.com/es/note">
+    <style>@media print{*,*:after,*:before{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}blockquote,pre{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}img,tr{page-break-inside:avoid}img{max-width:100% !important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}canvas,iframe,img,select,svg,textarea,video{max-width:100%}.overflow-container{overflow-x:scroll}.aspect-ratio{height:0;padding-top:56.25%;position:relative}.aspect-ratio--object{height:100%;position:absolute;top:0;right:0;bottom:0;left:0;width:100%;z-index:100}pre,
+code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+}
+
+a,
+a:visited {
+    color: #20a5ff;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #38a6f1;
+}
+
+.modest-no-decoration {
+    text-decoration: none;
+}
+
+html {
+    font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    line-height: 1.85;
+}
+
+p,
+.modest-p {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1,
+.modest-h1,
+h2,
+.modest-h2,
+h3,
+.modest-h3,
+h4,
+.modest-h4 {
+    margin: 1.414rem 0 .5rem;
+    font-weight: inherit;
+    line-height: 1.42;
+}
+
+h1,
+.modest-h1 {
+    margin-top: 0;
+    font-size: 2.6rem;
+}
+
+h2,
+.modest-h2 {
+    font-size: 2.2rem;
+}
+
+h3,
+.modest-h3 {
+    font-size: 1.999rem;
+}
+
+h4,
+.modest-h4 {
+    font-size: 1.414rem;
+}
+
+h5,
+.modest-h5 {
+    font-size: 1.121rem;
+}
+
+h6,
+.modest-h6 {
+    font-size: .88rem;
+}
+
+small,
+.modest-small {
+    font-size: .707em;
+}
+
+html {
+    font-size: 18px;
+    max-width: 100%;
+}
+
+body {
+    color: #444;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 48rem;
+    line-height: 1.45;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arimo, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 1.15rem;
+    padding-bottom: .5rem;
+}
+h1 {
+    text-align: center;
+    padding: 4rem 0;
+}
+h2 {
+    text-align: center;
+}
+
+blockquote {
+    border-left: 8px solid #fafafa;
+    padding: 1rem;
+}
+
+pre,
+code {
+    background-color: #fafafa;
+}
+ul {
+    text-align: justify;
+    padding-inline-end: 20px;
+}
+.fire {
+    background-image: url(/assets/signature-400.webp), url(/assets/dark-red.webp);
+    background-repeat: no-repeat, repeat;
+    background-attachment: scroll, fixed;
+    background-position: left, center;
+    background-size: 300px, auto;
+    animation: AnimateBG2 0.2s;
+}
+.fire h1, .fire p {
+    color: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: 0!important;
+    margin-bottom: 0!important;
+    text-shadow: 7px 2px black;
+}
+.fire h1 {
+    font-size: 3.5rem;
+    padding: 4rem 0!important;
+}
+.fire a {
+    text-decoration: none;
+}
+.fire p {
+    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 black;
+}
+.signature {
+    height: 210px;
+    padding: 0;
+    background-image: url(/assets/dark-red.webp);
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+audio {
+    width: 250px;
+    padding: 0!important;
+    margin: 0!important;
+}
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(0deg, transparent, #bd1e1eDE, #bd1e1eDE, transparent), url(/assets/dark-red.webp);
+    background-attachment: scroll, fixed;
+}
+@keyframes AnimateBG2 {
+    0%{background-position: center, center;}
+    100%{background-position: left, center;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .fire {
+        animation: unset;
+    }
+}
+@media (max-width: 555px) {
+    .fire h1 {
+        padding: 0 !important;
+    }
+}
+.center {
+    text-align: center;
+}
+.content {
+    padding: 0 .25em .25em .25em;
+}
+pre {
+    background-color: black;
+    overflow-x: auto;
+}
+code {
+    background-color: black;
+}
+body {
+    background-color: #111;
+    color: #ddd;
+}
+summary h2 {
+    display: inline;
+}
+summary.h2  {
+    font-size: 2.4rem;
+}
+summary {
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+blockquote p {
+    margin-top: 0;
+    padding: 0;
+}
+nav {
+    padding: 4px 20px;
+}
+nav a {
+    display: inline-block;
+    padding: 10px 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+a.selected {
+    background: #6e0000;
+}
+</style>
+    <meta name="viewport" content="user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>Notes made by Armando Cordova</title>
+    <meta name="description" content="Notes made by Armando Cordova. You will find notes about topics such as Violin, Kotlin and IndieWeb">
+    <meta name="theme-color" content="#A10000">
+    <meta name="author" content="Armando Cordova">
+    <meta property="og:title" content="Notes made by Armando Cordova">
+    <meta property="og:description" content="Notes made by Armando Cordova. You will find notes about topics such as Violin, Kotlin and IndieWeb">
+    <meta property="og:url" content="https://corlaez.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/banner.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Corlaez Blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/assets/banner.png">
+    <meta name="twitter:image:alt" content="Logo that reads A R">
+    <meta name="twitter:creator" content="@corlaez">
+    <meta name="twitter:site" content="@corlaez">
+    <meta name="twitter:site_name" content="@corlaez">
+    <meta name="twitter:title" content="Notes made by Armando Cordova">
+    <meta name="twitter:description" content="Notes made by Armando Cordova. You will find notes about topics such as Violin, Kotlin and IndieWeb">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><meta name="msapplication-TileColor" content="#A10000"><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">    <script>if('serviceWorker' in navigator){
+navigator.serviceWorker.register("/serviceWorker.js")}</script>
+    <link rel="webmention" href="https://webmention.io/corlaez.com/webmention">
+    <link rel="pingback" href="https://webmention.io/corlaez.com/xmlrpc">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/781">
+  </head>
+  <body>
+    <main class="h-feed">
+      <nav><a href="/">Blog</a> <a class="selected u-url" href="/note">Notes</a> <a href="/board.html">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/note">Versión en Español</a></nav>
+      <div class="center">
+        <audio preload="none" controls="controls" loop="loop"><source src="/assets/bec.mp3" type="audio/mpeg"></audio>
+        <noscript>
+          <p>Hey you, browsing with JavaScript off. You are welcomed! This page does not require JS to work properly :)</p>
+        </noscript>
+      </div>
+      <div class="content"><div class="h-entry">
+  <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/3.html"><em><time class="dt-published" datetime="2022-09-15T00:00:00">Sep 15, 2022</time></em></a></p>
+<p>I joined my first Homebrew website and indie web camp online meeting in general yesterday 😊 (<a href="https://indieweb.org/events/2022-09-015-hwc-pacific">wiki</a>).</p><p><a href="https://tracydurnell.com/">Tracy</a> and <a href="https://ragt.ag/">Angelo</a> were there, we discussed interesting topics and showed each other what we are working on.
+The direct benefits for my site have been:</p><ul><li>My website now uses <a href="https://indieweb.org/indieauth.com">IndieAuth.com</a>, <a href="https://aperture.p3k.io/">Aperture</a> (<a href="https://indieweb.org/Microsub">Microsub</a> server)</li><li>Now I can use <a href="https://monocle.p3k.io/">Monocle</a> and other Microsub clients</li><li>I reactivated Webmention and tested they are working correctly with <a href="https://commentpara.de">Comment Parade</a> (I am not publishing any Webmention yet)</li><li>I added a Score section in my footer which shows a link and image taken from the page for my domain in <a href="https://indieweb.rocks">IndieWeb.rocks</a></li></ul><details><summary>More highlights of the meeting:
+</summary><ul><li>Angelo's <a href="https://indieweb.rocks/the-street">the-street</a> a way to give an address to domains inspired by Snow Crash. I will add bellow my interpretation and derived ideas:
+<ul><li>The address is a domain hash, a lot of hashes will not point to an active domain</li><li>To solve this issue lists of addresses can be created. 'the-street' is one such list</li><li>I imagine that these lists could be navigated similar to webrings</li><li>All sorts of visualizations could be created as well (from street representations to plotting in a graph)</li><li>Address list could also be merged to display my own personal list of all the websites I share a community with</li><li>I could even see how many communities do I share with one or another domain</li><li>Any plain old links page/blogroll could be enhanced with a visualization, the actual hash can be hidden from view</li><li>A (separate?) path hash could help us map out people located on shared services such as Known</li></ul></li><li>Discussed with Tracy and Angelo about pop-ins, personas, online meetings and collaboration.</li><li>Learnt about <a href="https://www.gather.town/">https://www.gather.town/</a> dynamic videocall rooms with 2D videogame controls. Free up to 25 people at a time</li><li>Learnt about whostyle, a way to have a say on how the reader will display your mf2 content and it's complications</li><li>Proposed &quot;alternate embed&quot; or &quot;alternate embeddable&quot; that would point to an embed friendly version of your page. This should be more powerful than whostyle and easier to implement (I assume)</li></ul></details><p>Looking forward to joining more meetings!</p></div>
+  <hr>
+<br><br></div>
+<div class="h-entry">
+  <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/2.html"><em><time class="dt-published" datetime="2022-09-13T00:00:00">Sep 13, 2022</time></em></a></p>
+<p>publish.twitter.com or clicking '...' and 'embed tweet' allows you to generate html to show a tweet in your personal website.</p><p>It also allows twitter to run their JavaScript and track visitors. However, there is an easy fix. You see, the Twitter embed actually contains a quote about the tweet in case JavaScript is off. This can provide a useful starting point.</p><details>  <summary>See raw twitter embed html</summary><pre><code>&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot; data-theme=&quot;dark&quot;&gt;
+  &lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+    &lt;a href=&quot;https://t.co/kulxLw8m0r&quot;&gt;https://t.co/kulxLw8m0r&lt;/a&gt; 
+    Impressive stuff 
+    &lt;a href=&quot;https://twitter.com/hashtag/Nanite?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Nanite&lt;/a&gt;
+    &lt;a href=&quot;https://twitter.com/hashtag/UnrealEngine?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#UnrealEngine&lt;/a&gt; 
+    5
+  &lt;/p&gt;
+  &amp;mdash; Corlaez (@Corlaez) 
+  &lt;a href=&quot;https://twitter.com/Corlaez/status/1461732669188882442?ref_src=twsrc%5Etfw&quot;&gt;November 19, 2021&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</code></pre></details><p>But t.co?, src=hash&amp;amp?, ref_src=twsrc%5Etfw? ... Yeah, besides deleting the script tag we will need to delete extra url params
+and open the tweet to copy the real URL I intended to share.</p><details>  <summary>See the twitter embed html after a cleanup</summary><pre><code>&lt;blockquote&gt;
+  &lt;p&gt;
+    &lt;a href=&quot;https://www.youtube.com/watch?v=eviSykqSUUw&quot;&gt;https://www.youtube.com/watch?v=eviSykqSUUw&lt;/a&gt; 
+    Impressive stuff 
+    &lt;a href=&quot;https://twitter.com/hashtag/Nanite&quot;&gt;#Nanite&lt;/a&gt;
+    &lt;a href=&quot;https://twitter.com/hashtag/UnrealEngine&quot;&gt;#UnrealEngine&lt;/a&gt; 
+    5
+  &lt;/p&gt;
+  &amp;mdash; Corlaez (@Corlaez) 
+  &lt;a href=&quot;https://twitter.com/Corlaez/status/1461732669188882442&quot;&gt;November 19, 2021&lt;/a&gt;
+&lt;/blockquote&gt;
+</code></pre></details><p>And this is what it looks like:</p><blockquote>  <p>    <a href="https://www.youtube.com/watch?v=eviSykqSUUw">https://www.youtube.com/watch?v=eviSykqSUUw</a> 
+    Impressive stuff 
+    <a href="https://twitter.com/hashtag/Nanite">#Nanite</a>    <a href="https://twitter.com/hashtag/UnrealEngine">#UnrealEngine</a> 
+    5
+  </p>  &mdash; Corlaez (@Corlaez) 
+  <a href="https://twitter.com/Corlaez/status/1461732669188882442">November 19, 2021</a></blockquote></div>
+  <hr>
+<br><br></div>
+<div class="h-entry">
+  <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/1.html"><em><time class="dt-published" datetime="2022-09-11T00:00:00">Sep 11, 2022</time></em></a></p>
+<p>First note to self: Norm left us too soon.</p></div>
+  <hr>
+<br><br></div>
+</div>
+      <div class="h-card p-author">
+        <p class="center signature"><img class="u-photo" alt="Logo that reads A R" loading="lazy" src="/assets/signature-white-210.png" width="210" height="210"></p>
+        <p><a class="u-url u-uid" href="https://corlaez.com">corlaez.com</a> has been brought to you by <span class="p-name">Armando Cordova</span>. Thanks for your visit.</p>
+        <p class="center"><a class="u-url" href="https://github.com/corlaez" rel="me authn">Github</a> <a class="u-url" href="https://linkedin.com/in/corlaez" rel="me">LinkedIn</a> <a class="u-url" href="https://twitter.com/corlaez" rel="me">Twitter</a></p>
+      </div>
+    </main>
+    <p class="center"><a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous" rel="nofollow">←</a> An <a class="u-url" href="https://xn--sr8hvo.ws" rel="nofollow">IndieWeb Webring</a> 🕸💍 <a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next" rel="nofollow">→</a></p>
+    <p class="center"><a rel="me" href="//indieweb.rocks/corlaez.com"><img alt="IndieMark score" src="//indieweb.rocks/sites/corlaez.com/scoreboard.svg" style="height: 4rem"></a></p>
+  </body>
+</html>
