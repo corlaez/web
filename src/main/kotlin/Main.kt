@@ -8,6 +8,7 @@ import plugins.IndieWebRingPlugin
 import plugins.MdPlugin
 import plugins.MicrosubPlugin
 import plugins.NotesPlugin
+import plugins.PrismPlugin
 import plugins.ScorePlugin
 import plugins.WebMentionPlugin
 import java.time.LocalDateTime
@@ -26,7 +27,7 @@ fun main(args: Array<String>) {
         IndieWebRingPlugin(),
         IndieAuthPlugin(),
         MicrosubPlugin(),
-        ScorePlugin(),
+        ScorePlugin(), PrismPlugin()
     ).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
