@@ -6,9 +6,13 @@ Corlaez article about an example implementation of htmx using Kotlin HTML DSL by
 2022-09-19
 
 
-Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well. Buckle up. (tl;dr: [code](https://github.com/corlaez/kotlin-htmx))
+Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well. You can follow along (or skip the article) with the code [here](https://github.com/corlaez/kotlin-htmx).
 
-The main function creates a [Javalin](https://javalin.io/) HTTP Server (static files config including [Webjars](https://www.webjars.org/) which is how we will import the htmx js code avoiding node) and adds the "Friends" module (which is an extension function). Finally, it starts the server. A key config I want to highlight is the webjars setup that will help us serve htmx:
+Kotlin as you may know is a modern JVM and more recently multiplatform language, with a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.
+
+htmx is a JavaScript library that allows you to write HTML attribute instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.
+
+Let's start! The main function creates a [Javalin](https://javalin.io/) HTTP Server (static files config including [Webjars](https://www.webjars.org/) which is how we will import the htmx js code avoiding node) and adds the "Friends" module (which is an extension function). Finally, it starts the server. A key config I want to highlight is the webjars setup that will help us serve htmx:
 
 ```kotlin
 config.addStaticFiles { staticFiles ->
@@ -74,8 +78,9 @@ And as a closing argument while this example uses an HTTP Server, you could use 
 
 Cons!
 
-* The DSL is written with advanced Kotlin features and will force you to use advanced features if you try to break templates into pieces as I did: i.e. the lambda with receiver in `fun htmlBaseTemplate(bodyFn: BODY.() -> Unit): String`
-* While the autocomplete is very powerful at preventing mistakes, it does rely on a lot of imports. I recommend isolating the template code from the rest of your code (which is probably a good idea anyway)
+* The DSL is written with advanced Kotlin features and will force you to use advanced features if you try to break templates into pieces as I did: i.e. there is a lambda with receiver in `fun htmlBaseTemplate(bodyFn: BODY.() -> Unit): String`
+* Kotlin and its advanced features are better experienced with IntelliJ IDEA. There is a great free community edition but no other great alternatives that I know of.
+* While the HTML DSL autocomplete is very powerful at preventing mistakes, it does rely on a lot of imports. I recommend isolating the template code from the rest of your code (which is probably a good idea anyway)
 * Regarding HTMX, perhaps the biggest drawback is that it has a different take on building webapps. Serve HTML for your partials, the old school way. While not the norm today it really simplifies development of Full Stack apps
 
 I hope this was interesting, have fun!
