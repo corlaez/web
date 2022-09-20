@@ -61,7 +61,9 @@ With that I would leave the new example configuration as:
 
 ```kotlin
 // Proposal also found at: https://corlaez.com/hexagonal-proposal.html
-class TestCases(val forDiscounting: ForDiscounting) // Primary Adapter (instantiated by testing framework)
+class TestCases { // Primary Adapter (instantiated by testing framework)
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).discounterApp
+}
 class Console(val forDiscounting: ForDiscounting) // Primary Adapter
 interface ForDiscounting // Primary Port
 class DiscounterApp(val rateRepository: ForObtainingRates): ForDiscounting // App
