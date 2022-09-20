@@ -1,7 +1,7 @@
 hexagonal-feedback.html
-Hexagonal Feedback
+Sugerencia Hexagonal
 
-Hexagonal Feedback
+Sugerencia Hexagonal
 Corlaez article about feedback for a Hexagonal Architecture draft by Armando Cordova.
 2022-09-20
 

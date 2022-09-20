@@ -18,7 +18,7 @@ class MdPlugin(
     private val name: String,
     private val pathNamespace: String,
     private val localizedName: (LocalizedText) -> String,
-    private val navRel: String? = null,
+    private val navRel: String? = "",
     override val enabled: Boolean = true
 ) : WebPlugin {
     context(EnvContext, OutputContext)
@@ -39,13 +39,13 @@ class MdPlugin(
 
     context(EnvContext, LanguageContext, PageContext)
     override fun navTags(nav: NAV) {
-        with(nav) {
+        if(navRel != null) with(nav) {
             a {
                 if (pageUrl.contains("$pathNamespace$name.html")) {
                     classes = classes + "selected u-url"
                 }
                 href = "${language.langPath()}$pathNamespace$name.html"
-                if(navRel != null) rel = navRel
+                rel = navRel
                 +localizedName(t)
             }
             +" "

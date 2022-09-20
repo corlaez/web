@@ -21,6 +21,7 @@ fun main(args: Array<String>) {
         NotesPlugin(),
         MdPlugin("board", "", { it.board }),
         MdPlugin("legal", "", { it.legal }, "legal privacy"),
+        MdPlugin("hexagonal-proposal", "", { "Hexagonal" }, null),
         DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
         WebMentionPlugin(),

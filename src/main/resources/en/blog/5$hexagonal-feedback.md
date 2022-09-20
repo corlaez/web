@@ -33,14 +33,14 @@ interface ForObtainingRates // Secondary Port
 class StubRateRepository: ForObtainingRates // Secondary Adapter
 class FileRateRepository: ForObtainingRates // Secondary Adapter
 
-class DiscounterAppConfig(val prodDriver: Boolean, val prodRateRepository: Boolean) {
-    val rateRepository: ForObtainingRates = kotlin.run {
-        if(prodRateRepository) FileRateRepository() else StubRateRepository()
-    }
+class DiscounterAppConfig(useConsoleDriver: Boolean, useFileRateRepository: Boolean) {
+    val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
     val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
-    val driver: Driver = kotlin.run {
-        if(prodDriver) Console(discounterApp) else TestCases(discounterApp)
-    }
+    val driver: Driver =
+        if(useConsoleDriver) Console(discounterApp)
+        else TestCases(discounterApp)
 }
 ```
 
@@ -60,7 +60,7 @@ Ok, onto Driver now (I am assuming this interface is not empty and defines funct
 With that I would leave the new example configuration as:
 
 ```kotlin
-// Proposal for alternative configuration in Kotlin
+// Proposal also found at: https://corlaez.com/hexagonal-proposal.html
 class TestCases(val forDiscounting: ForDiscounting) // Primary Adapter (instantiated by testing framework)
 class Console(val forDiscounting: ForDiscounting) // Primary Adapter
 interface ForDiscounting // Primary Port
@@ -69,10 +69,10 @@ interface ForObtainingRates // Secondary Port
 class StubRateRepository: ForObtainingRates // Secondary Adapter
 class FileRateRepository: ForObtainingRates // Secondary Adapter
 
-class DiscounterAppConfig(val prodRateRepository: Boolean) {
-    private val rateRepository: ForObtainingRates = kotlin.run {
-        if(prodRateRepository) FileRateRepository() else StubRateRepository()
-    }
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
+    private val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
     val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
     val discounterConsole: Console = Console(discounterApp)
 }
@@ -95,11 +95,11 @@ class DiscounterApp2(val rateRepository: ForObtainingRates, val chaosService: Fo
 interface ForChaos // Secondary Port
 class RealChaos: ForChaos // Secondary Adapter
 
-class DiscounterAppConfig(val prodRateRepository: Boolean) {
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
    private val chaosService: ForChaos = RealChaos()
-   private val rateRepository: ForObtainingRates = kotlin.run {
-      if(prodRateRepository) FileRateRepository() else StubRateRepository()
-   }
+   private val rateRepository: ForObtainingRates =
+      if(useFileRateRepository) FileRateRepository()
+      else StubRateRepository()
    val discounterApp: ForDiscounting = newDiscounterApp(chaosService)// Same function used here
    val discounterConsole: Console = newDiscounterConsole(discounterApp)// Same function used here
 
@@ -119,5 +119,6 @@ And there you go, the main code will work the same and the tests will be able to
 
 And that's all for now!
 
-PS: The `kotlin.run` could very well be deleted from all my examples, but I am trying to show that you can actually write multiple expressions 
-taking several lines to configure each field if you need to.
+PS: If you think that a single expression to instantiate a field is too limiting you can always wrap the code in a 
+[run](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/run.html) helper function `val x = run {...}` and use as many lines as you wish
+
