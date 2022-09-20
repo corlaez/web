@@ -4,7 +4,7 @@ Hexagonal Feedback
 Hexagonal Feedback
 Corlaez article about feedback for a Hexagonal Architecture draft by Armando Cordova.
 2022-09-20
-
+2022-09-20
 
 Recently, Alistair Cockburn has been asking for feedback and making efforts to consolidate talks, documents and the concept of Hexagonal Architecture.
 
@@ -20,10 +20,10 @@ While Spring is very popular for Java programmers I think it is important to sho
 
 I proposed translating the code to Kotlin as it was, but couldn't wrap my head around the Driver interface. I will explain why I think it is problematic and submit it as feedback, along with my alternative configuration.
 
-This is a very close translation of what I found on the draft, adding the interfaces and classes explicitly:
+This is a close translation of what I found on the draft, adding the interfaces and classes explicitly:
 
 ```kotlin
-// Not my proposal but a close translation of what I found on the draft
+// Not my proposal but a close Kotlin translation of what I found on the draft 
 interface Driver // (?)
 class TestCases(val forDiscounting: ForDiscounting): Driver // Primary Adapter
 class Console(val forDiscounting: ForDiscounting): Driver // Primary Adapter
@@ -44,10 +44,12 @@ class DiscounterAppConfig(useConsoleDriver: Boolean, useFileRateRepository: Bool
 }
 ```
 
-As you can see, no library, just code. Sure this implementation will have to be instantiated manually somewhere else, but it will be fine. We can now remove the Spring dependency and its overhead. 
-By the way, there is nothing preventing Java to use the same approach for the configuration (except it won't be as efficient as Kotlin in terms of LoC and readability).
+As you can see, no library, just code. Sure this implementation will have to be instantiated manually somewhere else, but it should be a straightforward process.
+By the way, there is nothing preventing Java to use the same approach for the configuration.
 
-_"But I see no functions and Spring wasn't creating fields"_, I hear you say, and you are right. By default, Spring provides beans as singletons this just means that it will call that method only once. I decided to use the fields for that reason and for simple (or well-designed) apps this pattern can scale well with a few tweaks.
+_"But I see no functions and Spring wasn't creating fields"_, I hear you say, and you are right. 
+By default, Spring provides beans as singletons this just means that it will call that method only once and share that instance to the code that needs it. 
+I decided to use the fields for that reason and for simple (or carefully designed) apps this pattern can scale well with few tweaks.
 
 Ok, onto Driver now (I am assuming this interface is not empty and defines functions to be implemented for Primary Adapters):
 
@@ -117,10 +119,18 @@ It is important to use the same function on both cases to avoid wiring the objec
 Now the new method may have fewer arguments than the underlying class. Only keep the arguments that are meant to be mocked in tests.
 The other arguments can be injected directly using the already created instances (such is the case of rateRepository)
 
+And this would be the usage in tests:
+
+```kotlin
+class DiscounterAppTest { // Primary Adapter (instantiated by testing framework)
+   val chaosService = createMock<ForChaos>()
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).newDiscounterApp(chaosService)
+}
+```
+
 And there you go, the main code will work the same and the tests will be able to mock the designated arguments using these functions.
 
 And that's all for now!
 
 PS: If you think that a single expression to instantiate a field is too limiting you can always wrap the code in a 
 [run](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/run.html) helper function `val x = run {...}` and use as many lines as you wish
-
