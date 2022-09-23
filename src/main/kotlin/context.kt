@@ -12,7 +12,7 @@ data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebP
 
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
     fun Appendable.h() = appendHTML(prettyPrint = prettyPrint)
-    fun Appendable.createH() = createHTML(prettyPrint = prettyPrint)
+    fun createH() = createHTML(prettyPrint = prettyPrint)
 }
 
 data class OutputContext(val resources: Resources)
