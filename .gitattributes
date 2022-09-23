@@ -2,4 +2,4 @@ static/assets/htmx/htmx.js linguist-vendored
 static/assets/prism.js linguist-vendored
 static/assets/prism.css linguist-vendored
 
-deploy/* linguist-generated
+deploy/** linguist-generated
