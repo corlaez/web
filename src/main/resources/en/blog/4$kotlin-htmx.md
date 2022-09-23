@@ -6,7 +6,7 @@ Corlaez article about an example implementation of htmx using Kotlin HTML DSL by
 2022-09-19
 
 
-Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well. You can follow along (or skip the article) with the code [here](https://github.com/corlaez/kotlin-htmx) (there is also a static generation example in the static branch there). Try the demo [here](https://corlaez.com/assets/htmx/index.html).
+Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well. You can follow along (or skip the article) with the code [here](https://github.com/corlaez/kotlin-htmx) (there is also a static generation example in the static branch there). Try the demo [here](https://corlaez.com/htmx.html).
 
 Kotlin as you may know is a modern JVM and (more recently) multiplatform language. It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.
 

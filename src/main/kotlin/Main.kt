@@ -3,6 +3,7 @@ import org.eclipse.jetty.http.HttpStatus
 import plugins.BlogPlugin
 import plugins.DevCss
 import plugins.DevPlugin
+import plugins.HtmxPlugin
 import plugins.IndieAuthPlugin
 import plugins.IndieWebRingPlugin
 import plugins.MdPlugin
@@ -19,6 +20,7 @@ fun main(args: Array<String>) {
     val webPlugins = listOf(
         BlogPlugin(),
         NotesPlugin(),
+        HtmxPlugin("htmx", "",),
         MdPlugin("board", "", { it.board }),
         MdPlugin("legal", "", { it.legal }, "legal privacy"),
         MdPlugin("hexagonal-proposal", "", { "Hexagonal" }, null),

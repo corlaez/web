@@ -154,11 +154,11 @@ private fun FOOTER.hCard() {
             +t.thanksForYourVisit
         }
         p(classes = "center") {
-            a(classes = "u-url") {href = "https://github.com/corlaez"; rel = "me authn ${C.EXTERNAL_RELS}"; +"Github";  }
+            a(classes = "u-url") {href = "https://github.com/corlaez";rel = "me authn ${C.EXTERNAL_RELS}"; +"Github";  }
             +" "
-            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; rel = "me ${C.EXTERNAL_RELS}"; +"LinkedIn" }
+            a(classes = "u-url")  {href = "https://linkedin.com/in/corlaez";rel = "me ${C.EXTERNAL_RELS}"; +"LinkedIn" }
             +" "
-            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; rel = "me ${C.EXTERNAL_RELS}"; +"Twitter" }
+            a(classes = "u-url")  {href = "https://twitter.com/corlaez";rel = "me ${C.EXTERNAL_RELS}"; +"Twitter" }
         }
     }
 }

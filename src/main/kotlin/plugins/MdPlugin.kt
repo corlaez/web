@@ -14,7 +14,7 @@ import kotlinx.html.a
 import kotlinx.html.classes
 import templates.asHtmlPage
 
-class MdPlugin(
+open class MdPlugin(
     private val name: String,
     private val pathNamespace: String,
     private val localizedName: (LocalizedText) -> String,
