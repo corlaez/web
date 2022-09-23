@@ -31,18 +31,16 @@ class NotesPlugin(override val enabled: Boolean = true) : WebPlugin {
         }
     }
 
-    context(EnvContext, LanguageContext, PageContext)
-    override fun navTags(nav: NAV) {
-        with(nav) {
-            a {
-                if (path.contains("note")) {
-                    classes = classes + "selected"
-                    if (isIndex) classes = classes + "u-url"
-                }
-                href = "${language.langPath()}note"
-                +t.notes
+    context(EnvContext, LanguageContext, PageContext, NAV)
+    override fun navTags() {
+        this@NAV.a {
+            if (path.contains("note")) {
+                classes = classes + "selected"
+                if (isIndex) classes = classes + "u-url"
             }
-            +" "
+            href = "${language.langPath()}note"
+            +t.notes
         }
+        +" "
     }
 }

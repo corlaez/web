@@ -1,4 +1,5 @@
 import kotlinx.html.stream.appendHTML
+import kotlinx.html.stream.createHTML
 
 data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebPlugin>) {
     val domain: String = when(arg.isPrd()) {
@@ -11,6 +12,7 @@ data class EnvContext(val arg: Args, val port: String, val webPlugins: List<WebP
 
     fun mdToHtml(inputMarkdown: String) = markdownSupport.mdToHtml(inputMarkdown)
     fun Appendable.h() = appendHTML(prettyPrint = prettyPrint)
+    fun Appendable.createH() = createHTML(prettyPrint = prettyPrint)
 }
 
 data class OutputContext(val resources: Resources)

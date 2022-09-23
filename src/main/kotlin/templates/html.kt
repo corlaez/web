@@ -6,7 +6,6 @@ import OutputContext
 import Page
 import PageContext
 import kotlinx.html.*
-import notes.NoteResource
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
 fun asHtmlPage(mainClasses: String, contentHtml: String): Page {
@@ -15,13 +14,18 @@ fun asHtmlPage(mainClasses: String, contentHtml: String): Page {
         h().html {
             lang = language.toString()
             head { headTags() }
-            body {
-                main(classes = mainClasses) {
-                    navBar()
-                    heroBannerAndMain(contentHtml)
-                    hCard()
+            body(classes = mainClasses) {
+                nav { navTags() }
+                if (t.heroTitle != null) header { headerTags() }
+                main(classes = "content${if(!isIndex) " e-content" else ""}") {
+                    unsafe {
+                        +contentHtml
+                    }
                 }
-                webPlugins.forEach{ it.bodyTags(this@body) }
+                footer {
+                    hCard()
+                    webPlugins.forEach{ it.footerTags() }
+                }
             }
         }
     }
@@ -29,32 +33,28 @@ fun asHtmlPage(mainClasses: String, contentHtml: String): Page {
 }
 
 context(EnvContext, LanguageContext, PageContext)
-private fun MAIN.navBar() {
-    nav {
-        webPlugins.forEach { it.navTags(this) }
-        if (language != Language.es) {
-            +" "
-            a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }
-        }
-        if (language != Language.en) {
-            +" "
-            a { href = "${Language.en.langPath()}${path}"; +"English Version" }
-        }
+private fun NAV.navTags() {
+    webPlugins.forEach { it.navTags() }
+    if (language != Language.es) {
+        +" "
+        a { href = "${Language.es.langPath()}${path}"; +"Versión en Español" }
+    }
+    if (language != Language.en) {
+        +" "
+        a { href = "${Language.en.langPath()}${path}"; +"English Version" }
     }
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-private fun MAIN.heroBannerAndMain(contentHtml: String) {
-    if(t.heroTitle != null) {
-        header(classes = "fire") {
-            a(classes = "u-url") {
-                href = pageUrl
-                h1(classes = "p-name") {
-                    +t.heroTitle!!
-                }
+private fun HEADER.headerTags() {
+    div(classes = "fire") {
+        a(classes = "u-url") {
+            href = pageUrl
+            h1(classes = "p-name") {
+                +t.heroTitle!!
             }
-            if (t.heroDescription.isNotBlank()) p { +t.heroDescription }
         }
+        if (t.heroDescription.isNotBlank()) p { +t.heroDescription }
     }
     div(classes = "center") {
         audio {
@@ -67,11 +67,6 @@ private fun MAIN.heroBannerAndMain(contentHtml: String) {
             }
         }
         noScript { p { +t.noScriptMessage } }
-    }
-    div(classes = "content${if(!isIndex) " e-content" else ""}") {
-        unsafe {
-            +contentHtml
-        }
     }
 }
 
@@ -130,11 +125,11 @@ private fun HEAD.headTags() {
         unsafe { +"""if('serviceWorker' in navigator){
             |navigator.serviceWorker.register("${C.SERVICE_WORKER_JS_PATH}")}""".trimMargin() }
     }
-    webPlugins.forEach{ it.headTags(this@headTags) }
+    webPlugins.forEach{ it.headTags() }
 }
 
 context(EnvContext, OutputContext, LanguageContext, PageContext)
-private fun MAIN.hCard() {
+private fun FOOTER.hCard() {
     // Based on http://microformats.org/wiki/representative-h-card-authoring
     div(classes = "h-card p-author")  {
         p(classes = "center signature") {
@@ -159,11 +154,11 @@ private fun MAIN.hCard() {
             +t.thanksForYourVisit
         }
         p(classes = "center") {
-            a(classes = "u-url") {href = "https://github.com/corlaez"; rel = "me authn"; +"Github";  }
+            a(classes = "u-url") {href = "https://github.com/corlaez"; rel = "me authn ${C.EXTERNAL_RELS}"; +"Github";  }
             +" "
-            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; rel = "me"; +"LinkedIn" }
+            a(classes = "u-url")  { href = "https://linkedin.com/in/corlaez"; rel = "me ${C.EXTERNAL_RELS}"; +"LinkedIn" }
             +" "
-            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; rel = "me"; +"Twitter" }
+            a(classes = "u-url")  { href = "https://twitter.com/corlaez"; rel = "me ${C.EXTERNAL_RELS}"; +"Twitter" }
         }
     }
 }

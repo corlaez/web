@@ -27,7 +27,10 @@ class MdPlugin(
             for (language in Language.values()) {
                 if (pathNamespace.isNotBlank()) createDirectory("deploy/output${language.langPath()}$pathNamespace")
                 with(LanguageContext(language)) {
-                    with(PageContext("$pathNamespace$name.html", pageOgType = "website", t.notesIndexTitlesAndDescriptions)) {
+                    with(PageContext(
+                        "$pathNamespace$name.html",
+                        pageOgType = "website",
+                        t.notesIndexTitlesAndDescriptions)) {
                         val resources = loadArticles("/${language}/$name")// No pathNamespace here
                         val resource = resources.first()
                         add(asHtmlPage("", mdToHtml(resource.unparsedContent)))
@@ -37,10 +40,10 @@ class MdPlugin(
         }
     }
 
-    context(EnvContext, LanguageContext, PageContext)
-    override fun navTags(nav: NAV) {
-        if(navRel != null) with(nav) {
-            a {
+    context(EnvContext, LanguageContext, PageContext, NAV)
+    override fun navTags() {
+        if(navRel != null) {
+            this@NAV.a {
                 if (pageUrl.contains("$pathNamespace$name.html")) {
                     classes = classes + "selected u-url"
                 }

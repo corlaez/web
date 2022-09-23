@@ -10,10 +10,8 @@ import kotlinx.html.link
 
 class MicrosubPlugin(override val enabled: Boolean = true) : WebPlugin {
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) {
-        with(head) {
-            link { rel = "microsub"; href = "https://aperture.p3k.io/microsub/781" }
-        }
+    context(EnvContext, OutputContext, LanguageContext, PageContext, HEAD)
+    override fun headTags() {
+        this@HEAD.link { rel = "microsub"; href = "https://aperture.p3k.io/microsub/781" }
     }
 }

@@ -31,16 +31,16 @@ class BlogPlugin(override val enabled: Boolean = true) : WebPlugin {
         }
     }
 
-    context(EnvContext, LanguageContext, PageContext)
-    override fun navTags(nav: NAV) {
-        with(nav) {
+    context(EnvContext, LanguageContext, PageContext, NAV)
+    override fun navTags() {
+        with(this@NAV) {
             a {
                 if (path == "" || path.contains("blog")) {
                     classes = classes + "selected"
                     if (isIndex) classes = classes + "u-url"
                 }
                 href = language.langPath()
-                +"Blog"
+            +"Blog"
             }
             +" "
         }

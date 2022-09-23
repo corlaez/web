@@ -6,6 +6,7 @@ import OutputContext
 import PageContext
 import WebPlugin
 import kotlinx.html.HEAD
+import kotlinx.html.link
 import kotlinx.html.script
 import kotlinx.html.style
 import kotlinx.html.unsafe
@@ -18,10 +19,10 @@ enum class DevCss {
 
 class DevPlugin(private val devCss: DevCss = DevCss.NONE, override val enabled: Boolean = true) : WebPlugin {
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) {
+    context(EnvContext, OutputContext, LanguageContext, PageContext, HEAD)
+    override fun headTags() {
         if (arg.isDev()){// Check here because the EnvContext may be borrowed from the server
-            head.script {
+            this@HEAD.script {
                 async = true
                 defer = true
                 unsafe {
@@ -33,7 +34,7 @@ class DevPlugin(private val devCss: DevCss = DevCss.NONE, override val enabled: 
                 if (devCss == DevCss.BORDER) {
                     css = css.lines().filter { !it.contains("background") }.joinToString("").minifyCss()
                 }
-                head.style {
+                this@HEAD.style {
                     unsafe {
                         +css
                     }

@@ -34,17 +34,15 @@ fun MutableList<Page>.addBlogPages(articles: List<NoteResource>) {
     }
 
     val mergedArticles = contents.joinToString("") { content ->
-        buildString {
-            h().div(classes = "h-entry") {
-                div(classes = "e-content") {
-                    unsafe {
-                        +content
-                    }
+        createH().div(classes = "h-entry") {
+            div(classes = "e-content") {
+                unsafe {
+                    +content
                 }
-                hr()
-                br()
-                br()
             }
+            hr()
+            br()
+            br()
         }
     }
 

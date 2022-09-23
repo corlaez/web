@@ -8,7 +8,7 @@ import PageContext
 import WebPlugin
 import com.vladsch.flexmark.ext.gitlab.GitLabExtension
 import com.vladsch.flexmark.util.misc.Extension
-import kotlinx.html.BODY
+import kotlinx.html.FOOTER
 import kotlinx.html.script
 
 class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
@@ -21,16 +21,16 @@ class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
     }
 
     // loads mermaid js
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun bodyTags(body: BODY) {
+    context(EnvContext, OutputContext, LanguageContext, PageContext, FOOTER)
+    override fun footerTags() {
         // todo how to lazy load this only when needed
-        body.script { +(
+        this@FOOTER.script { +(
             "window.onload=function(){" +
             "mermaid.initialize({" +
             "'theme':'dark','background':'#111111'" +
             "});" +
             "};")
         }
-        body.script { defer = true; src ="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" }
+        this@FOOTER.script { defer = true; src ="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" }
     }
 }

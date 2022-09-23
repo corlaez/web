@@ -10,9 +10,9 @@ import kotlinx.html.link
 
 class WebMentionPlugin(override val enabled: Boolean = true) : WebPlugin {
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    override fun headTags(head: HEAD) {
-        head.link { rel="webmention"; href="https://webmention.io/corlaez.com/webmention" }
-        head.link { rel="pingback"; href="https://webmention.io/corlaez.com/xmlrpc" }
+    context(EnvContext, OutputContext, LanguageContext, PageContext, HEAD)
+    override fun headTags() {
+        this@HEAD.link { rel="webmention"; href="https://webmention.io/corlaez.com/webmention" }
+        this@HEAD.link { rel="pingback"; href="https://webmention.io/corlaez.com/xmlrpc" }
     }
 }

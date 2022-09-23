@@ -1,5 +1,5 @@
 import com.vladsch.flexmark.util.misc.Extension
-import kotlinx.html.BODY
+import kotlinx.html.FOOTER
 import kotlinx.html.HEAD
 import kotlinx.html.NAV
 
@@ -11,12 +11,12 @@ interface WebPlugin {
     context(EnvContext, OutputContext)
     fun pages(): List<Page> = emptyList()
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    fun headTags(head: HEAD) {}
+    context(EnvContext, OutputContext, LanguageContext, PageContext, HEAD)
+    fun headTags() {}
 
-    context(EnvContext, OutputContext, LanguageContext, PageContext)
-    fun bodyTags(body: BODY) {}
+    context(EnvContext, OutputContext, LanguageContext, PageContext, FOOTER)
+    fun footerTags() {}
 
-    context(EnvContext, LanguageContext, PageContext)
-    fun navTags(nav: NAV) {}
+    context(EnvContext, LanguageContext, PageContext, NAV)
+    fun navTags() {}
 }
