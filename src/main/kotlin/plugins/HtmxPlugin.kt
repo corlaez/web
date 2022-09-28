@@ -18,8 +18,12 @@ class HtmxPlugin(
     private val friends = listOf("Nicholas", "Joseph", "Caesar")
     private val characteristic = listOf("swimmer", "runner", "debater")
 
+    companion object {
+        const val activePluginName = "htmx"
+    }
+
     context(EnvContext, OutputContext, LanguageContext, PageContext, HEAD) override fun headTags() {
-        this@HEAD.script { src = "/assets/htmx/htmx.js" }
+        if(activePlugin.contains(activePluginName)) this@HEAD.script { defer = true; src = "/assets/htmx/htmx.js" }
     }
 
     context(EnvContext, OutputContext)
@@ -32,7 +36,9 @@ class HtmxPlugin(
                     with(PageContext(
                         "$pathNamespace$name.html",
                         pageOgType = "website",
-                        t.notesIndexTitlesAndDescriptions)) {
+                        t.notesIndexTitlesAndDescriptions,
+                        listOf(activePluginName),
+                    )) {
                         add(asHtmlPage("", friendsIndex(friends)))
                     }
                     friends.zip(characteristic).forEach { (f, c) ->

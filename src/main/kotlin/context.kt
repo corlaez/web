@@ -26,6 +26,7 @@ class PageContext(
     val fileName: String,
     val pageOgType: String,
     private val titlesAndDescriptions: TitlesAndDescriptions,
+    val activePlugin: List<String> = emptyList()
 ) {
     val isIndex = fileName.split("/").last() == "index.html"
     val path = if (isIndex) fileName.split("/").dropLast(1).joinToString("/")  else fileName

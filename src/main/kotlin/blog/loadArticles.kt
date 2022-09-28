@@ -15,6 +15,7 @@ import kotlinx.html.summary
 import kotlinx.html.unsafe
 import listFilenamesInDirectory
 import loadResourceAsString
+import plugins.MermaidPlugin
 import templates.asHtmlPage
 
 fun loadArticles(folder: String): List<ArticleResource> {
@@ -51,14 +52,24 @@ fun MutableList<Page>.addBlogPages(articles: List<ArticleResource>) {
 
     }
 
-    add(with(PageContext("index.html", pageOgType = "website", t.blogIndexTitlesAndDescriptions)) {
+    add(with(PageContext(
+        "index.html",
+        pageOgType = "website",
+        t.blogIndexTitlesAndDescriptions,
+        listOf(MermaidPlugin.activePluginName+"x")
+    )) {
         asHtmlPage("h-feed", mergedArticles)
     })
 
     articles.forEach { articleResource ->
         val blogId = articleResource.blogId
         val titlesAndDescriptions = articleResource.titlesAndDescriptions
-        val articlePage = with(PageContext("blog/$blogId", pageOgType = "article", titlesAndDescriptions)) {
+        val articlePage = with(PageContext(
+            "blog/$blogId",
+            pageOgType = "article",
+            titlesAndDescriptions,
+            listOf(MermaidPlugin.activePluginName+"x")// TODO md File -> article resource -> list
+        )) {
             asHtmlPage("h-entry", contentWithPermalink(articleResource))
         }
         add(articlePage)

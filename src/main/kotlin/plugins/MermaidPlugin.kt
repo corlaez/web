@@ -12,6 +12,11 @@ import kotlinx.html.FOOTER
 import kotlinx.html.script
 
 class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
+
+    companion object {
+        const val activePluginName = "htmx"
+    }
+
     // alters generation of mermaid code blocks to be a div with class mermaid as the js expects
     override fun flexmarkExtensions(): Collection<Extension> = listOf(GitLabExtension.create())
 
@@ -23,14 +28,15 @@ class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
     // loads mermaid js
     context(EnvContext, OutputContext, LanguageContext, PageContext, FOOTER)
     override fun footerTags() {
-        // todo how to lazy load this only when needed
-        this@FOOTER.script { +(
-            "window.onload=function(){" +
-            "mermaid.initialize({" +
-            "'theme':'dark','background':'#111111'" +
-            "});" +
-            "};")
+        if(activePlugin.contains(activePluginName)) {
+            this@FOOTER.script { +(
+                    "window.onload=function(){" +
+                            "mermaid.initialize({" +
+                            "'theme':'dark','background':'#111111'" +
+                            "});" +
+                            "};")
+            }
+            this@FOOTER.script { defer = true; src ="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" }
         }
-        this@FOOTER.script { defer = true; src ="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" }
     }
 }

@@ -30,7 +30,8 @@ fun main(args: Array<String>) {
         IndieWebRingPlugin(),
         IndieAuthPlugin(),
         MicrosubPlugin(),
-        ScorePlugin(), PrismPlugin()
+        ScorePlugin(false),
+        PrismPlugin()
     ).filter { it.enabled }
     if (arg.isRegenerate()) {
         val serverArg = getRequestArg(port)
