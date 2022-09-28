@@ -1,34 +1,49 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html><html lang="en">
   <head>
     <meta charset="utf-8">
     <link rel="preload" href="/assets/dark-red.webp" as="image">
-    <link rel="canonical" href="https://corlaez.com/es/note/1.html">
-    <link rel="alternate" hreflang="en" href="https://corlaez.com/note/1.html">
+    <link rel="canonical" href="https://corlaez.com/note/5.html">
+    <link rel="alternate" hreflang="es" href="https://corlaez.com/es/note/5.html">
     <link rel="stylesheet" href="/styles.css">
     <meta name="viewport" content="user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="robots" content="index, follow">
-    <title>Armando Cordova: Primer apunte personal: Norm se nos fue </title>
-    <meta name="description" content="Primer apunte personal: Norm se nos fue demasiado pronto.
+    <title>Armando Cordova: ```kotlin
+class A;class B;fun B.f(){};co</title>
+    <meta name="description" content="```kotlin
+class A;class B;fun B.f(){};context(A, B)fun t(){f()}
+```
+
+Bug in experimental Kotlin: [YouTrack ticket](https://youtrack.jetbrains.com/issue/KT-54139/k2-fir2ir-cant-find-an-extension-function-of-a-context-reproduction-available) and a explanation about [FIR (Frontend IR)](https://github.com/JetBrains/kotlin/blob/master/docs/fir/fir-basics.md)
 ">
     <meta name="theme-color" content="#A10000">
     <meta name="author" content="Armando Cordova">
-    <meta property="og:title" content="Armando Cordova: Primer apunte personal: Norm se nos fue ">
-    <meta property="og:description" content="Primer apunte personal: Norm se nos fue demasiado pronto.
+    <meta property="og:title" content="Armando Cordova: ```kotlin
+class A;class B;fun B.f(){};co">
+    <meta property="og:description" content="```kotlin
+class A;class B;fun B.f(){};context(A, B)fun t(){f()}
+```
+
+Bug in experimental Kotlin: [YouTrack ticket](https://youtrack.jetbrains.com/issue/KT-54139/k2-fir2ir-cant-find-an-extension-function-of-a-context-reproduction-available) and a explanation about [FIR (Frontend IR)](https://github.com/JetBrains/kotlin/blob/master/docs/fir/fir-basics.md)
 ">
     <meta property="og:url" content="https://corlaez.com">
     <meta property="og:type" content="article">
     <meta property="og:article:author" content="Armando Cordova">
     <meta property="og:image" content="/assets/banner.png">
-    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Corlaez Blog">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="/assets/banner.png">
-    <meta name="twitter:image:alt" content="Logo con el texto A R">
+    <meta name="twitter:image:alt" content="Logo that reads A R">
     <meta name="twitter:creator" content="@corlaez">
     <meta name="twitter:site" content="@corlaez">
     <meta name="twitter:site_name" content="@corlaez">
-    <meta name="twitter:title" content="Armando Cordova: Primer apunte personal: Norm se nos fue ">
-    <meta name="twitter:description" content="Primer apunte personal: Norm se nos fue demasiado pronto.
+    <meta name="twitter:title" content="Armando Cordova: ```kotlin
+class A;class B;fun B.f(){};co">
+    <meta name="twitter:description" content="```kotlin
+class A;class B;fun B.f(){};context(A, B)fun t(){f()}
+```
+
+Bug in experimental Kotlin: [YouTrack ticket](https://youtrack.jetbrains.com/issue/KT-54139/k2-fir2ir-cant-find-an-extension-function-of-a-context-reproduction-available) and a explanation about [FIR (Frontend IR)](https://github.com/JetBrains/kotlin/blob/master/docs/fir/fir-basics.md)
 ">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><meta name="msapplication-TileColor" content="#A10000"><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">    <script>if('serviceWorker' in navigator){
 navigator.serviceWorker.register("/serviceWorker.js")}</script>
@@ -40,13 +55,14 @@ navigator.serviceWorker.register("/serviceWorker.js")}</script>
     <link rel="stylesheet" href="/assets/prism.css">
   </head>
   <body class="h-entry">
-    <nav><a href="/es/">Blog</a> <a class="selected" href="/es/note">Apuntes</a> <a href="/es/board.html" rel="">Pizarra</a> <a href="/es/legal.html" rel="legal privacy">Legal</a>  <a href="/note/1.html">English Version</a></nav>
-    <main class="content e-content"><p><a class="u-url" href="https://corlaez.com/es/note/1.html"><em><time class="dt-published" datetime="2022-09-11T00:00:00">11 sept 2022</time></em></a></p>
-<p>Primer apunte personal: Norm se nos fue demasiado pronto.</p></main>
+    <nav><a href="/">Blog</a> <a class="selected" href="/note">Notes</a> <a href="/board.html" rel="">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/note/5.html">Versión en Español</a></nav>
+    <main class="content e-content"><p><a class="u-url" href="https://corlaez.com/note/5.html"><em><time class="dt-published" datetime="2022-09-22T00:00:00">Sep 22, 2022</time></em></a></p>
+<pre><code class="language-kotlin">class A;class B;fun B.f(){};context(A, B)fun t(){f()}
+</code></pre><p>Bug in experimental Kotlin: <a href="https://youtrack.jetbrains.com/issue/KT-54139/k2-fir2ir-cant-find-an-extension-function-of-a-context-reproduction-available">YouTrack ticket</a> and a explanation about <a href="https://github.com/JetBrains/kotlin/blob/master/docs/fir/fir-basics.md">FIR (Frontend IR)</a></p></main>
     <footer>
       <div class="h-card p-author">
-        <p class="center signature"><img class="u-photo" alt="Logo con el texto A R" loading="lazy" src="/assets/signature-white-210.png" width="210" height="210"></p>
-        <p><a class="u-url u-uid" href="https://corlaez.com">corlaez.com</a> llega a usted gracias a <span class="p-name">Armando Cordova</span>. Gracias por la visita</p>
+        <p class="center signature"><img class="u-photo" alt="Logo that reads A R" loading="lazy" src="/assets/signature-white-210.png" width="210" height="210"></p>
+        <p><a class="u-url u-uid" href="https://corlaez.com">corlaez.com</a> has been brought to you by <span class="p-name">Armando Cordova</span>. Thanks for your visit.</p>
         <p class="center"><a class="u-url" href="https://github.com/corlaez" rel="me authn nofollow noreferrer noopener">Github</a> <a class="u-url" href="https://linkedin.com/in/corlaez" rel="me nofollow noreferrer noopener">LinkedIn</a> <a class="u-url" href="https://twitter.com/corlaez" rel="me nofollow noreferrer noopener">Twitter</a></p>
       </div>
       <p class="center"><a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous" rel="nofollow noreferrer noopener">←</a> An <a class="u-url" href="https://xn--sr8hvo.ws" rel="nofollow noreferrer noopener">IndieWeb Webring</a> 🕸💍 <a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next" rel="nofollow noreferrer noopener">→</a></p>

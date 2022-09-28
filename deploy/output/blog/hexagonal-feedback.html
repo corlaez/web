@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preload" href="/assets/dark-red.webp" as="image">
+    <link rel="canonical" href="https://corlaez.com/blog/hexagonal-feedback.html">
+    <link rel="alternate" hreflang="es" href="https://corlaez.com/es/blog/hexagonal-feedback.html">
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>Hexagonal Feedback</title>
+    <meta name="description" content="Corlaez article about feedback for a Hexagonal Architecture draft by Armando Cordova.">
+    <meta name="theme-color" content="#A10000">
+    <meta name="author" content="Armando Cordova">
+    <meta property="og:title" content="Hexagonal Feedback">
+    <meta property="og:description" content="Corlaez article about feedback for a Hexagonal Architecture draft by Armando Cordova.">
+    <meta property="og:url" content="https://corlaez.com">
+    <meta property="og:type" content="article">
+    <meta property="og:article:author" content="Armando Cordova">
+    <meta property="og:image" content="/assets/banner.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Corlaez Blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/assets/banner.png">
+    <meta name="twitter:image:alt" content="Logo that reads A R">
+    <meta name="twitter:creator" content="@corlaez">
+    <meta name="twitter:site" content="@corlaez">
+    <meta name="twitter:site_name" content="@corlaez">
+    <meta name="twitter:title" content="Hexagonal Feedback">
+    <meta name="twitter:description" content="Corlaez article about feedback for a Hexagonal Architecture draft by Armando Cordova.">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><meta name="msapplication-TileColor" content="#A10000"><meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">    <script>if('serviceWorker' in navigator){
+navigator.serviceWorker.register("/serviceWorker.js")}</script>
+    <link rel="webmention" href="https://webmention.io/corlaez.com/webmention">
+    <link rel="pingback" href="https://webmention.io/corlaez.com/xmlrpc">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/781">
+    <link rel="stylesheet" href="/assets/prism.css">
+  </head>
+  <body class="h-entry">
+    <nav><a class="selected" href="/">Blog</a> <a href="/note">Notes</a> <a href="/board.html" rel="">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/blog/hexagonal-feedback.html">Versión en Español</a></nav>
+    <header>
+      <div class="fire"><a class="u-url" href="https://corlaez.com/blog/hexagonal-feedback.html">
+          <h1 class="p-name">Hexagonal Feedback</h1>
+        </a></div>
+      <div class="center">
+        <audio preload="none" controls="controls" loop="loop"><source src="/assets/bec.mp3" type="audio/mpeg"></audio>
+        <noscript>
+          <p>Hey you, browsing with JavaScript off. You are welcomed! This page does not require JS to work properly :)</p>
+        </noscript>
+      </div>
+    </header>
+    <main class="content e-content"><p><a class="u-url" href="https://corlaez.com/blog/hexagonal-feedback.html"><em><time class="dt-published" datetime="2022-09-20T00:00:00">Sep 20, 2022</time> (Last update: <time class="dt-updated" datetime="2022-09-20T00:00:00">Sep 20, 2022</time>)</em></a></p>
+<p>Recently, Alistair Cockburn has been asking for feedback and making efforts to consolidate talks, documents and the concept of Hexagonal Architecture.</p><pre><code class="language-text">// https://alistaircockburn.com/Articles/Component-Strategy-generalizes-Ports-Adapters#wbb1
+I am drafting a new pattern, Component + Strategy, which is the more general form of Ports &amp; Adapters (Hexagonal Architecture).
+Just now, I'm looking for comments, corrections, improvements and general feedback.
+</code></pre><p>In the <a href="https://alistaircockburn.com/Component%20plus%20strategy.pdf">draft</a> on page 16 and 17 there is a code example of a configuration written in Java with Spring.</p><p>While Spring is very popular for Java programmers I think it is important to show a configuration written with no libraries (or reflection) and why not in a different language.</p><p>I proposed translating the code to Kotlin as it was, but couldn't wrap my head around the Driver interface. I will explain why I think it is problematic and submit it as feedback, along with my alternative configuration.</p><p>This is a close translation of what I found on the draft, adding the interfaces and classes explicitly:</p><pre><code class="language-kotlin">// Not my proposal but a close Kotlin translation of what I found on the draft 
+interface Driver // (?)
+class TestCases(val forDiscounting: ForDiscounting): Driver // Primary Adapter
+class Console(val forDiscounting: ForDiscounting): Driver // Primary Adapter
+interface ForDiscounting // Primary Port
+class DiscounterApp(val rateRepository: ForObtainingRates): ForDiscounting // App
+interface ForObtainingRates // Secondary Port
+class StubRateRepository: ForObtainingRates // Secondary Adapter
+class FileRateRepository: ForObtainingRates // Secondary Adapter
+
+class DiscounterAppConfig(useConsoleDriver: Boolean, useFileRateRepository: Boolean) {
+    val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
+    val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
+    val driver: Driver =
+        if(useConsoleDriver) Console(discounterApp)
+        else TestCases(discounterApp)
+}
+</code></pre><p>As you can see, no library, just code. Sure this implementation will have to be instantiated manually somewhere else, but it should be a straightforward process.
+By the way, there is nothing preventing Java to use the same approach for the configuration.</p><p><em>&quot;But I see no functions and Spring wasn't creating fields&quot;</em>, I hear you say, and you are right.
+By default, Spring provides beans as singletons this just means that it will call that method only once and share that instance to the code that needs it.
+I decided to use the fields for that reason and for simple (or carefully designed) apps this pattern can scale well with few tweaks.</p><p>Ok, onto Driver now (I am assuming this interface is not empty and defines functions to be implemented for Primary Adapters):</p><ol><li>This interface has no name on Hexagonal Architecture, in clear contrast with all other classes and interfaces. It is effectively used as a Primary Adapter Interface</li><li>Primary Adapters are supposed to be technology dependent their API may need to be adjusted to satisfy the libraries, frameworks and protocols they work with</li><li>Primary Adapters depend on the application, but shouldn't &quot;wear a uniform&quot; to align with all others. Let the Primary Adapter implement what it wants and name it as it wishes
+<ul><li>Just think about TestCases, realistically tests have other goals and naming requirements than a Console Primary Adapter</li></ul></li><li>Finally, not all Primary Adapters fit well into the configuration. TestCases in my experience works best depending on the configuration and being instantiated by a framework</li></ol><p>With that I would leave the new example configuration as:</p><pre><code class="language-kotlin">// Proposal also found at: https://corlaez.com/hexagonal-proposal.html
+class TestCases { // Primary Adapter (instantiated by testing framework)
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).discounterApp
+}
+class Console(val forDiscounting: ForDiscounting) // Primary Adapter
+interface ForDiscounting // Primary Port
+class DiscounterApp(val rateRepository: ForObtainingRates): ForDiscounting // App
+interface ForObtainingRates // Secondary Port
+class StubRateRepository: ForObtainingRates // Secondary Adapter
+class FileRateRepository: ForObtainingRates // Secondary Adapter
+
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
+    private val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
+    val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
+    val discounterConsole: Console = Console(discounterApp)
+}
+</code></pre><p>One extra thing I have added is the <code>private</code> for the repository (or Secondary Adapters in General). The idea being that
+other classes should only use the discounterApp or discounterConsole and not depend on or use the Secondary Adapters, not even tests.</p><p>I am happy that Alistair is still working on promoting Hexagonal Architecture and asking feedback from the community.
+If you are reading this, Alistair, I want to say thank you from the heart because your writings have influenced my growth in this industry.</p><p>... now an extra section that I won't include in the proposal, but I find very useful:</p><p>I love using mocks on my tests. With a small change our configuration can be used with mocking libraries!</p><pre><code class="language-kotlin">// Not included in proposal. A recommendation that works with mocking libraries
+// Adding an App with a Secondary Port meant to be mocked
+class DiscounterApp2(val rateRepository: ForObtainingRates, val chaosService: ForChaos): ForDiscounting // App
+interface ForChaos // Secondary Port
+class RealChaos: ForChaos // Secondary Adapter
+
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
+   private val chaosService: ForChaos = RealChaos()
+   private val rateRepository: ForObtainingRates =
+      if(useFileRateRepository) FileRateRepository()
+      else StubRateRepository()
+   val discounterApp: ForDiscounting = newDiscounterApp(chaosService)// Same function used here
+   val discounterConsole: Console = newDiscounterConsole(discounterApp)// Same function used here
+
+   // Functions used by tests, the parameters allow mocks to be injected.
+   fun newDiscounterApp(chaosService: ForChaos) = DiscounterApp2(rateRepository, chaosService)
+   fun newDiscounterConsole(discounterApp: ForDiscounting) = Console(discounterApp)
+}
+</code></pre><p>First we create functions to will instantiate our test subjects (app and Primary Adapters). This will also be used to instantiate their real counterparts.
+It is important to use the same function on both cases to avoid wiring the objects with a different logic.</p><p>Now the new method may have fewer arguments than the underlying class. Only keep the arguments that are meant to be mocked in tests.
+The other arguments can be injected directly using the already created instances (such is the case of rateRepository)</p><p>And this would be the usage in tests:</p><pre><code class="language-kotlin">class DiscounterAppTest { // Primary Adapter (instantiated by testing framework)
+   val chaosService = createMock&lt;ForChaos&gt;()
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).newDiscounterApp(chaosService)
+}
+</code></pre><p>And there you go, the main code will work the same and the tests will be able to mock the designated arguments using these functions.</p><p>And that's all for now!</p><p>PS: If you think that a single expression to instantiate a field is too limiting you can always wrap the code in a
+<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/run.html">run</a> helper function <code>val x = run {...}</code> and use as many lines as you wish</p></main>
+    <footer>
+      <div class="h-card p-author">
+        <p class="center signature"><img class="u-photo" alt="Logo that reads A R" loading="lazy" src="/assets/signature-white-210.png" width="210" height="210"></p>
+        <p><a class="u-url u-uid" href="https://corlaez.com">corlaez.com</a> has been brought to you by <span class="p-name">Armando Cordova</span>. Thanks for your visit.</p>
+        <p class="center"><a class="u-url" href="https://github.com/corlaez" rel="me authn nofollow noreferrer noopener">Github</a> <a class="u-url" href="https://linkedin.com/in/corlaez" rel="me nofollow noreferrer noopener">LinkedIn</a> <a class="u-url" href="https://twitter.com/corlaez" rel="me nofollow noreferrer noopener">Twitter</a></p>
+      </div>
+      <p class="center"><a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous" rel="nofollow noreferrer noopener">←</a> An <a class="u-url" href="https://xn--sr8hvo.ws" rel="nofollow noreferrer noopener">IndieWeb Webring</a> 🕸💍 <a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next" rel="nofollow noreferrer noopener">→</a></p>
+      <script src="/assets/prism.js"></script>
+    </footer>
+  </body>
+</html>
