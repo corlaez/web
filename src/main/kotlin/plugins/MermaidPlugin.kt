@@ -8,8 +8,7 @@ import PageContext
 import WebPlugin
 import com.vladsch.flexmark.ext.gitlab.GitLabExtension
 import com.vladsch.flexmark.util.misc.Extension
-import kotlinx.html.FOOTER
-import kotlinx.html.script
+import kotlinx.html.*
 
 class MermaidPlugin(override val enabled: Boolean = true) : WebPlugin {
 

@@ -9,9 +9,7 @@ import WebPlugin
 import notes.addBlogPages
 import notes.loadArticles
 import createDirectory
-import kotlinx.html.NAV
-import kotlinx.html.a
-import kotlinx.html.classes
+import kotlinx.html.*
 
 class NotesPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)

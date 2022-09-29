@@ -5,9 +5,7 @@ import LanguageContext
 import OutputContext
 import PageContext
 import WebPlugin
-import kotlinx.html.FOOTER
-import kotlinx.html.a
-import kotlinx.html.p
+import kotlinx.html.*
 
 class IndieWebRingPlugin(override val enabled: Boolean = true) : WebPlugin {
 

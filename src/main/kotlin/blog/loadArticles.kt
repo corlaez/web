@@ -5,14 +5,7 @@ import LanguageContext
 import OutputContext
 import Page
 import PageContext
-import kotlinx.html.a
-import kotlinx.html.br
-import kotlinx.html.details
-import kotlinx.html.div
-import kotlinx.html.h2
-import kotlinx.html.hr
-import kotlinx.html.summary
-import kotlinx.html.unsafe
+import kotlinx.html.*
 import listFilenamesInDirectory
 import loadResourceAsString
 import plugins.MermaidPlugin

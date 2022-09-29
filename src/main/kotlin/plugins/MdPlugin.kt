@@ -9,9 +9,7 @@ import PageContext
 import WebPlugin
 import createDirectory
 import notes.loadArticles
-import kotlinx.html.NAV
-import kotlinx.html.a
-import kotlinx.html.classes
+import kotlinx.html.*
 import templates.asHtmlPage
 
 open class MdPlugin(

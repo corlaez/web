@@ -5,10 +5,7 @@ import LanguageContext
 import OutputContext
 import Page
 import PageContext
-import kotlinx.html.br
-import kotlinx.html.div
-import kotlinx.html.hr
-import kotlinx.html.unsafe
+import kotlinx.html.*
 import listFilenamesInDirectory
 import loadResourceAsString
 import templates.asHtmlPage

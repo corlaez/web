@@ -5,8 +5,7 @@ import LanguageContext
 import OutputContext
 import PageContext
 import WebPlugin
-import kotlinx.html.HEAD
-import kotlinx.html.link
+import kotlinx.html.*
 
 class IndieAuthPlugin(override val enabled: Boolean = true) : WebPlugin {
 

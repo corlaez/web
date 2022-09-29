@@ -9,9 +9,7 @@ import WebPlugin
 import blog.addBlogPages
 import blog.loadArticles
 import createDirectory
-import kotlinx.html.NAV
-import kotlinx.html.a
-import kotlinx.html.classes
+import kotlinx.html.*
 
 class BlogPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)

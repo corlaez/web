@@ -5,10 +5,7 @@ import LanguageContext
 import OutputContext
 import PageContext
 import WebPlugin
-import kotlinx.html.FOOTER
-import kotlinx.html.HEAD
-import kotlinx.html.link
-import kotlinx.html.script
+import kotlinx.html.*
 
 /**
  * Prism current config:

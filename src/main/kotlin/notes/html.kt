@@ -3,12 +3,7 @@ package notes
 import EnvContext
 import LanguageContext
 import PageContext
-import kotlinx.html.FlowOrPhrasingContent
-import kotlinx.html.a
-import kotlinx.html.em
-import kotlinx.html.p
-import kotlinx.html.time
-import kotlinx.html.unsafe
+import kotlinx.html.*
 import toDateTime
 import toHumanDate
 

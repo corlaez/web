@@ -5,10 +5,7 @@ import LanguageContext
 import OutputContext
 import PageContext
 import WebPlugin
-import kotlinx.html.HEAD
-import kotlinx.html.script
-import kotlinx.html.style
-import kotlinx.html.unsafe
+import kotlinx.html.*
 import loadResourceAsString
 import utils.minifyCss
 

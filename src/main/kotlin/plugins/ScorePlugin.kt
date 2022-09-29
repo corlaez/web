@@ -5,10 +5,7 @@ import LanguageContext
 import OutputContext
 import PageContext
 import WebPlugin
-import kotlinx.html.FOOTER
-import kotlinx.html.a
-import kotlinx.html.img
-import kotlinx.html.p
+import kotlinx.html.*
 
 class ScorePlugin(override val enabled: Boolean = true) : WebPlugin {
 

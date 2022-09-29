@@ -1,7 +1,5 @@
 import com.vladsch.flexmark.util.misc.Extension
-import kotlinx.html.FOOTER
-import kotlinx.html.HEAD
-import kotlinx.html.NAV
+import kotlinx.html.*
 
 interface WebPlugin {
     val enabled: Boolean
