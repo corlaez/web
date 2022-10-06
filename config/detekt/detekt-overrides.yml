@@ -20,6 +20,11 @@ naming:
     active: false
 
 style:
+  ForbiddenComment:
+    active: true
+    values:
+      - 'FIXME:'
+      - 'STOPSHIP:'
   ForbiddenMethodCall:
     active: true
     methods:

@@ -2,7 +2,7 @@ more-kotlin-less-js.html
 Más Kotlin, menos JS
 
 Más Kotlin, menos JS
-Artículo acerca de la renovación de esta web que ahora es generada con Kotlin. Publicado en 2022 por Armando Cordova.
+Artículo acerca de la renovación de esta web que ahora es generada con Kotlin. Publicado por Armando Cordova.
 2022-08-26
 
 

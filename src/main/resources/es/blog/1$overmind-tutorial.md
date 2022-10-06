@@ -2,7 +2,7 @@ overmind-tutorial.html
 Overmind tutorial
 
 Overmind tutorial
-Videotutorial para la librería de JavaScript para el manejo de estados Overmind, hecho en 2019 por Armando Cordova
+Videotutorial para la librería de JavaScript para el manejo de estados Overmind. Publicado por Armando Cordova
 2022-01-05
 2022-08-31
 

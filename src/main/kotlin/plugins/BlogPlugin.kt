@@ -11,6 +11,15 @@ import blog.loadArticles
 import createDirectory
 import kotlinx.html.*
 
+/**
+ * Gets Markdown files from resources and transforms each into an article page and merges them into an index page
+ * TODO: Parameter blog folder
+ * TODO: Parameter output
+ * TODO: Parameter template
+ * TODO: Index only with titles and separate page for full text search
+ * TODO: Use generic mf2 Resource instead of ArticleResource
+ * TODO: Supported Langs and default lang
+ */
 class BlogPlugin(override val enabled: Boolean = true) : WebPlugin {
     context(EnvContext, OutputContext)
     override fun pages(): List<Page> {

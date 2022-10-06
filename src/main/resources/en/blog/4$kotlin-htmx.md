@@ -4,11 +4,15 @@ Kotlin-htmx
 Kotlin-htmx
 Corlaez article about an example implementation of htmx using Kotlin HTML DSL by Armando Cordova.
 2022-09-19
+2022-10-03
 
+Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well.
+You can follow along (or skip the article) with the code](https://github.com/corlaez/kotlin-htmx) 
+(there is also a static generation example in the "static" branch there). 
+Try the demo [here](https://corlaez.com/htmx.html).
 
-Today I will talk about why I think [Kotlin](https://kotlinlang.org/) and [htmx](https://htmx.org/) mix so well. You can follow along (or skip the article) with the code [here](https://github.com/corlaez/kotlin-htmx) (there is also a static generation example in the static branch there). Try the demo [here](https://corlaez.com/htmx.html).
-
-Kotlin as you may know is a modern JVM and (more recently) multiplatform language. It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.
+Kotlin is a modern JVM and (more recently) multiplatform language. 
+It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.
 
 htmx is a JavaScript library that allows you to write HTML attributes instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.
 

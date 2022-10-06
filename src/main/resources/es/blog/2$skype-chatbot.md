@@ -2,7 +2,7 @@ skype-chatbot.html
 Skype Chatbot
 
 Skype Chatbot
-Artículo acerca de un Chatbot que notificaba la llegada de un vendedor de comida a la oficina. Publicado en 2019 por Armando Cordova.
+Artículo acerca de un Chatbot que notificaba la llegada de un vendedor de comida a la oficina. Publicado por Armando Cordova.
 2019-09-02
 2022-08-31
 
