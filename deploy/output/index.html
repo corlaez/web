@@ -4,265 +4,7 @@
     <link rel="preload" href="/assets/dark-red.webp" as="image">
     <link rel="canonical" href="https://corlaez.com/">
     <link rel="alternate" hreflang="es" href="https://corlaez.com/es/">
-    <style>@media print{*,*:after,*:before{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}blockquote,pre{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}img,tr{page-break-inside:avoid}img{max-width:100% !important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}canvas,iframe,img,select,svg,textarea,video{max-width:100%}.overflow-container{overflow-x:scroll}.aspect-ratio{height:0;padding-top:56.25%;position:relative}.aspect-ratio--object{height:100%;position:absolute;top:0;right:0;bottom:0;left:0;width:100%;z-index:100}pre,
-code {
-    font-family: Menlo, Monaco, "Courier New", monospace;
-}
-
-pre {
-    padding: .5rem;
-    line-height: 1.25;
-    overflow-x: scroll;
-}
-
-a,
-a:visited {
-    color: #20a5ff;
-}
-
-a:hover,
-a:focus,
-a:active {
-    color: #38a6f1;
-}
-
-.modest-no-decoration {
-    text-decoration: none;
-}
-
-html {
-    font-size: 12px;
-}
-
-@media screen and (min-width: 32rem) and (max-width: 48rem) {
-    html {
-        font-size: 15px;
-    }
-}
-
-@media screen and (min-width: 48rem) {
-    html {
-        font-size: 16px;
-    }
-}
-
-body {
-    line-height: 1.85;
-}
-
-p,
-.modest-p {
-    font-size: 1rem;
-    margin-bottom: 1.3rem;
-    text-align: justify;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-h1,
-.modest-h1,
-h2,
-.modest-h2,
-h3,
-.modest-h3,
-h4,
-.modest-h4 {
-    margin: 1.414rem 0 .5rem;
-    font-weight: inherit;
-    line-height: 1.42;
-}
-
-h1,
-.modest-h1 {
-    margin-top: 0;
-    font-size: 2.6rem;
-}
-
-h2,
-.modest-h2 {
-    font-size: 2.2rem;
-}
-
-h3,
-.modest-h3 {
-    font-size: 1.999rem;
-}
-
-h4,
-.modest-h4 {
-    font-size: 1.414rem;
-}
-
-h5,
-.modest-h5 {
-    font-size: 1.121rem;
-}
-
-h6,
-.modest-h6 {
-    font-size: .88rem;
-}
-
-small,
-.modest-small {
-    font-size: .707em;
-}
-
-html {
-    font-size: 18px;
-    max-width: 100%;
-}
-
-body {
-    color: #444;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 300;
-    margin: 0 auto;
-    max-width: 48rem;
-    line-height: 1.45;
-    padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Arimo, Helvetica, sans-serif;
-}
-
-h1,
-h2,
-h3 {
-    margin-bottom: 1.15rem;
-    padding-bottom: .5rem;
-}
-h1 {
-    text-align: center;
-    padding: 4rem 0;
-}
-h2 {
-    text-align: center;
-}
-
-blockquote {
-    border-left: 8px solid #fafafa;
-    padding: 1rem;
-}
-
-pre,
-code {
-    background-color: #fafafa;
-}
-ul {
-    text-align: justify;
-    padding-inline-end: 20px;
-}
-.fire {
-    background-image: url(/assets/signature-400.webp), url(/assets/dark-red.webp);
-    background-repeat: no-repeat, repeat;
-    background-attachment: scroll, fixed;
-    background-position: left, center;
-    background-size: 300px, auto;
-    animation: AnimateBG2 0.2s;
-}
-.fire h1, .fire p {
-    color: rgba(255, 255, 255, 0.9);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-top: 0!important;
-    margin-bottom: 0!important;
-    text-shadow: 7px 2px black;
-}
-.fire h1 {
-    font-size: 3.5rem;
-    padding: 4rem 0!important;
-}
-.fire a {
-    text-decoration: none;
-}
-.fire p {
-    background: rgba(0, 0, 0, 0.5);
-    text-shadow: 0 0 black;
-}
-.signature {
-    height: 210px;
-    padding: 0;
-    background-image: url(/assets/dark-red.webp);
-    background-size: auto;
-    background-repeat: repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-audio {
-    width: 250px;
-    padding: 0!important;
-    margin: 0!important;
-}
-audio::-webkit-media-controls-panel {
-    background: linear-gradient(0deg, transparent, #bd1e1eDE, #bd1e1eDE, transparent), url(/assets/dark-red.webp);
-    background-attachment: scroll, fixed;
-}
-@keyframes AnimateBG2 {
-    0%{background-position: center, center;}
-    100%{background-position: left, center;}
-}
-@media (prefers-reduced-motion: reduce) {
-    .fire {
-        animation: unset;
-    }
-}
-@media (max-width: 555px) {
-    .fire h1 {
-        padding: 0 !important;
-    }
-}
-.center {
-    text-align: center;
-}
-.content {
-    padding: 0 .25em .25em .25em;
-}
-pre {
-    background-color: black;
-    overflow-x: auto;
-}
-code {
-    background-color: black;
-}
-body {
-    background-color: #111;
-    color: #ddd;
-}
-summary h2 {
-    display: inline;
-}
-summary.h2  {
-    font-size: 2.4rem;
-}
-summary {
-    cursor: pointer;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-blockquote p {
-    margin-top: 0;
-    padding: 0;
-}
-nav {
-    padding: 4px 20px;
-}
-nav a {
-    display: inline-block;
-    padding: 10px 5px;
-    margin-right: 5px;
-    border-radius: 10px;
-}
-a.selected {
-    background: #6e0000;
-}
-</style>
+    <link rel="stylesheet" href="/styles.css">
     <meta name="viewport" content="user-scalable=yes, width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="robots" content="index, follow">
     <title>Corlaez Blog</title>
@@ -293,30 +35,120 @@ navigator.serviceWorker.register("/serviceWorker.js")}</script>
     <link rel="microsub" href="https://aperture.p3k.io/microsub/781">
     <link rel="stylesheet" href="/assets/prism.css">
   </head>
-  <body>
-    <main class="h-feed">
-      <nav><a class="selected u-url" href="/">Blog</a> <a href="/note">Notes</a> <a href="/board.html">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/">Versión en Español</a></nav>
-      <header class="fire"><a class="u-url" href="https://corlaez.com/">
+  <body class="h-feed">
+    <nav><a class="selected u-url" href="/">Blog</a> <a href="/note">Notes</a> <a href="/board.html" rel="">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/">Versión en Español</a></nav>
+    <header>
+      <div class="fire"><a class="u-url" href="https://corlaez.com/">
           <h1 class="p-name">Hi! I am Armando</h1>
         </a>
         <p>Welcome to my website where I will share about software in general, Kotlin and the Indie Web</p>
-      </header>
+      </div>
       <div class="center">
         <audio preload="none" controls="controls" loop="loop"><source src="/assets/bec.mp3" type="audio/mpeg"></audio>
         <noscript>
           <p>Hey you, browsing with JavaScript off. You are welcomed! This page does not require JS to work properly :)</p>
         </noscript>
       </div>
-      <div class="content"><details class="h-entry"><summary class="h2">
+    </header>
+    <main class="content"><details class="h-entry"><summary class="h2">
+    <h2><a class="u-url p-name" href="/blog/on-tuning.html">On Tuning</a></h2>
+  </summary>
+  <div class="e-content"><p><em><time class="dt-published" datetime="2022-09-30T00:00:00">Sep 30, 2022</time> (Last update: <time class="dt-updated" datetime="2022-09-30T00:00:00">Sep 30, 2022</time>)</em></p>
+<p>Placeholder</p><p>tl;dr: Instruments such as the violin have a different tuning than other instruments such as guitars and pianos...</p></div>
+  <hr>
+<br><br></details>
+<details class="h-entry"><summary class="h2">
+    <h2><a class="u-url p-name" href="/blog/hexagonal-feedback.html">Hexagonal Feedback</a></h2>
+  </summary>
+  <div class="e-content"><p><em><time class="dt-published" datetime="2022-09-20T00:00:00">Sep 20, 2022</time> (Last update: <time class="dt-updated" datetime="2022-09-20T00:00:00">Sep 20, 2022</time>)</em></p>
+<p>Recently, Alistair Cockburn has been asking for feedback and making efforts to consolidate talks, documents and the concept of Hexagonal Architecture.</p><pre><code class="language-text">// https://alistaircockburn.com/Articles/Component-Strategy-generalizes-Ports-Adapters#wbb1
+I am drafting a new pattern, Component + Strategy, which is the more general form of Ports &amp; Adapters (Hexagonal Architecture).
+Just now, I'm looking for comments, corrections, improvements and general feedback.
+</code></pre><p>In the <a href="https://alistaircockburn.com/Component%20plus%20strategy.pdf">draft</a> on page 16 and 17 there is a code example of a configuration written in Java with Spring.</p><p>While Spring is very popular for Java programmers I think it is important to show a configuration written with no libraries (or reflection) and why not in a different language.</p><p>I proposed translating the code to Kotlin as it was, but couldn't wrap my head around the Driver interface. I will explain why I think it is problematic and submit it as feedback, along with my alternative configuration.</p><p>This is a close translation of what I found on the draft, adding the interfaces and classes explicitly:</p><pre><code class="language-kotlin">// Not my proposal but a close Kotlin translation of what I found on the draft 
+interface Driver // (?)
+class TestCases(val forDiscounting: ForDiscounting): Driver // Primary Adapter
+class Console(val forDiscounting: ForDiscounting): Driver // Primary Adapter
+interface ForDiscounting // Primary Port
+class DiscounterApp(val rateRepository: ForObtainingRates): ForDiscounting // App
+interface ForObtainingRates // Secondary Port
+class StubRateRepository: ForObtainingRates // Secondary Adapter
+class FileRateRepository: ForObtainingRates // Secondary Adapter
+
+class DiscounterAppConfig(useConsoleDriver: Boolean, useFileRateRepository: Boolean) {
+    val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
+    val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
+    val driver: Driver =
+        if(useConsoleDriver) Console(discounterApp)
+        else TestCases(discounterApp)
+}
+</code></pre><p>As you can see, no library, just code. Sure this implementation will have to be instantiated manually somewhere else, but it should be a straightforward process.
+By the way, there is nothing preventing Java to use the same approach for the configuration.</p><p><em>&quot;But I see no functions and Spring wasn't creating fields&quot;</em>, I hear you say, and you are right.
+By default, Spring provides beans as singletons this just means that it will call that method only once and share that instance to the code that needs it.
+I decided to use the fields for that reason and for simple (or carefully designed) apps this pattern can scale well with few tweaks.</p><p>Ok, onto Driver now (I am assuming this interface is not empty and defines functions to be implemented for Primary Adapters):</p><ol><li>This interface has no name on Hexagonal Architecture, in clear contrast with all other classes and interfaces. It is effectively used as a Primary Adapter Interface</li><li>Primary Adapters are supposed to be technology dependent their API may need to be adjusted to satisfy the libraries, frameworks and protocols they work with</li><li>Primary Adapters depend on the application, but shouldn't &quot;wear a uniform&quot; to align with all others. Let the Primary Adapter implement what it wants and name it as it wishes
+<ul><li>Just think about TestCases, realistically tests have other goals and naming requirements than a Console Primary Adapter</li></ul></li><li>Finally, not all Primary Adapters fit well into the configuration. TestCases in my experience works best depending on the configuration and being instantiated by a framework</li></ol><p>With that I would leave the new example configuration as:</p><pre><code class="language-kotlin">// Proposal also found at: https://corlaez.com/hexagonal-proposal.html
+class TestCases { // Primary Adapter (instantiated by testing framework)
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).discounterApp
+}
+class Console(val forDiscounting: ForDiscounting) // Primary Adapter
+interface ForDiscounting // Primary Port
+class DiscounterApp(val rateRepository: ForObtainingRates): ForDiscounting // App
+interface ForObtainingRates // Secondary Port
+class StubRateRepository: ForObtainingRates // Secondary Adapter
+class FileRateRepository: ForObtainingRates // Secondary Adapter
+
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
+    private val rateRepository: ForObtainingRates =
+        if(useFileRateRepository) FileRateRepository()
+        else StubRateRepository()
+    val discounterApp: ForDiscounting = DiscounterApp(rateRepository)
+    val discounterConsole: Console = Console(discounterApp)
+}
+</code></pre><p>One extra thing I have added is the <code>private</code> for the repository (or Secondary Adapters in General). The idea being that
+other classes should only use the discounterApp or discounterConsole and not depend on or use the Secondary Adapters, not even tests.</p><p>I am happy that Alistair is still working on promoting Hexagonal Architecture and asking feedback from the community.
+If you are reading this, Alistair, I want to say thank you from the heart because your writings have influenced my growth in this industry.</p><p>... now an extra section that I won't include in the proposal, but I find very useful:</p><p>I love using mocks on my tests. With a small change our configuration can be used with mocking libraries!</p><pre><code class="language-kotlin">// Not included in proposal. A recommendation that works with mocking libraries
+// Adding an App with a Secondary Port meant to be mocked
+class DiscounterApp2(val rateRepository: ForObtainingRates, val chaosService: ForChaos): ForDiscounting // App
+interface ForChaos // Secondary Port
+class RealChaos: ForChaos // Secondary Adapter
+
+class DiscounterAppConfig(useFileRateRepository: Boolean) {
+   private val chaosService: ForChaos = RealChaos()
+   private val rateRepository: ForObtainingRates =
+      if(useFileRateRepository) FileRateRepository()
+      else StubRateRepository()
+   val discounterApp: ForDiscounting = newDiscounterApp(chaosService)// Same function used here
+   val discounterConsole: Console = newDiscounterConsole(discounterApp)// Same function used here
+
+   // Functions used by tests, the parameters allow mocks to be injected.
+   fun newDiscounterApp(chaosService: ForChaos) = DiscounterApp2(rateRepository, chaosService)
+   fun newDiscounterConsole(discounterApp: ForDiscounting) = Console(discounterApp)
+}
+</code></pre><p>First we create functions to will instantiate our test subjects (app and Primary Adapters). This will also be used to instantiate their real counterparts.
+It is important to use the same function on both cases to avoid wiring the objects with a different logic.</p><p>Now the new method may have fewer arguments than the underlying class. Only keep the arguments that are meant to be mocked in tests.
+The other arguments can be injected directly using the already created instances (such is the case of rateRepository)</p><p>And this would be the usage in tests:</p><pre><code class="language-kotlin">class DiscounterAppTest { // Primary Adapter (instantiated by testing framework)
+   val chaosService = createMock&lt;ForChaos&gt;()
+   val discounterApp: ForDiscounting = DiscounterAppConfig(false).newDiscounterApp(chaosService)
+}
+</code></pre><p>And there you go, the main code will work the same and the tests will be able to mock the designated arguments using these functions.</p><p>And that's all for now!</p><p>PS: If you think that a single expression to instantiate a field is too limiting you can always wrap the code in a
+<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/run.html">run</a> helper function <code>val x = run {...}</code> and use as many lines as you wish</p></div>
+  <hr>
+<br><br></details>
+<details class="h-entry"><summary class="h2">
     <h2><a class="u-url p-name" href="/blog/kotlin-htmx.html">Kotlin-htmx</a></h2>
   </summary>
-  <div class="e-content"><p><em><time class="dt-published" datetime="2022-09-19T00:00:00">Sep 19, 2022</time></em></p>
-<p>Today I will talk about why I think <a href="https://kotlinlang.org/">Kotlin</a> and <a href="https://htmx.org/">htmx</a> mix so well. You can follow along (or skip the article) with the code <a href="https://github.com/corlaez/kotlin-htmx">here</a>.</p><p>Kotlin as you may know is a modern JVM and (more recently) multiplatform language. It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.</p><p>htmx is a JavaScript library that allows you to write HTML attribute instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.</p><p>Let's start! The main function creates a <a href="https://javalin.io/">Javalin</a> HTTP Server (static files config including <a href="https://www.webjars.org/">Webjars</a> which is how we will import the htmx js code avoiding node) and adds the &quot;Friends&quot; module (which is an extension function). Finally, it starts the server. A key config I want to highlight is the webjars setup that will help us serve htmx:</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/javalin.kt
+  <div class="e-content"><p><em><time class="dt-published" datetime="2022-09-19T00:00:00">Sep 19, 2022</time> (Last update: <time class="dt-updated" datetime="2022-10-03T00:00:00">Oct 3, 2022</time>)</em></p>
+<p>Today I will talk about why I think <a href="https://kotlinlang.org/">Kotlin</a> and <a href="https://htmx.org/">htmx</a> mix so well.
+You can follow along (or skip the article) with the code](https://github.com/corlaez/kotlin-htmx)
+(there is also a static generation example in the &quot;static&quot; branch there).
+Try the demo <a href="https://corlaez.com/htmx.html">here</a>.</p><p>Kotlin is a modern JVM and (more recently) multiplatform language.
+It has a great type system and interesting advanced features while still being a pragmatic tool meant for engineers.</p><p>htmx is a JavaScript library that allows you to write HTML attributes instead of JS code to load content from the server and manipulate the DOM. Your HTML will be more powerful than ever and you will deal less with JS.</p><p>Let's start! The main function creates a <a href="https://javalin.io/">Javalin</a> HTTP Server (static files config including <a href="https://www.webjars.org/">Webjars</a> which is how we will import the htmx js code avoiding node) and adds the &quot;Friends&quot; module (which is an extension function). Finally, it starts the server. A key config I want to highlight is the webjars setup that will help us serve htmx:</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/javalin.kt
 config.addStaticFiles { staticFiles -&gt;
     staticFiles.directory = &quot;META-INF/resources/webjars/&quot;
     staticFiles.location = Location.CLASSPATH
 }
-</code></pre><p>addFriendsModule creates an index route and a route for each friend. ctx.html is the Javalin function to respond with an HTML string.</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/addFriendsModule.kt
+</code></pre><p>It is important to mention that Javalin can be replaced with any HTTP Server you like. In fact your can drop the server altogether, write your HTML Strings to files and make your own static generator (that's how corlaez.com is written)</p><p>Then addFriendsModule creates an index route and a route for each friend. ctx.html is the Javalin function to respond with an HTML string. friends.forEach will be <a href="https://kotlinlang.org/docs/inline-functions.html">inlined</a> into a regular for loop</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/addFriendsModule.kt
 fun Javalin.addFriendsModule() {
     val friends = listOf(&quot;Joseph&quot;, &quot;Nicholas&quot;, &quot;Caesar&quot;)
     get(&quot;/&quot;) { ctx -&gt;
@@ -329,9 +161,23 @@ fun Javalin.addFriendsModule() {
         }
     }
 }
-</code></pre><p>Let's focus on htmlFriendProfile and htmlFriendsIndex now:</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/html.kt
+</code></pre><p>Next we have the base html template which is a Kotlin function. The parameter is a <a href="https://kotlinlang.org/docs/lambdas.html#function-literals-with-receiver">lambda with receiver</a> that will populate our HTML body tag and the return is an String. <code>createHTML</code> takes out fancy DSL and outputs a String as well.
+If you try to define a body tag inside a head or viceversa the editor and compiler will let you know.</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/htmlBaseTemplate.kt
+fun htmlBaseTemplate(bodyFn: BODY.() -&gt; Unit): String {
+    return &quot;&lt;!DOCTYPE html&gt;&quot; + createHTML().html {
+        lang = &quot;en&quot;
+        head {
+            script { src = &quot;/htmx.org/$htmxVersion/dist/htmx.js&quot; }
+            link { href = &quot;/modest-variation.css&quot;; rel=&quot;stylesheet&quot; }
+        }
+        body {
+            bodyFn()
+        }
+    }
+}
+</code></pre><p>Let's now focus on htmlFriendProfile and htmlFriendsIndex now:</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/friends/html.kt
 fun htmlFriendsIndex(friends: List&lt;String&gt;): String {
-    return htmlBaseTemplate { /* htmlBaseTemplate is just another function of this app. Its parameter is the HTML that is inside the braces */
+    return htmlBaseTemplate {
         h1 { a { href = &quot;/&quot;; +&quot;My Friends&quot; } }// nested `a` inside a `h1`. To insert a text inside any tag we use the + operator
         friends.forEach { friend -&gt;// Regular Kotlin used to loop!
             h2 {
@@ -357,7 +203,17 @@ fun htmlFriendProfile(friend: String, characteristic: String): String {
         }
     }
 }
-</code></pre><p>htmlFriendsIndex calls htmlBaseTemplate, this auxiliary function is where the html, head and body tags are defined (including css and htmx script). Its argument is the HTML markup that goes inside the BODY tag. The index builds its contents using regular Kotlin loops.</p><p>The hx functions are simple HTMLTag extension functions that add attributes (<code>attributes += &quot;hx-get&quot; to &quot;/$friend&quot;</code>). The autocomplete game of HTML DSL gives me the best experience writing HTML ever and the htmx integration is seamless. It is hard to articulate how good is it until you try it.</p><p>And as a closing argument while this example uses an HTTP Server, you could use the DSL and htmx to make a static website. Actually this blog post is an example of a Kotlin HTML DSL static website.</p><p>Cons!</p><ul><li>The DSL is written with advanced Kotlin features and will force you to use advanced features if you try to break templates into pieces as I did: i.e. there is a lambda with receiver in <code>fun htmlBaseTemplate(bodyFn: BODY.() -&gt; Unit): String</code></li><li>Kotlin and its advanced features are better experienced with IntelliJ IDEA. There is a great free community edition but no other great alternatives that I know of.</li><li>While the HTML DSL autocomplete is very powerful at preventing mistakes, it does rely on a lot of imports. I recommend isolating the template code from the rest of your code (which is probably a good idea anyway)</li><li>Regarding HTMX, perhaps the biggest drawback and advantage is that it goes against the norm: it works best if you serve HTML partials from your server, the old school way. This works great for websites meant to be used by humans.</li></ul><p>I hope this was interesting, have fun!</p></div>
+</code></pre><p>htmlFriendsIndex calls htmlBaseTemplate as this is meant to be a full page. This index builds its contents using regular Kotlin loops. htmlFriendProfile, on the other hand, creates the HTML directly as it is just a partial HTML document.</p><p>The hx functions are simple HTMLTag <a href="https://kotlinlang.org/docs/extensions.html">extension functions</a> that add HTML attributes.</p><pre><code class="language-kotlin">// https://github.com/corlaez/kotlin-htmx/blob/master/src/main/kotlin/hx.kt
+fun HTMLTag.hxGet(value: String) {
+    attributes += &quot;hx-get&quot; to value
+}
+fun HTMLTag.hxSwap(value: String) {
+    attributes += &quot;hx-swap&quot; to value
+}
+fun HTMLTag.hxTarget(value: String) {
+    attributes += &quot;hx-target&quot; to value
+}
+</code></pre><p>The autocomplete game of HTML DSL gives me the best experience writing HTML I have ever experienced and the htmx integration is seamless. It is hard to articulate how good is it until you try it (Use <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> if in doubt, there is a free community edition, and they do offer education licences if you have an institutional email)</p><p><strong>Cons!</strong></p><ul><li>The DSL is written with advanced Kotlin features and will force you to use/learn (maybe not that bad) advanced features if you try to break templates into different functions as I did.</li><li>Kotlin's advanced features are better experienced with IntelliJ IDEA. There is a great free community edition but no other great alternatives that I know of.</li><li>While the HTML DSL autocomplete is very powerful at preventing mistakes, it does rely on a lot of imports. I recommend isolating the template code from the rest of your code (which is probably a good idea anyway)</li><li>Regarding HTMX, perhaps the biggest drawback and advantage is that it goes against the norm: it works best if you serve HTML partials from your server, the old school way. This works great for websites meant to be used by humans.</li></ul><p>I hope this was interesting, have fun!</p></div>
   <hr>
 <br><br></details>
 <details class="h-entry"><summary class="h2">
@@ -385,15 +241,15 @@ The simple program relied on trust and accurate reports of its participants to w
 <p>A tutorial on the JavaScript UI library state manager <a href="https://overmindjs.org/">Overmind JS</a> in a React application.</p><p>In the video I use React, but it can also be used with Angular, Vue and Svelte.</p><p><a href="https://www.youtube.com/watch?v=pe1F0-A-e8U">YouTube tutorial</a></p></div>
   <hr>
 <br><br></details>
-</div>
+</main>
+    <footer>
       <div class="h-card p-author">
         <p class="center signature"><img class="u-photo" alt="Logo that reads A R" loading="lazy" src="/assets/signature-white-210.png" width="210" height="210"></p>
         <p><a class="u-url u-uid" href="https://corlaez.com">corlaez.com</a> has been brought to you by <span class="p-name">Armando Cordova</span>. Thanks for your visit.</p>
-        <p class="center"><a class="u-url" href="https://github.com/corlaez" rel="me authn">Github</a> <a class="u-url" href="https://linkedin.com/in/corlaez" rel="me">LinkedIn</a> <a class="u-url" href="https://twitter.com/corlaez" rel="me">Twitter</a></p>
+        <p class="center"><a class="u-url" href="https://github.com/corlaez" rel="me authn nofollow noreferrer noopener">Github</a> <a class="u-url" href="https://linkedin.com/in/corlaez" rel="me nofollow noreferrer noopener">LinkedIn</a> <a class="u-url" href="https://twitter.com/corlaez" rel="me nofollow noreferrer noopener">Twitter</a></p>
       </div>
-    </main>
-    <p class="center"><a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous" rel="nofollow">←</a> An <a class="u-url" href="https://xn--sr8hvo.ws" rel="nofollow">IndieWeb Webring</a> 🕸💍 <a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next" rel="nofollow">→</a></p>
-    <p class="center"><a rel="me" href="//indieweb.rocks/corlaez.com"><img alt="IndieMark score" src="//indieweb.rocks/sites/corlaez.com/scoreboard.svg" style="height: 4rem"></a></p>
-    <script src="/assets/prism.js"></script>
+      <p class="center"><a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/previous" rel="nofollow noreferrer noopener">←</a> An <a class="u-url" href="https://xn--sr8hvo.ws" rel="nofollow noreferrer noopener">IndieWeb Webring</a> 🕸💍 <a class="u-url" href="https://xn--sr8hvo.ws/%F0%9F%94%AE%F0%9F%90%9C%F0%9F%9A%87/next" rel="nofollow noreferrer noopener">→</a></p>
+      <script src="/assets/prism.js"></script>
+    </footer>
   </body>
 </html>

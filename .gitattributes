@@ -1,5 +1,7 @@
+# Excluded from github stats, not written by me
 static/assets/htmx/htmx.js linguist-vendored
 static/assets/prism.js linguist-vendored
 static/assets/prism.css linguist-vendored
 
+# Excluded from github stats, generated code
 deploy/** linguist-generated
