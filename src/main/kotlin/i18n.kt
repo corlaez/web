@@ -48,7 +48,7 @@ class LocalizedText(language: Language) {
         Language.en -> "Hey you, browsing with JavaScript off. You are welcomed! " +
                 "This page does not require JS to work properly :)"
         Language.es -> "Hey tu, navegando con JavaScript deshabilitado. Bienvenido! " +
-                "Esta pagina no requiere JS para funcionar de manera apropiada :)"
+                "Esta página no requiere JS para funcionar de manera apropiada :)"
     }
     val logoAlly = when(language) {
         Language.en -> "Logo that reads A R"
@@ -70,10 +70,10 @@ class LocalizedText(language: Language) {
         )
         Language.es -> TitlesAndDescriptions(
             "Hola! Soy Armando",
-            "Bienvenido a mi página web donde compartiré sobre software en general, Violin," +
+            "Bienvenido a mi asdasd web donde compartiré sobre software en general, Violin," +
                     " Kotlin y la Indie Web",
             "Corlaez Blog",
-            "Bienvenido a la página web de Armando Cordova. " +
+            "Bienvenido al sitio web de Armando Cordova. " +
                     "Encontrarás información sobre Violín, Kotlin y La Indie Web",
         )
     }
@@ -89,7 +89,7 @@ class LocalizedText(language: Language) {
             null,
             "",
             "Apuntes hechos por Armando Cordova",
-            "Bienvenido a la página web de Armando Cordova. " +
+            "Bienvenido al sitio web de Armando Cordova. " +
                     "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
         )
     }

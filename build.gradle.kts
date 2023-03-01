@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.21"
-    id("io.gitlab.arturbosch.detekt").version("1.21.0")
+    kotlin("jvm") version "1.8.10"
+    id("io.gitlab.arturbosch.detekt").version("1.22.0")
     application
 }
 
@@ -23,9 +23,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")// HTML DSL
 
     // javalin
-    implementation("io.javalin:javalin:4.6.4")// HTTP Server
-    implementation("org.slf4j:slf4j-simple:2.0.0")// javalin requirement
-
+    implementation("io.javalin:javalin:4.6.7")// HTTP Server
+    implementation("org.slf4j:slf4j-simple:2.0.6")// required by javalin
 }
 
 tasks.withType<KotlinCompile> {
@@ -37,6 +36,10 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.freeCompilerArgs += "-Xjdk-release=17"
     kotlinOptions.freeCompilerArgs += "-no-reflect"
     kotlinOptions.freeCompilerArgs += "-verbose"
+}
+tasks.withType<JavaCompile> {
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
 }
 
 application {
