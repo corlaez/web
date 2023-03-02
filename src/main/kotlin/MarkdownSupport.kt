@@ -3,7 +3,7 @@ import com.vladsch.flexmark.parser.Parser
 import com.vladsch.flexmark.util.data.MutableDataSet
 
 class MarkdownSupport(private val webPlugins: List<WebPlugin>) {
-    private val options = with(MutableDataSet()) {
+    private val parserOptions = with(MutableDataSet()) {
 //        uncomment to set optional extensions
 //        set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), StrikethroughExtension.create()));
 //        uncomment to convert soft-breaks to hard breaks
@@ -11,8 +11,9 @@ class MarkdownSupport(private val webPlugins: List<WebPlugin>) {
         set(Parser.EXTENSIONS, webPlugins.flatMap { it.flexmarkExtensions() });
         this
     }
-    private val parser: Parser = Parser.builder(options).build()
-    private val htmlRenderer = HtmlRenderer.builder(options).build()
+    private val htmlRendererOptions = MutableDataSet()
+    private val parser: Parser = Parser.builder(parserOptions).build()
+    private val htmlRenderer = HtmlRenderer.builder(htmlRendererOptions).build()
 
     fun mdToHtml(inputMarkdown: String) = htmlRenderer.render(parser.parse(inputMarkdown)).replace(">\n", ">")
 }

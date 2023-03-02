@@ -59,7 +59,8 @@ private fun getRequestArg(port: String): Args {
 
 context(EnvContext)
 private fun devGetRequestReload() {
-    if (arg.isDev()) {
+    val reloadScriptPresentInWebClient = arg.isDev()
+    if (reloadScriptPresentInWebClient) {
         val (reloadStatus, reloadResponse) = httpGet("http://localhost:$port/dev/reload")
         if (reloadStatus != HttpStatus.OK_200) error("dev server failed to reload clients. Code: $reloadStatus")
         logger.info("$reloadResponse ${LocalDateTime.now()}")

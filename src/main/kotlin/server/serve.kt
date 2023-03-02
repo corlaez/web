@@ -14,6 +14,7 @@ fun serve() {
         }
         config.enableDevLogging()
     }.start(port.toInt())
+    // Expose arguments used to run this server for later regeneration
     app.get("/dev/arg") { ctx ->
         ctx.result(arg.toString())
     }
