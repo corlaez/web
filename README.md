@@ -47,3 +47,9 @@ This is the recommended configuration:
 
 * Support to write each blog post in a different page and generate index out of their titles
 * Separate this project into a reusable library
+
+## Notes for self
+
+The banner was created using colorrandom with size 600x315 red as primary and some darker red as variation.
+the old banner was 2048x1170, I can't remember if there was a reason for that.
+THe new banner upscales the original image to 2400x1260 and also has the svg signature on top.

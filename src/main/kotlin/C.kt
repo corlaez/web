@@ -19,7 +19,7 @@ object C {
     val AUDIO_RGB = register("AUDIO_RGB" to THEME_DARK_RGB)
     val TWITTER_HANDLE = register("TWITTER_HANDLE" to "@corlaez")
     val WEBSITE_NAME = register("WEBSITE_NAME" to "Corlaez Blog")
-    val LOGO_SQR_IMAGE_PATH = register("LOGO_SQR_IMAGE_PATH" to "/assets/banner.png")
+    val LOGO_SQR_IMAGE_PATH = register("LOGO_SQR_IMAGE_PATH" to "/assets/banner2.png")
     val LOGO_SQR_THEME_RGB = register("LOGO_SQR_THEME_RGB" to "#A10000")
     val SERVICE_WORKER_JS_PATH = register("SERVICE_WORKER_JS_PATH" to "/serviceWorker.js")
     val EXTERNAL_RELS = register("EXTERNAL_RELS" to "nofollow noreferrer noopener")
