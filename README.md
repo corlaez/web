@@ -34,7 +34,7 @@ While pages served with the included server in dev mode will hot reload if the g
 
 This is the recommended configuration:
 
-* File Type: Any
+* File Type: Any (Alternatively one for each: kt, md, js)
 * Scope: Open Files
 * Program: Point for gradlew in the root of the project
 * Arguments: run --args="regenerate"
@@ -52,4 +52,4 @@ This is the recommended configuration:
 
 The banner was created using colorrandom with size 600x315 red as primary and some darker red as variation.
 the old banner was 2048x1170, I can't remember if there was a reason for that.
-THe new banner upscales the original image to 2400x1260 and also has the svg signature on top.
+The new banner upscales the 600x315 image to 2400x1260 and then adds the signature on top.

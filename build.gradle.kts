@@ -11,9 +11,14 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://www.jitpack.io")
+    }
 }
 
 dependencies {
+    implementation("com.github.corlaez:web-libk:e8bb85d41a")
+
     // flexmark
     implementation("com.vladsch.flexmark:flexmark-all:0.64.0")// markdown
     implementation("com.vladsch.flexmark:flexmark-ext-gitlab:0.64.0")// mermaid markdown
@@ -37,9 +42,9 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.freeCompilerArgs += "-no-reflect"
     kotlinOptions.freeCompilerArgs += "-verbose"
 }
-tasks.withType<JavaCompile> {
-    sourceCompatibility = "17"
-    targetCompatibility = "17"
+
+kotlin {
+    jvmToolchain(17)
 }
 
 application {
