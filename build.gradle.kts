@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-//    implementation("com.github.corlaez:web-libk:578c39304d")
-    implementation("com.corlaez:web-libk:1.0-SNAPSHOT")
+//    implementation("com.corlaez:web-libk:1.0-SNAPSHOT")// local
+    implementation("com.github.corlaez:web-libk:v0.1.0-alpha")// jitpack
     implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.8.0")
 }
 
