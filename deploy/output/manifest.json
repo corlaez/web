@@ -2,7 +2,7 @@
  "name": "Corlaez Blog",
  "short_name": "Corlaez Blog",
  "start_url":"/",
- "background_color":"#131516",
+ "background_color":"BACKGROUND_RGB",
  "display":"minimal-ui",
  "theme_color":"#A10000",
  "categories": ["blog", "IT", "technology", "software", "programming", "Kotlin", "Java", "JVM"],

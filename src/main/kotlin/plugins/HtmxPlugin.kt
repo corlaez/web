@@ -1,14 +1,9 @@
 package plugins
 
-import EnvContext
-import LanguageContext
-import OutputContext
-import Page
-import PageContext
-import WebPlugin
-import createDirectory
+import common.*
 import kotlinx.html.*
 import templates.asHtmlPage
+import utils.createDirectory
 
 class HtmxPlugin(
     private val name: String,
@@ -29,9 +24,9 @@ class HtmxPlugin(
     context(EnvContext, OutputContext)
     override fun pages(): List<Page> {
         return buildList {
-            for (language in Language.values()) {
-                if (pathNamespace.isNotBlank()) createDirectory("deploy/output${language.langPath()}$pathNamespace")
-                createDirectory("deploy/output${language.langPath()}$pathNamespace$name/")
+            for (language in languages) {
+                if (pathNamespace.isNotBlank()) createDirectory("deploy/output${language.langPath}$pathNamespace")
+                createDirectory("deploy/output${language.langPath}$pathNamespace$name/")
                 with(LanguageContext(language)) {
                     with(PageContext(
                         "$pathNamespace$name.html",

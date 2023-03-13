@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="preload" href="/assets/dark-red.webp" as="image">
     <link rel="canonical" href="https://corlaez.com/">
     <link rel="alternate" hreflang="es" href="https://corlaez.com/es/">
     <link rel="stylesheet" href="/styles.css">
@@ -15,11 +14,11 @@
     <meta property="og:description" content="Welcome to the website of Armando Cordova. You will find blogs about topics such as Violin, Kotlin and IndieWeb">
     <meta property="og:url" content="https://corlaez.com">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/assets/banner2.png">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Corlaez Blog">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="/assets/banner2.png">
     <meta name="twitter:image" content="/assets/banner2.png">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image:alt" content="Logo that reads A R">
     <meta name="twitter:creator" content="@corlaez">
     <meta name="twitter:site" content="@corlaez">
@@ -34,11 +33,12 @@ navigator.serviceWorker.register("/serviceWorker.js")}</script>
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     <link rel="microsub" href="https://aperture.p3k.io/microsub/781">
     <link rel="stylesheet" href="/assets/prism.css">
+    <link rel="preload" href="/assets/dark-red.webp" as="image">
   </head>
   <body class="h-feed">
     <nav><a class="selected u-url" href="/">Blog</a> <a href="/note">Notes</a> <a href="/board.html" rel="">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/">Versión en Español</a></nav>
     <header>
-      <div class="fire"><a class="u-url" href="https://corlaez.com/">
+      <div class="header-banner"><a class="u-url" href="https://corlaez.com/">
           <h1 class="p-name">Hi! I am Armando</h1>
         </a>
         <p>Welcome to my website where I will share about software in general, Kotlin and the Indie Web</p>

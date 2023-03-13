@@ -1,3 +1,6 @@
+import common.TitlesAndDescriptions
+import common.WebVariables
+
 // WIP
 class Mf2Resource(name: String, unparsedContent: String) {
     val id: Int = name.split("$")[0].toInt()
@@ -26,7 +29,7 @@ class Mf2Resource(name: String, unparsedContent: String) {
         titlesAndDescriptions = TitlesAndDescriptions(
             variables["visibleTitle"],
             variables["visibleDescription"] ?: "",
-            variables["metaTitle"] ?: (C.OWNER_NAME + ": " + mdContent.substring(0, 40.coerceAtMost(mdContent.length))),
+            variables["metaTitle"] ?: (WebVariables["OWNER_NAME"] + ": " + mdContent.substring(0, 40.coerceAtMost(mdContent.length))),
             variables["metaDescription"] ?: mdContent,
         )
     }

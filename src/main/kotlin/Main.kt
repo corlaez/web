@@ -1,68 +1,159 @@
-import plugins.MermaidPlugin
-import org.eclipse.jetty.http.HttpStatus
-import plugins.BlogPlugin
-import plugins.DevCss
-import plugins.DevPlugin
-import plugins.HtmxPlugin
-import plugins.IndieAuthPlugin
-import plugins.IndieWebRingPlugin
-import plugins.MdPlugin
-import plugins.MicrosubPlugin
-import plugins.NotesPlugin
-import plugins.PrismPlugin
-import plugins.ScorePlugin
-import plugins.WebMentionPlugin
-import java.time.LocalDateTime
+import common.*
+import plugins.*
+import server.Arg
+
+// todo
+//- <audio preload="none" controls="controls" loop="loop"><source src="/assets/bec.mp3" type="audio/mpeg"></audio>
+
+val envText = EnvText(
+    author =  { "Armando Cordova" },
+    logoAlly = { when(it) {
+        englishUnitedStatesLanguage -> "Logo that reads A R"
+        spanishPeruLanguage -> "Logo con el texto A R"
+        else -> error("Invalid language")
+    }},
+    LOGO_SQR_THEME_RGB = "#A10000",
+    LOGO_SQR_IMAGE_PATH = "/assets/banner2.png",
+    WEBSITE_NAME = "Corlaez Blog",
+    TWITTER_HANDLE = "@corlaez",
+    SERVICE_WORKER_JS_PATH = "/serviceWorker.js",
+    EXTERNAL_RELS = "nofollow noreferrer noopener",
+)
 
 fun main(args: Array<String>) {
-    val arg = Args.valueOf(args[0])
-    val port = System.getenv("PORT") ?: "8080"
-    val webPlugins = listOf(
-        BlogPlugin(),
-        NotesPlugin(),
+    val envContext = EnvContext(
+        arg = Arg.valueOf(args[0]),
+        port = System.getenv("PORT") ?: "8080",
+        productionDomain = "https://corlaez.com",
+        envText = envText,
+        languages = listOf(spanishPeruLanguage, englishUnitedStatesLanguage),
+        webPlugins = webPlugins2(),
+    )
+    with(envContext) {
+        run()
+    }
+}
+
+private fun webPlugins2(): List<WebPlugin> {
+    return listOf(
+        BlogPlugin({
+            when(it) {
+                englishUnitedStatesLanguage -> TitlesAndDescriptions(
+                    "Hi! I am Armando",
+                    "Welcome to my website where I will share about software in general," +
+                            " Kotlin and the Indie Web",
+                    "Corlaez Blog",
+                    "Welcome to the website of Armando Cordova. You will find blogs about topics " +
+                            "such as Violin, Kotlin and IndieWeb",
+                )
+                spanishPeruLanguage -> TitlesAndDescriptions(
+                    "Hola! Soy Armando",
+                    "Bienvenido a mi asdasd web donde compartiré sobre software en general, Violin," +
+                            " Kotlin y la Indie Web",
+                    "Corlaez Blog",
+                    "Bienvenido al sitio web de Armando Cordova. " +
+                            "Encontrarás información sobre Violín, Kotlin y La Indie Web",
+                )
+                else -> error("Invalid language")
+            }
+        }),
+        NotesPlugin({
+            when(it) {
+                englishUnitedStatesLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Notes made by Armando Cordova",
+                    "Notes made by Armando Cordova. You will find notes about topics " +
+                            "such as Violin, Kotlin and IndieWeb",
+                )
+                spanishPeruLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Apuntes hechos por Armando Cordova",
+                    "Bienvenido al sitio web de Armando Cordova. " +
+                            "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
+                )
+                else -> error("Invalid language")
+            }
+        }),
         HtmxPlugin("htmx", "",),
-        MdPlugin("board", "", { it.board }),
-        MdPlugin("legal", "", { it.legal }, "legal privacy"),
-        MdPlugin("hexagonal-proposal", "", { "Hexagonal" }, null),
+        MdPlugin("board", "", { when(it) {
+            englishUnitedStatesLanguage -> "Board"
+            spanishPeruLanguage -> "Pizarra"
+            else -> error("Invalid language")
+        } }, {
+            when(it) {
+                englishUnitedStatesLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Board made by Armando Cordova",
+                    "Board made by Armando Cordova. Ever changing, free scratch notes",
+                )
+                spanishPeruLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Apuntes hechos por Armando Cordova",
+                    "Bienvenido al sitio web de Armando Cordova. " +
+                            "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
+                )
+                else -> error("Invalid language")
+            }
+        }),
+        MdPlugin("legal", "", { when(it) {
+            englishUnitedStatesLanguage -> "Legal"
+            spanishPeruLanguage -> "Legal"
+            else -> error("Invalid language")
+        } }, {
+            when(it) {
+                englishUnitedStatesLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Board made by Armando Cordova",
+                    "Board made by Armando Cordova. Ever changing, free scratch notes",
+                )
+                spanishPeruLanguage -> common.TitlesAndDescriptions(
+                    null,
+                    "",
+                    "Apuntes hechos por Armando Cordova",
+                    "Bienvenido al sitio web de Armando Cordova. " +
+                            "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
+                )
+                else -> error("Invalid language")
+            }
+        }, "legal privacy"),
+        MdPlugin("hexagonal-proposal", "", { "Hexagonal" }, { when(it) {
+            englishUnitedStatesLanguage -> TitlesAndDescriptions(
+                null,
+                "",
+                "Hexagonal Proposal made by Armando Cordova",
+                "Board made by Armando Cordova. Ever changing, free scratch notes",
+            )
+            spanishPeruLanguage -> TitlesAndDescriptions(
+                null,
+                "",
+                "Propuesta Hexagonal hecha por Armando Cordova",
+                "Bienvenido al sitio web de Armando Cordova. " +
+                        "Aquí encontrarás información sobre Violín, Kotlin y La Indie Web",
+            )
+            else -> error("Invalid language")
+        } }, null),
         DevPlugin(DevCss.BORDER),
         MermaidPlugin(false),
         WebMentionPlugin(),
+        CardPlugin(),
         IndieWebRingPlugin(),
         IndieAuthPlugin(),
         MicrosubPlugin(),
         ScorePlugin(false),
-        PrismPlugin()
+        PrismPlugin(),
+        LanguageNavPlugin({
+            when(it) {
+                englishUnitedStatesLanguage -> "English Version"
+                spanishPeruLanguage -> "Versión en Español"
+                else -> error("Invalid language")
+            }
+        }),
+        VarsPlugin(),
+        AudioHeaderPlugin(),
     ).filter { it.enabled }
-    if (arg.isRegenerate()) {
-        val serverArg = getRequestArg(port)
-        with(EnvContext(serverArg, port, webPlugins)) {
-            generate()
-            devGetRequestReload()
-        }
-    } else {
-        with(EnvContext(arg, port, webPlugins)) {
-            generate()
-            serve()
-        }
-    }
-}
-
-private fun getRequestArg(port: String): Args {
-    val (argStatus, argResponse) = httpGet("http://localhost:$port/dev/arg")
-    return if (argStatus != HttpStatus.OK_200) {
-        logger.warn("server failed to provide arg (generating as prd). Code: $argStatus")
-        Args.prd
-    } else {
-        Args.valueOf(argResponse)
-    }
-}
-
-context(EnvContext)
-private fun devGetRequestReload() {
-    val reloadScriptPresentInWebClient = arg.isDev()
-    if (reloadScriptPresentInWebClient) {
-        val (reloadStatus, reloadResponse) = httpGet("http://localhost:$port/dev/reload")
-        if (reloadStatus != HttpStatus.OK_200) error("dev server failed to reload clients. Code: $reloadStatus")
-        logger.info("$reloadResponse ${LocalDateTime.now()}")
-    }
 }

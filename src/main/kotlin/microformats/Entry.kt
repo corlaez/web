@@ -1,6 +1,6 @@
 package microformats
 
-import TitlesAndDescriptions
+import common.TitlesAndDescriptions
 
 data class Entry(
     val createdDate: String,

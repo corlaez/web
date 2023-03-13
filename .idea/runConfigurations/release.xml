@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="prdWithoutServer" type="JetRunConfigurationType">
+  <configuration default="false" name="release" type="JetRunConfigurationType">
     <option name="MAIN_CLASS_NAME" value="MainKt" />
     <module name="web.main" />
-    <option name="PROGRAM_PARAMETERS" value="prdWithoutServer" />
+    <option name="PROGRAM_PARAMETERS" value="release" />
     <shortenClasspath name="NONE" />
     <method v="2">
       <option name="Make" enabled="true" />

@@ -153,7 +153,7 @@ ul {
     text-align: justify;
     padding-inline-end: 20px;
 }
-.fire {
+.header-banner {
     background-image: url(/assets/signature-400.webp), url(/assets/dark-red.webp);
     background-repeat: no-repeat, repeat;
     background-attachment: scroll, fixed;
@@ -161,7 +161,7 @@ ul {
     background-size: 300px, auto;
     animation: AnimateBG2 0.2s;
 }
-.fire h1, .fire p {
+.header-banner h1, .header-banner p {
     color: rgba(255, 255, 255, 0.9);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -169,14 +169,14 @@ ul {
     margin-bottom: 0!important;
     text-shadow: 7px 2px black;
 }
-.fire h1 {
+.header-banner h1 {
     font-size: 3.5rem;
     padding: 4rem 0!important;
 }
-.fire a {
+.header-banner a {
     text-decoration: none;
 }
-.fire p {
+.header-banner p {
     background: rgba(0, 0, 0, 0.5);
     text-shadow: 0 0 black;
 }
@@ -203,12 +203,12 @@ audio::-webkit-media-controls-panel {
     100%{background-position: left, center;}
 }
 @media (prefers-reduced-motion: reduce) {
-    .fire {
+    .header-banner {
         animation: unset;
     }
 }
 @media (max-width: 555px) {
-    .fire h1 {
+    .header-banner h1 {
         padding: 0 !important;
     }
 }

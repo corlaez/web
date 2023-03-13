@@ -1,3 +1,3 @@
-import org.slf4j.LoggerFactory
-
-val logger = LoggerFactory.getLogger("corlaez")!!
+//import org.slf4j.LoggerFactory
+//
+//val logger = LoggerFactory.getLogger("corlaez")!!
