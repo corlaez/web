@@ -38,6 +38,18 @@ navigator.serviceWorker.register("/serviceWorker.js")}</script>
   <body class="h-feed">
     <nav><a href="/">Blog</a> <a class="selected u-url" href="/note">Notes</a> <a href="/board.html" rel="">Board</a> <a href="/legal.html" rel="legal privacy">Legal</a>  <a href="/es/note">Versión en Español</a></nav>
     <main class="content"><div class="h-entry">
+  <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/9.html"><em><time class="dt-published" datetime="2023-03-23T00:00:00">Mar 23, 2023</time></em></a></p>
+<p>Tempted to buy &quot;Structure and Interpretation of Computer Programs, JavaScript Edition&quot;</p></div>
+  <hr>
+<br><br></div>
+<div class="h-entry">
+  <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/8.html"><em><time class="dt-published" datetime="2023-03-23T00:00:00">Mar 23, 2023</time></em></a></p>
+<p>This talk by Marty Pitt has low-key blown my mind: https://www.youtube.com/watch?v=GUAVOkz_zWU</p><p>Despite the type-aliases in the title, that seems to be the least important part of the talk. Some quick notes:</p><ul><li>Distinguish between Semantic Contract and Structural Contract</li><li>Makes a point on how Semantic Contracts are easier to share and encourages to do so</li><li>Makes a point on how Structural Contracts are a pain to share and encourages to keep that private</li><li>Taxi language can define semantic contracts. You can use Kotlin type aliases to write taxi semantic contracts</li><li>Orbitalhq is a docker image that can consume semantic contracts and register data sources (DB, Kafka, REST API, Soap, etc)</li><li>This wasn't mentioned, but you pay for orbital, the free tier is very limited. Still amazing what it can achieve.</li><li>You can use taxi language queries to request an arbitrary structure of semantic data. (can also be written in Kotlin)</li><li>Orbital can then automatically reach to the different sources and look for the semantic data and arrange it as requested</li></ul><p>The result is:</p><ul><li>A single, <em>formal</em>, definition (across teams) of the semantic contracts</li><li>Clients do not care where the semantic data is coming from. Resilient to changes.</li><li>Orbital automates SQL, Kafka, REST glue code reducing overall code required.</li></ul><p>My concerns:</p><ul><li>Does Orbital have any permission management? Exposing DB model and data seems dangerous without it.</li><li>Can contract sync be an issue?</li></ul><p>Overall what orbital does is impressive. I don't think I have seen it elsewhere. Nothing here is really Kotlin
+specific besides the fact that you can define taxi lang constructs (contracts and queries) with type safe Kotlin
+which actually is convenient as well.</p></div>
+  <hr>
+<br><br></div>
+<div class="h-entry">
   <div class="e-content"><p><a class="u-url" href="https://corlaez.com/note/7.html"><em><time class="dt-published" datetime="2022-11-28T00:00:00">Nov 28, 2022</time></em></a></p>
 <p>Loans are yours lol afk</p></div>
   <hr>

@@ -2,9 +2,6 @@ import common.*
 import plugins.*
 import server.Arg
 
-// todo
-//- <audio preload="none" controls="controls" loop="loop"><source src="/assets/bec.mp3" type="audio/mpeg"></audio>
-
 val envText = EnvText(
     author =  { "Armando Cordova" },
     logoAlly = { when(it) {
