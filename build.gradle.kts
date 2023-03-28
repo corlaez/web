@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.20-RC"
     id("io.gitlab.arturbosch.detekt").version("1.22.0")
     application
 }
@@ -24,12 +24,10 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
-    kotlinOptions.useK2 = true
+    kotlinOptions.languageVersion = "2.0"
     kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
     kotlinOptions.freeCompilerArgs += "-progressive"
     kotlinOptions.freeCompilerArgs += "-version"
-    kotlinOptions.freeCompilerArgs += "-Xjdk-release=17"
     kotlinOptions.freeCompilerArgs += "-no-reflect"
     kotlinOptions.freeCompilerArgs += "-verbose"
 }
