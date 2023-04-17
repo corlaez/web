@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="prepareDeploy" type="CompoundRunConfigurationType">
-    <toRun name="detekt" type="GradleRunConfiguration" />
-    <toRun name="prdWithoutServer" type="JetRunConfigurationType" />
-    <method v="2" />
-  </configuration>
-</component>

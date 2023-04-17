@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="955c9632-bd52-411d-ac2c-e4ab4b1cc626" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/en/notes/10.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/es/notes/10.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/chamaco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/detekt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/dev.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/prd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/prepareDeploy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/regenerate.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/release.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/web-lib">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/web-lib">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="web" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="web" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="uebdceki" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2CmBk8BM0dTQx85kSgTAgnzgtVS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/armando/Documents/github/web/src/main/resources/en/notes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/en/notes" />
+      <recent name="$PROJECT_DIR$/src/main/resources/es/notes" />
+      <recent name="$PROJECT_DIR$/static/assets" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\src\main\resources\es\blog" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\src\main\resources\en\blog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chamaco\Documents\repos\web\static\assets" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\static" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\master" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\src\main\resources\es\blog" />
+      <recent name="C:\Users\chamaco\Documents\repos\web\src\main\resources\en\blog" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="plugins" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="KotlinExtractInterfaceDialog.RECENT_KEYS">
+      <recent name="mermaid" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="plugins" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.prd">
+    <configuration name="dev" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+            <option value="--args='dev'" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="prd" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+            <option value="--args='prd'" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="prdWithoutServer" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+            <option value="--args='prdWithoutServer'" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="web [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="web [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="web [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="web-lib [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/web-lib" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="ManualKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ManualKt" />
+      <module name="web.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.prdWithoutServer" />
+      <item itemvalue="Gradle.dev" />
+      <item itemvalue="Gradle.prd" />
+      <item itemvalue="Gradle.web [build]" />
+      <item itemvalue="Gradle.web [test]" />
+      <item itemvalue="Gradle.web-lib [test]" />
+      <item itemvalue="Gradle.web [clean]" />
+      <item itemvalue="Kotlin.ManualKt" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.web [build]" />
+        <item itemvalue="Gradle.web [clean]" />
+        <item itemvalue="Gradle.web [test]" />
+        <item itemvalue="Gradle.web-lib [test]" />
+        <item itemvalue="Kotlin.ManualKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="955c9632-bd52-411d-ac2c-e4ab4b1cc626" name="Changes" comment="" />
+      <created>1659329681140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659329681140</updated>
+      <workItem from="1659329683345" duration="2881000" />
+      <workItem from="1659398024116" duration="20706000" />
+      <workItem from="1659444294216" duration="31707000" />
+      <workItem from="1659493429102" duration="8650000" />
+      <workItem from="1659504752461" duration="289000" />
+      <workItem from="1659532918454" duration="9955000" />
+      <workItem from="1659545371934" duration="2485000" />
+      <workItem from="1659547992317" duration="4287000" />
+      <workItem from="1659555047770" duration="4130000" />
+      <workItem from="1659568587920" duration="49204000" />
+      <workItem from="1659700319336" duration="4962000" />
+      <workItem from="1659705564185" duration="9678000" />
+      <workItem from="1659732276974" duration="13758000" />
+      <workItem from="1659758106276" duration="4993000" />
+      <workItem from="1659897025320" duration="499000" />
+      <workItem from="1659923088217" duration="8177000" />
+      <workItem from="1659961878635" duration="33342000" />
+      <workItem from="1660043094901" duration="10876000" />
+      <workItem from="1660077662426" duration="211000" />
+      <workItem from="1660096430310" duration="5260000" />
+      <workItem from="1660133859455" duration="1143000" />
+      <workItem from="1660191160749" duration="1031000" />
+      <workItem from="1660221056916" duration="1417000" />
+      <workItem from="1660231240353" duration="1539000" />
+      <workItem from="1660233925326" duration="2925000" />
+      <workItem from="1660244844692" duration="3193000" />
+      <workItem from="1660251189608" duration="309000" />
+      <workItem from="1660262821261" duration="6314000" />
+      <workItem from="1660302900986" duration="3635000" />
+      <workItem from="1660314315601" duration="5149000" />
+      <workItem from="1660670340935" duration="15405000" />
+      <workItem from="1660755083466" duration="831000" />
+      <workItem from="1660756218903" duration="1212000" />
+      <workItem from="1660792168943" duration="1978000" />
+      <workItem from="1660795282492" duration="653000" />
+      <workItem from="1660881710088" duration="2546000" />
+      <workItem from="1661008784648" duration="171000" />
+      <workItem from="1661048568664" duration="600000" />
+      <workItem from="1661134271073" duration="3077000" />
+      <workItem from="1661154950019" duration="798000" />
+      <workItem from="1661171029093" duration="13991000" />
+      <workItem from="1661309639374" duration="1948000" />
+      <workItem from="1661353857964" duration="6780000" />
+      <workItem from="1661403811920" duration="5000" />
+      <workItem from="1661429416775" duration="10145000" />
+      <workItem from="1661443133530" duration="6320000" />
+      <workItem from="1661527395755" duration="1228000" />
+      <workItem from="1661543791494" duration="595000" />
+      <workItem from="1661546240710" duration="9219000" />
+      <workItem from="1661606469807" duration="5168000" />
+      <workItem from="1661649032651" duration="10595000" />
+      <workItem from="1661662762061" duration="71000" />
+      <workItem from="1661664940500" duration="139000" />
+      <workItem from="1661665089099" duration="3262000" />
+      <workItem from="1661731815441" duration="1197000" />
+      <workItem from="1661776883952" duration="8420000" />
+      <workItem from="1661830637144" duration="7165000" />
+      <workItem from="1661904789529" duration="5811000" />
+      <workItem from="1661921946374" duration="1744000" />
+      <workItem from="1661949411956" duration="2779000" />
+      <workItem from="1661970138932" duration="6667000" />
+      <workItem from="1662033645920" duration="1789000" />
+      <workItem from="1662060714583" duration="1320000" />
+      <workItem from="1662096333942" duration="958000" />
+      <workItem from="1662126203902" duration="611000" />
+      <workItem from="1662170037153" duration="1280000" />
+      <workItem from="1662266523485" duration="594000" />
+      <workItem from="1662272795861" duration="1637000" />
+      <workItem from="1662280359576" duration="1509000" />
+      <workItem from="1662302130593" duration="2233000" />
+      <workItem from="1662405242983" duration="8653000" />
+      <workItem from="1662431353328" duration="28351000" />
+      <workItem from="1662663479635" duration="659000" />
+      <workItem from="1662707472318" duration="56000" />
+      <workItem from="1662728323933" duration="22402000" />
+      <workItem from="1662893762854" duration="8627000" />
+      <workItem from="1662937483474" duration="4055000" />
+      <workItem from="1662990478090" duration="2748000" />
+      <workItem from="1662994324800" duration="5821000" />
+      <workItem from="1663011483138" duration="1203000" />
+      <workItem from="1663032793811" duration="9008000" />
+      <workItem from="1663073095557" duration="684000" />
+      <workItem from="1663088020502" duration="2722000" />
+      <workItem from="1663093096674" duration="16392000" />
+      <workItem from="1663127061256" duration="1288000" />
+      <workItem from="1663158751524" duration="3802000" />
+      <workItem from="1663168918555" duration="13903000" />
+      <workItem from="1663242291099" duration="17705000" />
+      <workItem from="1663293648589" duration="534000" />
+      <workItem from="1663334463702" duration="3449000" />
+      <workItem from="1663339745361" duration="8356000" />
+      <workItem from="1663357507326" duration="1710000" />
+      <workItem from="1663548610332" duration="12986000" />
+      <workItem from="1663591535637" duration="12111000" />
+      <workItem from="1663617064733" duration="82000" />
+      <workItem from="1663638388779" duration="4742000" />
+      <workItem from="1663676380870" duration="12812000" />
+      <workItem from="1663695965991" duration="3192000" />
+      <workItem from="1663742651685" duration="596000" />
+      <workItem from="1663746052563" duration="69000" />
+      <workItem from="1663746252459" duration="944000" />
+      <workItem from="1663789217721" duration="9249000" />
+      <workItem from="1663849927838" duration="9759000" />
+      <workItem from="1663942414458" duration="1502000" />
+      <workItem from="1663952365919" duration="4396000" />
+      <workItem from="1664217467410" duration="1828000" />
+      <workItem from="1664240452533" duration="1190000" />
+      <workItem from="1664287361048" duration="595000" />
+      <workItem from="1664336437746" duration="2920000" />
+      <workItem from="1664405736137" duration="1553000" />
+      <workItem from="1664455360934" duration="1018000" />
+      <workItem from="1664456641558" duration="4159000" />
+      <workItem from="1664544719791" duration="3212000" />
+      <workItem from="1664691452225" duration="1012000" />
+      <workItem from="1664759873129" duration="59000" />
+      <workItem from="1664801083093" duration="919000" />
+      <workItem from="1664853345786" duration="594000" />
+      <workItem from="1664890507590" duration="3324000" />
+      <workItem from="1664976187452" duration="2780000" />
+      <workItem from="1665031423895" duration="1266000" />
+      <workItem from="1665033451151" duration="7000" />
+      <workItem from="1665063687526" duration="1221000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/semeru-17.0.4/lib/src.zip!/jdk.zipfs/jdk/nio/zipfs/ZipFileSystemProvider.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="((java.util.Arrays.ArrayList)((LinkedHashMap.Entry)((LinkedHashMap)articles).entrySet().toArray()[0]).getValue()).get(3)" custom="java.util.LinkedHashMap,java.util.Arrays.ArrayList,java.util.LinkedHashMap.Entry" />
+        <watch expression="((PageContext)_context_receiver_3).fileName" custom="PageContext" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
