@@ -14,8 +14,10 @@ This project also uses experimental features in Kotlin such as the k2 compiler a
 | arg        | Outcome                               | Recommended Usage                       |
 |------------|---------------------------------------|-----------------------------------------|
 | dev        | generate and serve with hot reload    | Dev server                              |
-| prod       | generate and serve without hot reload | Check website before a deploy           |
+| prd        | generate and serve without hot reload | Check website as it would look in prod  |
 | regenerate | http request to regenerate website    | Run manually or use it in File Watchers |
+| release    | generate as prd without serving       | Generate website for a deploy           |
+
 
 ## Writing a blog post
 
