@@ -16,12 +16,13 @@ jobs:
         distribution: corretto
         java-version: 17
     - uses: gradle/gradle-build-action@v2
+    - run: git checkout deploy
+    - run: git reset --hard origin/master
     - run: ./gradlew run --args="release"
     - uses: stefanzweifel/git-auto-commit-action@v5.0.0
       with:
         commit_message: 'Build production website'
         branch: deploy
-        push_options: --force
     - uses: fjogeleit/http-request-action@4cbc7a46b206a7aad09ef774775110b7b94f8523
       with:
         url: ${{ secrets.DEPLOY_WEBHOOK }}
